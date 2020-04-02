@@ -18,9 +18,9 @@ int diagonalDifference(vector<vector<int>> arr, int n) {
         d1 += arr[i][i];
         // n=3
         // x y
-        // 2 0
-        // 1 1
         // 0 2
+        // 1 1
+        // 2 0
         d2 += arr[n-i-1][i];
     }
 
