@@ -3,6 +3,15 @@
         <img height=180 src="https://user-images.githubusercontent.com/35857179/78155098-9cdad380-746f-11ea-962e-b4b7f47724ad.png">
     </a>
     <hr>
-    A collection of my HackerRank solutions
+    A Collection of my HackerRank solutions with explanations.
 </div>
 
+## Problem Solving
+<details>
+  <summary>Warm-up</summary>
+  
+  - [Diagonal Difference](https://github.com/wingkwong/hackerrank/tree/master/warmup/diagonal-difference)
+  - [A Very Big Sum](https://github.com/wingkwong/hackerrank/tree/master/warmup/a-very-big-sum)
+  - [Simple Array Sum](https://github.com/wingkwong/hackerrank/tree/master/warmup/simple-array-sum)
+  - [Compare the Triplets](https://github.com/wingkwong/hackerrank/tree/master/warmup/compare-the-triplets)
+</details>
