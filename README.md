@@ -17,4 +17,6 @@
   - [Birthday Cake Candles](https://github.com/wingkwong/hackerrank/tree/master/warmup/birthday-cake-candles)
   - [Mini-Max Sum](https://github.com/wingkwong/hackerrank/tree/master/warmup/mini-max-sum)
   - [Plus Minus](https://github.com/wingkwong/hackerrank/tree/master/warmup/plus-minus)
+  - [Staircase](https://github.com/wingkwong/hackerrank/tree/master/warmup/staircase)
+  - [Time Conversion](https://github.com/wingkwong/hackerrank/tree/master/warmup/time-conversion)
 </details>
