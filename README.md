@@ -31,3 +31,10 @@
   - [Mars Exploration](https://github.com/wingkwong/hackerrank/tree/master/strings/mars-exploration)
   - [Pangrams](https://github.com/wingkwong/hackerrank/tree/master/strings/pangrams)
 </details>
+
+
+<details>
+  <summary>Implementation</summary>
+
+  - [Extra Long Factorials](https://github.com/wingkwong/hackerrank/tree/master/implementation/extra-long-factorials)
+</details>
