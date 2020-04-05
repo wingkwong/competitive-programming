@@ -20,3 +20,14 @@
   - [Staircase](https://github.com/wingkwong/hackerrank/tree/master/warmup/staircase)
   - [Time Conversion](https://github.com/wingkwong/hackerrank/tree/master/warmup/time-conversion)
 </details>
+
+<details>
+  <summary>Strings</summary>
+
+  - [Camel Case](https://github.com/wingkwong/hackerrank/tree/master/strings/camelcase)
+  - [Making Anagrams](https://github.com/wingkwong/hackerrank/tree/master/strings/making-anagrams)
+  - [Strong Password](https://github.com/wingkwong/hackerrank/tree/master/strings/strong-password)
+  - [HackerRank in a String](https://github.com/wingkwong/hackerrank/tree/master/strings/hackerrank-in-a-string)
+  - [Mars Exploration](https://github.com/wingkwong/hackerrank/tree/master/strings/mars-exploration)
+  - [Pangrams](https://github.com/wingkwong/hackerrank/tree/master/strings/pangrams)
+</details>
