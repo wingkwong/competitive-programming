@@ -49,7 +49,7 @@ int diry[8]={ 0, 1, -1, 0, -1, 1, -1, 1 };
 #define FAST_INP  ios_base::sync_with_stdio(false);cin.tie(NULL)
 
 int hh;
-string s,ap;
+string s,ap,r;
 
 int main() {
     FAST_INP;
@@ -59,17 +59,18 @@ int main() {
 	//0123456789
     hh=stoi(s.substr(0,2));
     ap=s.substr(8,2);
+	r=s.substr(2,6);
     if(ap=="AM") {
     	//12:00:00AM -> 00:00:00
-    	if(hh==12) cout << "00" << s.substr(2,6);
+    	if(hh==12) cout << "00" << r;
     	//05:00:00AM -> 05:00:00
-    	else cout << (hh<10?"0":"") << hh << s.substr(2,6);
+    	else cout << (hh<10?"0":"") << hh << r;
 	}
     else if(ap=="PM") {
     	//12:00:00PM -> 12:00:00
-    	if(hh==12) cout << (hh<10?"0":"") << hh << s.substr(2,6);
+    	if(hh==12) cout << (hh<10?"0":"") << hh << r;
     	//07:00:00PM -> 19:00:00
-    	else cout << (hh+12) << s.substr(2,6);
+    	else cout << (hh+12) << r;
 	}
     return 0;
 }
