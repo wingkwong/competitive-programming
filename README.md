@@ -39,9 +39,15 @@
   - [Extra Long Factorials](https://github.com/wingkwong/hackerrank/tree/master/implementation/extra-long-factorials)
 </details>
 
+<details>
+  <summary>Dynamic Programming</summary>
+
+  - [The Longest Increasing Subsequence](https://github.com/wingkwong/hackerrank/tree/master/dynamic-programming/longest-increasing-subsequent)
+</details>
+
 ## Contests
 <details>
   <summary>Project Euler</summary>
-  
+
   - [#001: Multiples of 3 and 5](https://github.com/wingkwong/hackerrank/tree/master/euler/001)
 </details>
