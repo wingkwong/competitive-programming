@@ -57,7 +57,7 @@ int main()
     cin >> s;
     REP(i,s.size()){
         if(isupper(s[i])) cnt++;
-        cout << cnt;
-        return 0; 
     }
+    cout << cnt;
+    return 0; 
 } 
