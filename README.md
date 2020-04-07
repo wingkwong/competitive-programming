@@ -37,6 +37,7 @@
   <summary>Implementation</summary>
 
   - [Extra Long Factorials](https://github.com/wingkwong/hackerrank/tree/master/implementation/extra-long-factorials)
+  - [Grading Students](https://github.com/wingkwong/hackerrank/tree/master/implementation/grading)
 </details>
 
 <details>
