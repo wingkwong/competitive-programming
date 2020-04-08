@@ -38,4 +38,5 @@
   <summary>Dynamic Programming</summary>
 
   - [The Longest Increasing Subsequence](https://github.com/wingkwong/hackerrank/tree/master/problem-solving/algorithms/dynamic-programming/longest-increasing-subsequent)
+  - [Knapsack](https://github.com/wingkwong/hackerrank/tree/master/problem-solving/algorithms/dynamic-programming/unbounded-knapsack/problem)
 </details>
