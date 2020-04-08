@@ -13,4 +13,4 @@ Sample Output
 5000000015
 ```
 
-Nothing special. Read an input and sum them up. ``long`` should be enough in this case. Let's delete all the code provided by HackerRank. Copy and paste the template.
+Nothing special. Read an input and sum them up. ``long`` should be enough in this case.
