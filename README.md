@@ -41,6 +41,12 @@
 </details>
 
 <details>
+  <summary>Algorithm</summary>
+
+  - [The Time in Words](https://github.com/wingkwong/hackerrank/tree/master/algorithms/the-time-in-words)
+</details>
+
+<details>
   <summary>Dynamic Programming</summary>
 
   - [The Longest Increasing Subsequence](https://github.com/wingkwong/hackerrank/tree/master/dynamic-programming/longest-increasing-subsequent)
