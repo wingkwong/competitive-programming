@@ -47,6 +47,12 @@
 </details>
 
 <details>
+  <summary>Date Structures</summary>
+
+  - [QHEAP1](https://github.com/wingkwong/hackerrank/tree/master/data-structures/qheap1)
+</details>
+
+<details>
   <summary>Dynamic Programming</summary>
 
   - [The Longest Increasing Subsequence](https://github.com/wingkwong/hackerrank/tree/master/dynamic-programming/longest-increasing-subsequent)
