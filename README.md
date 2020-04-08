@@ -8,55 +8,20 @@
 
 ## Problem Solving
 <details>
-  <summary>Warm-up</summary>
+<summary>Algorithms</summary>
+
+  - [Warmup](https://github.com/wingkwong/hackerrank/tree/master/problem-solving/algorithms/warmup/)
+  - [Implementation](https://github.com/wingkwong/hackerrank/tree/master/problem-solving/algorithms/implementation/)
+  - [Strings](https://github.com/wingkwong/hackerrank/tree/master/problem-solving/algorithms/strings/)
+  - [Dynamic Programming](https://github.com/wingkwong/hackerrank/tree/master/problem-solving/algorithms/dynamic-programming/)
+</details>
+
+<details>
+<summary>Data Structures</summary>
   
-  - [Diagonal Difference](https://github.com/wingkwong/hackerrank/tree/master/warmup/diagonal-difference)
-  - [A Very Big Sum](https://github.com/wingkwong/hackerrank/tree/master/warmup/a-very-big-sum)
-  - [Simple Array Sum](https://github.com/wingkwong/hackerrank/tree/master/warmup/simple-array-sum)
-  - [Compare the Triplets](https://github.com/wingkwong/hackerrank/tree/master/warmup/compare-the-triplets)
-  - [Birthday Cake Candles](https://github.com/wingkwong/hackerrank/tree/master/warmup/birthday-cake-candles)
-  - [Mini-Max Sum](https://github.com/wingkwong/hackerrank/tree/master/warmup/mini-max-sum)
-  - [Plus Minus](https://github.com/wingkwong/hackerrank/tree/master/warmup/plus-minus)
-  - [Staircase](https://github.com/wingkwong/hackerrank/tree/master/warmup/staircase)
-  - [Time Conversion](https://github.com/wingkwong/hackerrank/tree/master/warmup/time-conversion)
+  - [Heap](https://github.com/wingkwong/hackerrank/tree/master/problem-solving/data-structures/)
 </details>
 
-<details>
-  <summary>Strings</summary>
-
-  - [Camel Case](https://github.com/wingkwong/hackerrank/tree/master/strings/camelcase)
-  - [Making Anagrams](https://github.com/wingkwong/hackerrank/tree/master/strings/making-anagrams)
-  - [Strong Password](https://github.com/wingkwong/hackerrank/tree/master/strings/strong-password)
-  - [HackerRank in a String](https://github.com/wingkwong/hackerrank/tree/master/strings/hackerrank-in-a-string)
-  - [Mars Exploration](https://github.com/wingkwong/hackerrank/tree/master/strings/mars-exploration)
-  - [Pangrams](https://github.com/wingkwong/hackerrank/tree/master/strings/pangrams)
-</details>
-
-
-<details>
-  <summary>Implementation</summary>
-
-  - [Extra Long Factorials](https://github.com/wingkwong/hackerrank/tree/master/implementation/extra-long-factorials)
-  - [Grading Students](https://github.com/wingkwong/hackerrank/tree/master/implementation/grading)
-</details>
-
-<details>
-  <summary>Algorithm</summary>
-
-  - [The Time in Words](https://github.com/wingkwong/hackerrank/tree/master/algorithms/the-time-in-words)
-</details>
-
-<details>
-  <summary>Date Structures</summary>
-
-  - [QHEAP1](https://github.com/wingkwong/hackerrank/tree/master/data-structures/qheap1)
-</details>
-
-<details>
-  <summary>Dynamic Programming</summary>
-
-  - [The Longest Increasing Subsequence](https://github.com/wingkwong/hackerrank/tree/master/dynamic-programming/longest-increasing-subsequent)
-</details>
 
 ## Contests
 <details>
