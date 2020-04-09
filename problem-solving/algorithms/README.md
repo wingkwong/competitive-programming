@@ -31,6 +31,7 @@
   - [Extra Long Factorials](https://github.com/wingkwong/hackerrank/tree/master/problem-solving/algorithms/implementation/extra-long-factorials)
   - [Grading Students](https://github.com/wingkwong/hackerrank/tree/master/problem-solving/algorithms/implementation/grading)
   - [The Time in Words](https://github.com/wingkwong/hackerrank/tree/master/problem-solving/algorithms/implementation/the-time-in-words)
+  - [Migratory Birds](https://github.com/wingkwong/hackerrank/tree/master/problem-solving/algorithms/implementation/migratory-birds)
 </details>
 
 
