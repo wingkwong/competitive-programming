@@ -66,10 +66,6 @@ ll s(ll n,ll k){
     return (k*(x*(x+1)))/2;
 }
 
-ll euler1(ll n){
-    return s(n,3)+s(n,5)-s(n,15);
-}
-
 int main()  
 { 
     FAST_INP;
@@ -77,7 +73,7 @@ int main()
     cin >> t;
     TC(t){
         cin >> i;
-        cout << euler1(i-1) << "\n";
+        cout << s(i-1,3)+s(i-1,5)-s(i-1,15) << "\n";
     }
     return 0; 
 }
