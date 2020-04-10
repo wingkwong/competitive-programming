@@ -1,0 +1,1 @@
+# [Arrays Introduction](https://www.hackerrank.com/challenges/arrays-introduction/problem)
