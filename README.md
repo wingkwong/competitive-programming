@@ -37,8 +37,10 @@
   - [Day 1 - Data Types](https://github.com/wingkwong/hackerrank/tree/master/30-days-of-code/day1-data-types)
   - [Day 2 - Operators](https://github.com/wingkwong/hackerrank/tree/master/30-days-of-code/day2-operators)
   - [Day 3 - Intro to Conditional Statements](https://github.com/wingkwong/hackerrank/tree/master/30-days-of-code/day3-conditional-statements)
-  - [Day 4 - Class vs Instance](https://github.com/wingkwong/hackerrank/tree/master/30-days-of-code/day4-class-vs-instance	)
+  - [Day 4 - Class vs Instance](https://github.com/wingkwong/hackerrank/tree/master/30-days-of-code/day4-class-vs-instance)
   - [Day 5 - Loops](https://github.com/wingkwong/hackerrank/tree/master/30-days-of-code/day5-loops)
   - [Day 6 - Let's Review](https://github.com/wingkwong/hackerrank/tree/master/30-days-of-code/day6-review-loop)
   - [Day 7 - Arrays](https://github.com/wingkwong/hackerrank/tree/master/30-days-of-code/day7-arrays)
+  - [Day 8 - Dictionaries and Maps](https://github.com/wingkwong/hackerrank/tree/master/30-days-of-code/day8-dictionaries-and-maps)
+  - [Day 9 - Recursion 3](https://github.com/wingkwong/hackerrank/tree/master/30-days-of-code/day9-recursion)
 </details>
