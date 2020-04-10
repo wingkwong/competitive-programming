@@ -35,6 +35,7 @@
   - [Find Digits](https://github.com/wingkwong/hackerrank/tree/master/problem-solving/algorithms/implementation/find-digits)
   - [Breaking the Records](https://github.com/wingkwong/hackerrank/tree/master/problem-solving/algorithms/implementation/breaking-best-and-worst-records)
   - [The Hurdle Race](https://github.com/wingkwong/hackerrank/tree/master/problem-solving/algorithms/implementation/the-hurdle-race)
+  - [Beautiful Days at the Movies](https://github.com/wingkwong/hackerrank/tree/master/problem-solving/algorithms/implementation/beautiful-days-at-the-movies)
 </details>
 
 
