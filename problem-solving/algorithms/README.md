@@ -33,6 +33,7 @@
   - [The Time in Words](https://github.com/wingkwong/hackerrank/tree/master/problem-solving/algorithms/implementation/the-time-in-words)
   - [Migratory Birds](https://github.com/wingkwong/hackerrank/tree/master/problem-solving/algorithms/implementation/migratory-birds)
   - [Find Digits](https://github.com/wingkwong/hackerrank/tree/master/problem-solving/algorithms/implementation/find-digits)
+  - [Breaking the Records](https://github.com/wingkwong/hackerrank/tree/master/problem-solving/algorithms/implementation/breaking-best-and-worst-records)
 </details>
 
 
