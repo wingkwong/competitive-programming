@@ -1,0 +1,1 @@
+# [Inherited Code](https://www.hackerrank.com/challenges/inherited-code/problem)
