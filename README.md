@@ -13,6 +13,7 @@
   - [Warmup](https://github.com/wingkwong/hackerrank/tree/master/problem-solving/algorithms/warmup/)
   - [Implementation](https://github.com/wingkwong/hackerrank/tree/master/problem-solving/algorithms/implementation/)
   - [Strings](https://github.com/wingkwong/hackerrank/tree/master/problem-solving/algorithms/strings/)
+  - [Greedy](https://github.com/wingkwong/hackerrank/tree/master/problem-solving/algorithms/greedy/)
   - [Dynamic Programming](https://github.com/wingkwong/hackerrank/tree/master/problem-solving/algorithms/dynamic-programming/)
 </details>
 
