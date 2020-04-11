@@ -41,6 +41,11 @@
   - [Jumping on the Clouds: Revisited](https://github.com/wingkwong/hackerrank/tree/master/problem-solving/algorithms/implementation/jumping-on-the-clouds-revisited)
 </details>
 
+<details>
+  <summary>Greedy</summary>
+
+  - [Minimum Absolute Difference in an Array](https://github.com/wingkwong/hackerrank/tree/master/problem-solving/algorithms/greedy/minimum-absolute-difference-in-an-array)
+</details>
 
 <details>
   <summary>Dynamic Programming</summary>
