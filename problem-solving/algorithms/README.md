@@ -39,6 +39,7 @@
   - [Angry Professor](https://github.com/wingkwong/hackerrank/tree/master/problem-solving/algorithms/implementation/angry-professor)
   - [Jumping on the Clouds](https://github.com/wingkwong/hackerrank/tree/master/problem-solving/algorithms/implementation/jumping-on-the-clouds)
   - [Jumping on the Clouds: Revisited](https://github.com/wingkwong/hackerrank/tree/master/problem-solving/algorithms/implementation/jumping-on-the-clouds-revisited)
+  - [Repeated String](https://github.com/wingkwong/hackerrank/tree/master/problem-solving/algorithms/implementation/repeated-string)
 </details>
 
 <details>
