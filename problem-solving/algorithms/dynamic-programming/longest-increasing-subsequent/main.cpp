@@ -111,22 +111,21 @@ int diry[8]={ 0, 1, -1, 0, -1, 1, -1, 1 };
 int main()  
 { 
     FAST_INP;
-    int n;
+    int n,a;
 
     cin >> n;
-    vi a(n);
     vi v;
 
     REP(i,n){
         vi::iterator it;
 
-        cin >> a[i];
-        if(i==0) v.push_back(a[i]);
+        cin >> a;
+        if(i==0) v.push_back(a);
         else {
-            it=lower_bound(v.begin(),v.end(),a[i]);
+            it=lower_bound(v.begin(),v.end(),a);
             int k=it-v.begin();
-            if(k==v.size()) v.push_back(a[i]);
-            else v[k]=a[i];
+            if(k==v.size()) v.push_back(a);
+            else v[k]=a;
         }
     }
     cout << v.size();
