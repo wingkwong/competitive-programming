@@ -45,6 +45,7 @@
   <summary>Greedy</summary>
 
   - [Minimum Absolute Difference in an Array](https://github.com/wingkwong/hackerrank/tree/master/problem-solving/algorithms/greedy/minimum-absolute-difference-in-an-array)
+  - [Marc's Cakewalk](https://github.com/wingkwong/hackerrank/tree/master/problem-solving/algorithms/greedy/marcs-cakewalk)
 </details>
 
 <details>
