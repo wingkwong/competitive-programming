@@ -44,4 +44,5 @@
   - [Day 7 - Arrays](https://github.com/wingkwong/hackerrank/tree/master/30-days-of-code/day7-arrays)
   - [Day 8 - Dictionaries and Maps](https://github.com/wingkwong/hackerrank/tree/master/30-days-of-code/day8-dictionaries-and-maps)
   - [Day 9 - Recursion 3](https://github.com/wingkwong/hackerrank/tree/master/30-days-of-code/day9-recursion)
+  - [Day 10 - Binary Numbers](https://github.com/wingkwong/hackerrank/tree/master/30-days-of-code/day10-binary-numbers)
 </details>
