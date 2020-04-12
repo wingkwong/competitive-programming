@@ -51,6 +51,12 @@
 </details>
 
 <details>
+  <summary>Search</summary>
+
+  - [Missing Numbers](https://github.com/wingkwong/hackerrank/tree/master/problem-solving/algorithms/search/missing-numbers)
+</details>
+
+<details>
   <summary>Dynamic Programming</summary>
 
   - [The Longest Increasing Subsequence](https://github.com/wingkwong/hackerrank/tree/master/problem-solving/algorithms/dynamic-programming/longest-increasing-subsequent)
