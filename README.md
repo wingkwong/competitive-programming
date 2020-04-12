@@ -14,6 +14,7 @@
   - [Implementation](https://github.com/wingkwong/hackerrank/tree/master/problem-solving/algorithms/implementation/)
   - [Strings](https://github.com/wingkwong/hackerrank/tree/master/problem-solving/algorithms/strings/)
   - [Greedy](https://github.com/wingkwong/hackerrank/tree/master/problem-solving/algorithms/greedy/)
+  - [Search](https://github.com/wingkwong/hackerrank/tree/master/problem-solving/algorithms/search/)
   - [Dynamic Programming](https://github.com/wingkwong/hackerrank/tree/master/problem-solving/algorithms/dynamic-programming/)
 </details>
 
