@@ -55,6 +55,7 @@
 
   - [Missing Numbers](https://github.com/wingkwong/hackerrank/tree/master/problem-solving/algorithms/search/missing-numbers)
   - [Ice Cream Parlor](https://github.com/wingkwong/hackerrank/tree/master/problem-solving/algorithms/search/icecream-parlor)
+  - [Maximum Subarray Sum](https://github.com/wingkwong/hackerrank/tree/master/problem-solving/algorithms/search/maximum-subarray-sum)
 </details>
 
 <details>
