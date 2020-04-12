@@ -54,6 +54,7 @@
   <summary>Search</summary>
 
   - [Missing Numbers](https://github.com/wingkwong/hackerrank/tree/master/problem-solving/algorithms/search/missing-numbers)
+  - [Ice Cream Parlor](https://github.com/wingkwong/hackerrank/tree/master/problem-solving/algorithms/search/icecream-parlor)
 </details>
 
 <details>
