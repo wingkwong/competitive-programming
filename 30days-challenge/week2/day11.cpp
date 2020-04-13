@@ -24,7 +24,40 @@ Note: The length of path between two nodes is represented by the number of edges
  *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
  * };
  */
+
+// O(n)
 class Solution {
+public:
+    int diameterOfBinaryTree(TreeNode* root) {
+        int h;
+        return diameter(root,&h);
+    }
+    
+    int diameter(TreeNode* root, int* h){
+        // lh --> Height of left subtree 
+        // rh --> Height of right subtree
+        // ldiameter  --> diameter of left subtree 
+        // rdiameter  --> Diameter of right subtree
+        int lh=0,rh=0,ld=0,rd=0;
+        // base case tree is empty
+        if(root==NULL){
+            *h=0;
+            return 0;
+        }
+        // Get the heights of left and right subtrees in lh and rh 
+        // And store the returned values in ldiameter and ldiameter
+        ld=diameter(root->left, &lh);
+        rd=diameter(root->right, &rh);
+        // Height of current node is max of heights of left and 
+        // right subtrees plus one
+        *h=max(lh,rh)+1;
+        return max(lh+rh, max(ld,rd));;
+        // return max(lh+rh+1, max(ld,rd));
+    }
+};
+
+// O(n^2)
+class Solution2 {
 public:
     int diameterOfBinaryTree(TreeNode* root) {
         // base case where tree is empty
