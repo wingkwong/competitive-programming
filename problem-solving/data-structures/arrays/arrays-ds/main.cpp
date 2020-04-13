@@ -56,9 +56,6 @@ int main()
     cin >> n;
     vi a(n);
     REP(i,n) cin >> a[i];
-    reverse(a.begin(),a.end());
-    REP(j,n){
-        cout << a[j] << " ";
-    }
+    FORD(i,n-1,0) cout << a[i] << " ";
     return 0;
 }
