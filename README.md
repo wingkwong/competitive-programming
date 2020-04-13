@@ -47,4 +47,5 @@
   - [Day 9 - Recursion 3](https://github.com/wingkwong/hackerrank/tree/master/30-days-of-code/day9-recursion)
   - [Day 10 - Binary Numbers](https://github.com/wingkwong/hackerrank/tree/master/30-days-of-code/day10-binary-numbers)
   - [Day 11 - 2D Arrays](https://github.com/wingkwong/hackerrank/tree/master/30-days-of-code/day11-2d-arrays)
+  - [Day 12 - Inheritance](https://github.com/wingkwong/hackerrank/tree/master/30-days-of-code/day12-inheritance)
 </details>
