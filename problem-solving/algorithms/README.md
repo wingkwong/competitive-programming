@@ -41,6 +41,7 @@
   - [Jumping on the Clouds: Revisited](https://github.com/wingkwong/hackerrank/tree/master/problem-solving/algorithms/implementation/jumping-on-the-clouds-revisited)
   - [Repeated String](https://github.com/wingkwong/hackerrank/tree/master/problem-solving/algorithms/implementation/repeated-string)
   - [Taum and B'day](https://github.com/wingkwong/hackerrank/tree/master/problem-solving/algorithms/implementation/taum-and-bday)
+  - [Library Fine](https://github.com/wingkwong/hackerrank/tree/master/problem-solving/algorithms/implementation/library-fine)
 </details>
 
 <details>
