@@ -111,6 +111,7 @@ to
 dp[c-w[i]]
 ```
 
+and also from
 ```cpp
 int ans=mm[0];
 for(int i=1;i<n;i++){
@@ -142,7 +143,7 @@ dp[0] = 0
 for C=0 ... W:
     for i=0 .. N:
         if w[i]<=C: 
-            dp[i] = max ( dp[i] + ( dp[C-w[i]] + v[i] ) )
+            dp[i] = max ( dp[i], ( dp[C-w[i]] + v[i] ) )
         else 
             dp[i] = 0
 ```
