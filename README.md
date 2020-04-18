@@ -52,5 +52,5 @@
   - [Day 14 - Scope](https://github.com/wingkwong/hackerrank/tree/master/30-days-of-code/day14-scope)
   - [Day 15 - Linked List](https://github.com/wingkwong/hackerrank/tree/master/30-days-of-code/day15-linked-list)
   - [Day 16 - Exceptions - String to Integer](https://github.com/wingkwong/hackerrank/tree/master/30-days-of-code/day16-exceptions-string-to-integer)
-  - [Day 17 - More Exceptions](https://github.com/wingkwong/hackerrank/tree/master/30-days-of-code/day17-more-exceptions)day16-exceptions-string-to-integer)
+  - [Day 17 - More Exceptions](https://github.com/wingkwong/hackerrank/tree/master/30-days-of-code/day17-more-exceptions)
 </details>
