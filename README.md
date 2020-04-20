@@ -54,4 +54,5 @@
   - [Day 16 - Exceptions - String to Integer](https://github.com/wingkwong/hackerrank/tree/master/30-days-of-code/day16-exceptions-string-to-integer)
   - [Day 17 - More Exceptions](https://github.com/wingkwong/hackerrank/tree/master/30-days-of-code/day17-more-exceptions)
   - [Day 18 - Queues and Stacks](https://github.com/wingkwong/hackerrank/tree/master/30-days-of-code/day18-queues-stacks)
+  - [Day 19 - Interfaces](https://github.com/wingkwong/hackerrank/tree/master/30-days-of-code/day19-interfaces)
 </details>
