@@ -56,3 +56,10 @@
   - [Day 18 - Queues and Stacks](https://github.com/wingkwong/hackerrank/tree/master/30-days-of-code/day18-queues-stacks)
   - [Day 19 - Interfaces](https://github.com/wingkwong/hackerrank/tree/master/30-days-of-code/day19-interfaces)
 </details>
+
+## Interview Prepartion Kit
+<details>
+  <summary>Arrays</summary>
+
+  - [New Year Chaos](https://github.com/wingkwong/hackerrank/tree/master/interview-preparation-kit/arrays/new-year-chaos)
+</details>
