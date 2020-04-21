@@ -1,4 +1,4 @@
-# Week 1
+# Week 1: April 1st–April 7th
 
 - Single Number
 - Happy Number
