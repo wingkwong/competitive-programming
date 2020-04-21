@@ -55,6 +55,7 @@
   - [Day 17 - More Exceptions](https://github.com/wingkwong/hackerrank/tree/master/30-days-of-code/day17-more-exceptions)
   - [Day 18 - Queues and Stacks](https://github.com/wingkwong/hackerrank/tree/master/30-days-of-code/day18-queues-stacks)
   - [Day 19 - Interfaces](https://github.com/wingkwong/hackerrank/tree/master/30-days-of-code/day19-interfaces)
+  - [Day 20 - Sorting](https://github.com/wingkwong/hackerrank/tree/master/30-days-of-code/day20-sorting)
 </details>
 
 ## Interview Prepartion Kit
