@@ -6,3 +6,4 @@
 - Minimum Path Sum
 - Search in Rotated Sorted Array
 - Construct Binary Search Tree from Preorder Traversal
+- Leftmost Column with at Least a One
