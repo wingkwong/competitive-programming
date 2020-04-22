@@ -36,8 +36,6 @@ Constraints:
 class Solution {
 public:
     int countElements(vector<int>& arr) {
-        ios_base::sync_with_stdio(false);
-        cin.tie(NULL);
         unordered_set<int> us;
         int ans=0;
         for(int a: arr) us.insert(a);
@@ -45,3 +43,5 @@ public:
         return ans;
     }
 };
+
+static const auto io_sync_off = []() {std::ios::sync_with_stdio(false);cin.tie(nullptr);cout.tie(nullptr);return 0;}();

@@ -34,18 +34,22 @@ Constraints:
 
 */
 
+// Peak Valley Approach
+// TotalProfit = Σ (height(peak) - height(valley))
 class Solution {
 public:
     int maxProfit(vector<int>& prices) {
-        ios_base::sync_with_stdio(false);
-        cin.tie(NULL);
         int max=0;
         int sz=prices.size();
         for(int i=1;i<sz;i++){
+            // peak after valley
             if(prices[i]>prices[i-1]){
+                // add the diff to max profit
                 max+=prices[i]-prices[i-1];
             }
         }
         return max;
     }
 };
+
+static const auto io_sync_off = []() {std::ios::sync_with_stdio(false);cin.tie(nullptr);cout.tie(nullptr);return 0;}();
