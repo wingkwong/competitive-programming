@@ -56,6 +56,7 @@
   - [Day 18 - Queues and Stacks](https://github.com/wingkwong/hackerrank/tree/master/30-days-of-code/day18-queues-stacks)
   - [Day 19 - Interfaces](https://github.com/wingkwong/hackerrank/tree/master/30-days-of-code/day19-interfaces)
   - [Day 20 - Sorting](https://github.com/wingkwong/hackerrank/tree/master/30-days-of-code/day20-sorting)
+  - [Day 21 - Generics](https://github.com/wingkwong/hackerrank/tree/master/30-days-of-code/day21-generics)
 </details>
 
 ## Interview Prepartion Kit
