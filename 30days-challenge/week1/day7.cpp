@@ -38,7 +38,11 @@ public:
     int countElements(vector<int>& arr) {
         unordered_set<int> us;
         int ans=0;
+        // put all values [1,1,3,3,5,5,7,7] to a set 
+        // Set: [1,3,5,7]
         for(int a: arr) us.insert(a);
+        // check if the input value + 1 can be found in the set
+        // if so, increase ans by 1
         for(int a: arr) if(us.find(a+1)!=us.end()) ans++;
         return ans;
     }
