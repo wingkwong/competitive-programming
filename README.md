@@ -57,7 +57,8 @@
   - [Day 19 - Interfaces](https://github.com/wingkwong/hackerrank/tree/master/30-days-of-code/day19-interfaces)
   - [Day 20 - Sorting](https://github.com/wingkwong/hackerrank/tree/master/30-days-of-code/day20-sorting)
   - [Day 21 - Generics](https://github.com/wingkwong/hackerrank/tree/master/30-days-of-code/day21-generics)
-  - [Day 22 - Binary Search Trees](https://github.com/wingkwong/hackerrank/tree/master/30-days-of-code/day22-binary-search-tress)
+  - [Day 22 - Binary Search Trees](https://github.com/wingkwong/hackerrank/tree/master/30-days-of-code/day22-binary-search-trees)
+  - [Day 23 - BST Level-Order Traversal](https://github.com/wingkwong/hackerrank/tree/master/30-days-of-code/day23-binary-trees)
 </details>
 
 ## Interview Prepartion Kit

@@ -63,11 +63,11 @@ int main()
             cin >> v;
             // cout << "========================\n";
             // cout << "sum: " << sum << " v:" << v << " m:" << m << "\n";
-            sum=(sum+v)%m;
+            sum=(sum+v)%m; // finding prefix sum
             // cout << "sum: " << sum << "\n";
-            if(sum>max)max=sum;
+            if(sum>max)max=sum; // finding max of prefix sum
             // cout << "max: " << max << "\n";
-            auto it=s.lower_bound(sum+1);
+            auto it=s.lower_bound(sum+1); // finding the first element that is not less than value ``prefix+1``
             if(it!=s.end()){
                 // cout << "*it:" << (*it) << " sum-(*it)+m: " << sum-(*it)+m << "\n";
                 if(sum-(*it)+m>max)max=sum-(*it)+m;
