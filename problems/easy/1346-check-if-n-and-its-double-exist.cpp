@@ -38,7 +38,11 @@ public:
     bool checkIfExist(vector<int>& arr) {
         set<int> s;
         for(int n:arr){
+            // case 1: if target exists before the current index => s.count(2*n)
+            // case 2: if target exists after the current index => s.count(n/2)
+            // We need to add n%2==0 to avoid cases like n=7,m=3  (7/2->3..1)
             if(s.count(2*n)||(s.count(n/2)&&n%2==0)) return true;
+            // inserting each value to a set
             s.insert(n);
         }
         return false;
