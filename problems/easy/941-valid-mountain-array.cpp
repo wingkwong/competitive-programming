@@ -41,7 +41,7 @@ public:
         while(j>0&&A[j-1]>A[j]) j--;
         // peak cannot be the first or the last
         // i and j should meet at the same point
-        return i>=0 &&i==j&&j<sz-1;
+        return i>0 &&i==j&&j<sz-1;
     }
 };
 
