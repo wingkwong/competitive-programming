@@ -68,3 +68,22 @@
 
   - [New Year Chaos](https://github.com/wingkwong/hackerrank/tree/master/interview-preparation-kit/arrays/new-year-chaos)
 </details>
+
+## C++
+<details>
+  <summary>Subdomains</summary>
+
+  - [Introduction](https://github.com/wingkwong/hackerrank/tree/master/cpp/introduction/)
+  - [Classes](https://github.com/wingkwong/hackerrank/tree/master/cpp/classes/)
+  - [Debugging](https://github.com/wingkwong/hackerrank/tree/master/cpp/debugging/)
+  - [Other Concepts](https://github.com/wingkwong/hackerrank/tree/master/cpp/other-concepts/)
+  - [STL](https://github.com/wingkwong/hackerrank/tree/master/cpp/STL/)
+  - [Strings](https://github.com/wingkwong/hackerrank/tree/master/cpp/strings/)
+</details>
+
+## Python
+<details>
+  <summary>Subdomains</summary>
+
+  - [Introduction](https://github.com/wingkwong/hackerrank/tree/master/python/introduction/)
+</details>
