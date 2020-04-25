@@ -17,8 +17,6 @@ Output:
 class Solution {
 public:
     vector<int> findDisappearedNumbers(vector<int>& nums) {
-        ios_base::sync_with_stdio(false);
-        cin.tie(NULL);
         vector<int> ans;
         unordered_set<int> us;
         for(int n:nums) us.insert(n);
@@ -29,3 +27,23 @@ public:
         return ans;
     }
 };
+
+class Solution2 {
+public:
+    vector<int> findDisappearedNumbers(vector<int>& nums) {
+        int t;
+        vector<int> ans;
+        // make the index to a negative
+        for(int num:nums){
+           t=abs(num);
+           if(nums[t-1]>0) nums[t-1] *= -1;
+        }        
+        // the missing index stays positive
+        for(int i=0;i<nums.size();i++){
+            if(nums[i]>0) ans.push_back(i+1);
+        }
+        return ans;
+    }
+};
+
+static const auto io_sync_off = []() {std::ios::sync_with_stdio(false);cin.tie(nullptr);cout.tie(nullptr);return 0;}();
