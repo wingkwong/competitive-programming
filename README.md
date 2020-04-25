@@ -59,6 +59,7 @@
   - [Day 21 - Generics](https://github.com/wingkwong/hackerrank/tree/master/30-days-of-code/day21-generics)
   - [Day 22 - Binary Search Trees](https://github.com/wingkwong/hackerrank/tree/master/30-days-of-code/day22-binary-search-trees)
   - [Day 23 - BST Level-Order Traversal](https://github.com/wingkwong/hackerrank/tree/master/30-days-of-code/day23-binary-trees)
+  - [Day 24 - More Linked Lists](https://github.com/wingkwong/hackerrank/tree/master/30-days-of-code/day24-linked-list-deletion)
 </details>
 
 ## Interview Prepartion Kit
