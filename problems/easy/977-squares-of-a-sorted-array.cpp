@@ -23,7 +23,9 @@ A is sorted in non-decreasing order.
 class Solution {
 public:
     vector<int> sortedSquares(vector<int>& A) {
+        // produce an array of the squares of each number
         for(int i=0;i<A.size();i++) A[i] *= A[i];
+        // sort in a non-decreasing order
         sort(A.begin(),A.end());
         return A;
     }
