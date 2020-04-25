@@ -67,6 +67,8 @@
   <summary>Arrays</summary>
 
   - [New Year Chaos](https://github.com/wingkwong/hackerrank/tree/master/interview-preparation-kit/arrays/new-year-chaos)
+  - [Left Rotation](https://github.com/wingkwong/hackerrank/tree/master/interview-preparation-kit/arrays/left-rotation)
+  - [Minimum Swaps 2](https://github.com/wingkwong/hackerrank/tree/master/interview-preparation-kit/arrays/minimum-swaps-2)
 </details>
 
 ## C++
