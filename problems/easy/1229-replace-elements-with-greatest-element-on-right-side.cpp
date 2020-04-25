@@ -35,4 +35,20 @@ public:
     }
 };
 
+// In place solution
+class Solution2 {
+public:
+    vector<int> replaceElements(vector<int>& arr) {
+        int m = -1, tmp;
+        // Loop through the array starting from the end.
+        for(int i=arr.size()-1;i>=0;i--){
+            tmp = arr[i];
+            arr[i] = m;
+            // Keep the maximum value seen so far.
+            m = max(m,tmp);
+        }
+        return arr;
+    }
+};
+
 static const auto io_sync_off = []() {std::ios::sync_with_stdio(false);cin.tie(nullptr);cout.tie(nullptr);return 0;}();
