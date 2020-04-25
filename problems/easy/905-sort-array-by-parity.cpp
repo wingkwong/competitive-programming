@@ -23,7 +23,9 @@ public:
     vector<int> sortArrayByParity(vector<int>& A) {
         vector<int> ans;
         for(int k : A) {
+            // if even, insert it to the front
             if(k%2==0) ans.insert(ans.begin(),1,k);
+            // if odd, insert it to the back
             else ans.push_back(k);
         }
         return ans;
