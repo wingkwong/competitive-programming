@@ -36,12 +36,10 @@ class Solution{
         }
 
 		int getHeight(Node* root){
-            int cnt=0;
-            while(root->right){
-                cnt++;
-                root = root->right;
-            }
-            return cnt;
+            if(!root) return -1;
+            int left = getHeight(root->left);
+            int right = getHeight(root->right);
+            return (left>right?left:right)+1;
         }
 
 }; //End of Solution
