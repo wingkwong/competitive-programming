@@ -60,6 +60,7 @@
   - [Day 22 - Binary Search Trees](https://github.com/wingkwong/hackerrank/tree/master/30-days-of-code/day22-binary-search-trees)
   - [Day 23 - BST Level-Order Traversal](https://github.com/wingkwong/hackerrank/tree/master/30-days-of-code/day23-binary-trees)
   - [Day 24 - More Linked Lists](https://github.com/wingkwong/hackerrank/tree/master/30-days-of-code/day24-linked-list-deletion)
+  - [Day 25: Running Time and Complexity](https://github.com/wingkwong/hackerrank/tree/master/30-days-of-code/day25-running-time-and-complexity)
 </details>
 
 ## Interview Prepartion Kit
