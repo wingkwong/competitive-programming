@@ -62,6 +62,7 @@
   - [Day 24 - More Linked Lists](https://github.com/wingkwong/hackerrank/tree/master/30-days-of-code/day24-linked-list-deletion)
   - [Day 25 - Running Time and Complexity](https://github.com/wingkwong/hackerrank/tree/master/30-days-of-code/day25-running-time-and-complexity)
   - [Day 26 - Nested Logic](https://github.com/wingkwong/hackerrank/tree/master/30-days-of-code/day26-nested-logic)
+  - [Day 27 - Testing](https://github.com/wingkwong/hackerrank/tree/master/30-days-of-code/day27-testing)
 </details>
 
 ## Interview Prepartion Kit
