@@ -63,6 +63,7 @@
   - [Day 25 - Running Time and Complexity](https://github.com/wingkwong/hackerrank/tree/master/30-days-of-code/day25-running-time-and-complexity)
   - [Day 26 - Nested Logic](https://github.com/wingkwong/hackerrank/tree/master/30-days-of-code/day26-nested-logic)
   - [Day 27 - Testing](https://github.com/wingkwong/hackerrank/tree/master/30-days-of-code/day27-testing)
+  - [Day 28 - RegEx, Patterns, and Intro to Databases](https://github.com/wingkwong/hackerrank/tree/master/30-days-of-code/day28-regex-pattern)
 </details>
 
 ## Interview Prepartion Kit
