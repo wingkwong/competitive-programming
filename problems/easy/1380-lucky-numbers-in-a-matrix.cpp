@@ -56,6 +56,8 @@ public:
     }
 };
 
+static const auto io_sync_off = []() {std::ios::sync_with_stdio(false);cin.tie(nullptr);cout.tie(nullptr);return 0;}();
+
 //             | min
 // 3  7   8    | 3
 // 9  11  13   | 9
