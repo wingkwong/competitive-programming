@@ -64,6 +64,7 @@
   - [Day 26 - Nested Logic](https://github.com/wingkwong/hackerrank/tree/master/30-days-of-code/day26-nested-logic)
   - [Day 27 - Testing](https://github.com/wingkwong/hackerrank/tree/master/30-days-of-code/day27-testing)
   - [Day 28 - RegEx, Patterns, and Intro to Databases](https://github.com/wingkwong/hackerrank/tree/master/30-days-of-code/day28-regex-pattern)
+  - [Day 29 - Bitwise AND](https://github.com/wingkwong/hackerrank/tree/master/30-days-of-code/day29-bitwise-and)
 </details>
 
 ## Interview Prepartion Kit
