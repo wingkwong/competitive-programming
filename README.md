@@ -76,6 +76,13 @@
   - [Minimum Swaps 2](https://github.com/wingkwong/hackerrank/tree/master/interview-preparation-kit/arrays/minimum-swaps-2)
 </details>
 
+<details>
+  <summary>Dictionaries / HashMaps</summary>
+
+  - [Two Strings](https://github.com/wingkwong/hackerrank/tree/master/interview-preparation-kit/dictionaries-hashmaps/two-strings)
+  - [Sherlock and Anagrams](https://github.com/wingkwong/hackerrank/tree/master/interview-preparation-kit/dictionaries-hashmaps/sherlock-and-anagrams)
+</details>
+
 ## C++
 <details>
   <summary>Subdomains</summary>
