@@ -22,15 +22,14 @@ The characters in J are distinct.
 class Solution {
 public:
     int numJewelsInStones(string J, string S) {
-        ios_base::sync_with_stdio(false);
-        cin.tie(NULL);
-        
         unordered_map<char,int> m;
-        int ssz=S.size();
-        int jsz=J.size();
+        int ssz=(int)S.size();
+        int jsz=(int)J.size();
         int ans=0;
         for(int i=0;i<ssz;i++) m[S[i]]++;
         for(int i=0;i<jsz;i++) if(m[J[i]]) ans+=m[J[i]];
         return ans;
     }
 };
+
+static const auto io_sync_off = []() {std::ios::sync_with_stdio(false);cin.tie(nullptr);cout.tie(nullptr);return 0;}();
