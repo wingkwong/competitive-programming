@@ -34,8 +34,6 @@ Constraints:
 class Solution {
 public:
     int maxProfit(vector<int>& prices) {
-        ios_base::sync_with_stdio(false);
-        cin.tie(NULL);
         int max=0;
         int sz=prices.size();
         for(int i=1;i<sz;i++){
@@ -46,3 +44,19 @@ public:
         return max;
     }
 };
+
+class Solution2 {
+public:
+    int maxProfit(vector<int>& prices) {
+        int sz = (int)prices.size();
+        if(!sz) return 0;
+        int minPrice=INT_MAX, maxPrice=INT_MIN;
+        for(int i=0;i<sz;i++){
+            minPrice=min(minPrice,prices[i]);
+            maxPrice=max(maxPrice,prices[i]-minPrice);
+        }
+        return maxPrice;
+    }
+};
+
+static const auto io_sync_off = []() {std::ios::sync_with_stdio(false);cin.tie(nullptr);cout.tie(nullptr);return 0;}();
