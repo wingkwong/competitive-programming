@@ -83,6 +83,12 @@
   - [Sherlock and Anagrams](https://github.com/wingkwong/hackerrank/tree/master/interview-preparation-kit/dictionaries-hashmaps/sherlock-and-anagrams)
 </details>
 
+<details>
+  <summary>Dynamic Programming</summary>
+
+  - [Max Array Sum](https://github.com/wingkwong/hackerrank/tree/master/interview-preparation-kit/dynamic-programming/max-array-sum)
+</details>
+
 ## C++
 <details>
   <summary>Subdomains</summary>
