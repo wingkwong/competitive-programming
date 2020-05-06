@@ -87,6 +87,7 @@
   <summary>Dynamic Programming</summary>
 
   - [Max Array Sum](https://github.com/wingkwong/hackerrank/tree/master/interview-preparation-kit/dynamic-programming/max-array-sum)
+  - [Abbreviation](https://github.com/wingkwong/hackerrank/tree/master/interview-preparation-kit/dynamic-programming/abbreviation)
 </details>
 
 ## C++
