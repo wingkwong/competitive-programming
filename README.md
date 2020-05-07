@@ -81,6 +81,8 @@
 
   - [Two Strings](https://github.com/wingkwong/hackerrank/tree/master/interview-preparation-kit/dictionaries-hashmaps/two-strings)
   - [Sherlock and Anagrams](https://github.com/wingkwong/hackerrank/tree/master/interview-preparation-kit/dictionaries-hashmaps/sherlock-and-anagrams)
+  - [Random Note](https://github.com/wingkwong/hackerrank/tree/master/interview-preparation-kit/dictionaries-hashmaps/ransom-note)
+  - [Count Triplets](https://github.com/wingkwong/hackerrank/tree/master/interview-preparation-kit/dictionaries-hashmaps/count-triplets)
 </details>
 
 <details>
