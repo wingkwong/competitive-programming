@@ -92,6 +92,13 @@
   - [Abbreviation](https://github.com/wingkwong/hackerrank/tree/master/interview-preparation-kit/dynamic-programming/abbreviation)
 </details>
 
+<details>
+  <summary>Sorting</summary>
+
+  - [Bubble Sort](https://github.com/wingkwong/hackerrank/tree/master/interview-preparation-kit/sorting/bubble-sort)
+  - [Mark and Toys](https://github.com/wingkwong/hackerrank/tree/master/interview-preparation-kit/sorting/mark-and-toys)
+</details>
+
 ## C++
 <details>
   <summary>Subdomains</summary>
