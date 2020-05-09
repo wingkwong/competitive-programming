@@ -19,8 +19,11 @@ Sample Output
 Efficient approach using Prefix Sum Array :
 
 1 : Run a loop for 'm' times, inputting 'a' and 'b'.
+
 2 : Add k at index 'a' and subtract k from index 'b+1'.
+
 3 : After completion of 'm' operations, compute the prefix sum array.
+
 4 : Scan the largest element and we're done.
 
 ```
