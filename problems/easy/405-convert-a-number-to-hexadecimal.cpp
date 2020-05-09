@@ -43,3 +43,5 @@ public:
         return ans;
     }
 };
+
+static const auto io_sync_off = []() {std::ios::sync_with_stdio(false);cin.tie(nullptr);cout.tie(nullptr);return 0;}();
