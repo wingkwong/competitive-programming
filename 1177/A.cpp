@@ -1,3 +1,31 @@
+/*
+A. Digits Sequence (Easy Edition)
+time limit per test1 second
+memory limit per test256 megabytes
+inputstandard input
+outputstandard output
+Let's write all the positive integer numbers one after another from 1 without any delimiters (i.e. as a single string). It will be the infinite sequence starting with 123456789101112131415161718192021222324252627282930313233343536...
+
+Your task is to print the 𝑘-th digit of this sequence.
+
+Input
+The first and only line contains integer 𝑘 (1≤𝑘≤10000) — the position to process (1-based index).
+
+Output
+Print the 𝑘-th digit of the resulting infinite sequence.
+
+Examples
+
+input
+7
+output
+7
+input
+21
+output
+5
+*/
+
 #include <bits/stdc++.h>
 using namespace std; 
 
