@@ -8,4 +8,5 @@
 
 <br/>
 
-- AtCoder Beginner Contest 167
+- [AtCoder Beginner Contest 167](https://github.com/wingkwong/atcoder/tree/master/abc167)
+- [AtCoder Beginner Contest 166](https://github.com/wingkwong/atcoder/tree/master/abc166)
