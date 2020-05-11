@@ -5,4 +5,4 @@
 - C. Peaks
 - [D. I hate Factorization](https://github.com/wingkwong/atcoder/tree/master/abc166/D.cpp)
 - E. This Message Will Self-Destruct in 5s
-- F. Three Variables Game
+- [F. Three Variables Game]((https://github.com/wingkwong/atcoder/tree/master/abc166/F.cpp))
