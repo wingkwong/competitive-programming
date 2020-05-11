@@ -1,19 +1,6 @@
 /*
 F - Three Variables Game
 https://atcoder.jp/contests/abc166/tasks/abc166_f
-
-*******UNSOLVED*******
-
-Failed cases:
-killer_01.txt		2 ms	3564 KB
-killer_02.txt		2 ms	3484 KB
-killer_03.txt		2 ms	3608 KB
-killer_04.txt		2 ms	3484 KB
-killer_05.txt		2 ms	3596 KB
-killer_07.txt		2 ms	3516 KB
-killer_08.txt		2 ms	3608 KB
-killer_09.txt		2 ms	3496 KB
-killer_10.txt		2 ms	3552 KB
 */
 
 #include <bits/stdc++.h>
@@ -23,22 +10,37 @@ using namespace std;
 int main()  
 { 
     FAST_INP;
-    int n; 
+    int n; string ss;
     vector<char> ans;
+    vector<string> s;
     unordered_map<char,int> m;
-    string s;
     cin >> n >> m['A'] >> m['B'] >> m['C'];
-    if(n==0)
-    while(n--){
-        cin >> s;
-        char x=s[0],y=s[1];
+    for(int i=0;i<n;i++) {
+        cin >> ss;
+        s.push_back(ss);
+    }
+    for(int i=0;i<n;i++){
+        char x=s[i][0],y=s[i][1];
         if(m[x]>m[y]) {
             m[y]++; m[x]--;
             ans.push_back(y);
-        } else {
+        } else if(i+1<n&&m[x]==m[y]){
+            // AB  // BA
+            // AC  // AC
+            if(s[i+1][0]==x||s[i+1][1]==x){
+                m[x]++;
+                m[y]--;
+                ans.push_back(x);
+            } else if(s[i+1][0]==y||s[i+1][1]==y) {
+                m[y]++;
+                m[x]--;
+                ans.push_back(y);
+            }
+        }  else {
             m[x]++; m[y]--;
             ans.push_back(x);
         }
+
         if(m[x]<0||m[y]<0) {
             cout << "No\n";
             return 0;
@@ -46,5 +48,6 @@ int main()
     }
     cout << "Yes\n";
     for(char ch:ans) cout << ch << "\n";
+    // cout << m['A'] << " " <<  m['B'] << " "  << m['C'] << endl;
     return 0;
 } 
