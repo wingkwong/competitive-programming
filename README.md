@@ -98,6 +98,19 @@
 
   - [Bubble Sort](https://github.com/wingkwong/hackerrank/tree/master/interview-preparation-kit/sorting/bubble-sort)
   - [Mark and Toys](https://github.com/wingkwong/hackerrank/tree/master/interview-preparation-kit/sorting/mark-and-toys)
+  - [Sorting: Comparator](https://github.com/wingkwong/hackerrank/tree/master/interview-preparation-kit/sorting/comparator-sorting)
+</details>
+
+<details>
+  <summary>String Manipulation</summary>
+
+  - [Alternating Characters](https://github.com/wingkwong/hackerrank/tree/master/interview-preparation-kit/string-manipulation/alternating-characters)
+</details>
+
+<details>
+  <summary>Recursion & Backtracking</summary>
+
+  - [Fibonacci Numbers](https://github.com/wingkwong/hackerrank/tree/master/interview-preparation-kit/recursion-and-backtracking/fibonacci-numbers)
 </details>
 
 ## C++
