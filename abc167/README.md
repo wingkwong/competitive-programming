@@ -1,6 +1,6 @@
 # AtCoder Beginner Contest 167
 
-- A. Registration
+- [A. Registration](https://github.com/wingkwong/atcoder/blob/master/abc167/A.cpp)
 - B. Easy Linear Programming
 - C. Skill Up
 - D. Teleporter       
