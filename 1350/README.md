@@ -2,7 +2,7 @@
 
 - [A. Orac and Factors](https://github.com/wingkwong/codeforces/blob/master/1350/A.cpp)
 - B. Orac and Models
-- C. Orac and LC
+- [C. Orac and LCM](https://github.com/wingkwong/codeforces/blob/master/1350/C.cpp)
 - D. Orac and Medians
 - E. Orac and Game of Life
 - F. Slime and Sequences (Easy Version)
