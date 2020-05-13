@@ -27,7 +27,8 @@ public:
     string removeKdigits(string num, int k) {
         while(k){
             int n = (int) num.size();
-            int i = 0;have
+            int i = 0;
+            // locate the first largest number and remove one before it
             while(i+1<n&&num[i]<=num[i+1]) i++;
             num.erase(i,1);
             k--;
@@ -35,6 +36,7 @@ public:
         
         int n = (int) num.size();
         int i = 0;
+        // output must not contain leading zeros
         while(i<n-1&&num[i]=='0') i++;
         num.erase(0,i);
         return num==""?"0":num;
