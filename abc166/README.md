@@ -1,4 +1,4 @@
-# AtCoder Beginner Contest 166
+# [AtCoder Beginner Contest 166](https://atcoder.jp/contests/abc166)
 
 - [A. A?C](https://github.com/wingkwong/atcoder/tree/master/abc166/A.cpp)
 - [B. Trick or Treat](https://github.com/wingkwong/atcoder/tree/master/abc166/B.cpp)
