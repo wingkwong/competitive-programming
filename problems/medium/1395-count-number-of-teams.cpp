@@ -34,9 +34,45 @@ n == rating.length
 1 <= rating[i] <= 10^5
 */
 
+
 class Solution {
 public:
     int numTeams(vector<int>& rating) {
+        int n=rating.size(),ans=0;
+        // for each number, find out how many numbers are smaller & greater than it on both side
+        for(int j=0;j<n;j++){
+            // ls: left smaller
+            // lg: left greater
+            // rs; right smaller
+            // rg: right greater
+            int ls=0,lg=0,rs=0,rg=0;
+            // i..j
+            for(int i=0;i<j;i++){
+                if(rating[i]<rating[j]) ls++; // the number on the left is smaller than it
+                else lg++; // the number on the left is greater than it 
+            }
+            // j..k
+            for(int k=j+1;k<n;k++){
+                if(rating[k]<rating[j]) rs++; // the number on the right is smaller than it
+                else rg++; // the number on the right is greater than it 
+            }
+            // Example: [2,5,3,4,1]
+            // take rating[2]=3 as an example
+            // for rating[i] < rating[j] < rating[k], there is 1 number smaller than 3 from left side and 1 number greater than 3 
+            // i.e. 2 < 3 < 4
+            // for rating[i] > rating[j] > rating[k], there are 1 number smaller than 3 and 1 number greater than 3  
+            // i.e. 5 > 3 > 1
+            // there would be  1*1 + 1*1 = 2 tripplets in total for the number 3 being rating[j]
+            ans+=ls*rg+lg*rs;
+        }
+        return ans;
+    }
+};
+
+class Solution2 {
+public:
+    int numTeams(vector<int>& rating) {
+        // n is just 200. brute force approach should work
         int n = rating.size();
         int ans=0;
         for(int i=0;i<n;i++){
