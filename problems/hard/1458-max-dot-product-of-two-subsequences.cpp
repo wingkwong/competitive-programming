@@ -37,6 +37,27 @@ class Solution {
 public:
     int maxDotProduct(vector<int>& nums1, vector<int>& nums2) {
        int m=nums1.size(),n=nums2.size();
+        const int INF=10e7; // below -1000*-1000
+        vector<vector<int>> dp(m+1, vector<int>(n+1,-INF));
+        for(int i=1;i<=m;i++){
+            for(int j=1;j<=n;j++){
+                dp[i][j]=max({
+                    nums1[i-1]*nums2[j-1], // ignore previous dp bc it might be negative
+                    dp[i-1][j], // ignore last number from first
+                    dp[i][j-1], // ignore last number from second
+                    dp[i-1][j-1]+nums1[i-1]*nums2[j-1] // take last numbers from both the first & the second
+                });
+            }
+        }
+        return dp[m][n];
+    }
+};
+
+
+class Solution2 {
+public:
+    int maxDotProduct(vector<int>& nums1, vector<int>& nums2) {
+       int m=nums1.size(),n=nums2.size();
         vector<vector<int>> dp(m, vector<int>(n,0));
         for(int i=0;i<m;i++){
             for(int j=0;j<n;j++){
