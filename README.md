@@ -27,6 +27,16 @@
 
 ## Contests
 <details>
+  <summary>Hack the Interview IV (Asia Pacific)</summary>
+  
+  - [Valid Binary String](https://github.com/wingkwong/hackerrank/tree/master/contests/hack-the-interview-iv-apac/A.cpp)
+  - [Arrange Students](https://github.com/wingkwong/hackerrank/tree/master/contests/hack-the-interview-iv-apac/B.cpp)
+  - [Optimal Network Routing](https://github.com/wingkwong/hackerrank/tree/master/contests/hack-the-interview-iv-apac/C.cpp)
+  - [Number of integers](https://github.com/wingkwong/hackerrank/tree/master/contests/hack-the-interview-iv-apac/D.cpp)
+
+</details>
+
+<details>
   <summary>Project Euler</summary>
 
   - [#001: Multiples of 3 and 5](https://github.com/wingkwong/hackerrank/tree/master/euler/001)
