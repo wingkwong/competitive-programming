@@ -141,3 +141,10 @@
 
   - [Introduction](https://github.com/wingkwong/hackerrank/tree/master/python/introduction/)
 </details>
+
+## Artificial Intelligence
+<details>
+  <summary>Bot Building</summary>
+
+  - [Bot saves princess](https://github.com/wingkwong/hackerrank/tree/master/ai/bot-building/saveprincess)
+</details>
