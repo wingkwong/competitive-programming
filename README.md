@@ -8,6 +8,7 @@
 
 <br/>
 
+- [Codeforces Round #647 (Div. 2) - Thanks, Algo Muse!](https://github.com/wingkwong/codeforces/tree/master/1362)
 - [Educational Codeforces Round 88 (Rated for Div. 2)](https://github.com/wingkwong/codeforces/tree/master/1359)
 - [Codeforces Round #644 (Div. 3)](https://github.com/wingkwong/codeforces/tree/master/1360)
 - [Codeforces Round #643 (Div. 2)](https://github.com/wingkwong/codeforces/tree/master/1355)
