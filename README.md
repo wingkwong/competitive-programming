@@ -140,6 +140,7 @@
   <summary>Subdomains</summary>
 
   - [Introduction](https://github.com/wingkwong/hackerrank/tree/master/python/introduction/)
+  - [Basic Data Type](https://github.com/wingkwong/hackerrank/tree/master/python/basic-data-type/)
 </details>
 
 ## Artificial Intelligence
