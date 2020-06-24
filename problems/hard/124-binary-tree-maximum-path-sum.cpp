@@ -63,4 +63,21 @@ private:
     }
 };
 
+class Solution2 {
+public:
+    int maxPathSum(TreeNode* root) {
+        helper(root);
+        return ans;
+    }
+private:
+    int ans=INT_MIN;
+    int helper(TreeNode* root){
+        if(!root) return 0;
+        int l=max(0,helper(root->left));
+        int r=max(0,helper(root->right));
+        ans=max(ans,l+root->val+r);
+        return max(l,r) + root->val;
+    }
+};
+
 static const auto io_sync_off = []() {std::ios::sync_with_stdio(false);cin.tie(nullptr);cout.tie(nullptr);return 0;}();
