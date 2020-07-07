@@ -22,6 +22,9 @@ Output: 16
 class Solution {
 public:
     int islandPerimeter(vector<vector<int>>& grid) {
+        // a) count how many islands, multiply by 4
+        // b) count how many neighours, multiply by 2 
+        // ans = a) - b)
         int c=0, cc=0;
         for(int i=0;i<grid.size();i++){
             for(int j=0;j<grid[0].size();j++){
