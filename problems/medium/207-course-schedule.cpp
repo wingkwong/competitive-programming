@@ -39,8 +39,7 @@ class Solution {
 public:
     bool canFinish(int numCourses, vector<vector<int>>& prerequisites) {
         vector<int> indegree(numCourses), bfs;
-        vector<vector<int>> g;
-        g.resize(numCourses);
+        vector<vector<int>> g(numCourses);
         for(auto& p:prerequisites) {
             g[p[0]].push_back(p[1]);
             indegree[p[1]]++;
@@ -133,5 +132,29 @@ public:
             cnt++;
         }
         return cnt==numCourses;
+    }
+};
+
+class Solution4 {
+public:
+    bool canFinish(int n, vector<vector<int>>& p) {
+        vector<vector<int>> g(n);
+        vector<int> indegree(n,0);
+        for(auto x:p){
+            g[x[1]].push_back(x[0]);
+            indegree[x[0]]++;
+        }
+        for(int i=0;i<n;i++){
+            int j;
+            for(j=0;j<n;j++){
+                if(indegree[j]==0) break;
+            }
+            if(j==n) return false;
+            indegree[j]--;
+            for(auto to:g[j]){
+                indegree[to]--;
+            }
+        }
+        return true;
     }
 };
