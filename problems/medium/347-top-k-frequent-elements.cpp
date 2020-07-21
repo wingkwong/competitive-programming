@@ -45,3 +45,19 @@ public:
         return ans;
     }
 };
+
+class Solution2 {
+public:
+    vector<int> topKFrequent(vector<int>& nums, int k) {
+        unordered_map<int,int> m;
+        for(int n:nums) m[n]++;
+        vector<pair<int,int>> v;
+        for(auto x:m) v.push_back({x.first,x.second});
+        sort(v.begin(),v.end(),[](pair<int,int> a, pair<int,int> b){
+            return a.second > b.second;
+        });
+        vector<int> ans;
+        for(int i=0;i<k;i++) ans.emplace_back(v[i].first);
+        return ans;
+    }
+};
