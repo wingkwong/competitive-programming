@@ -8,6 +8,7 @@
 
 <br/>
 
+- [M-SOLUTIONS Programming Contest 2020](https://github.com/wingkwong/atcoder/tree/master/contests/m-solutions2020)
 - [AIsing Programming Contest 2020](https://github.com/wingkwong/atcoder/tree/master/contests/aising2020)
 - [AtCoder Beginner Contest 172](https://github.com/wingkwong/atcoder/tree/master/contests/abc172)
 - [AtCoder Beginner Contest 171](https://github.com/wingkwong/atcoder/tree/master/contests/abc171)
