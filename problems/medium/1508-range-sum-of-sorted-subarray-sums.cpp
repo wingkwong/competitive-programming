@@ -50,7 +50,7 @@ public:
         int ans=0;
         for(int i=left;i<=right;i++){
             // take mod for each addition
-            ans=ans+v[i]%mod;
+            ans=(ans+v[i])%mod;
         }
         return ans;
     }
