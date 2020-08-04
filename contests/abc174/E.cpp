@@ -13,10 +13,10 @@ int main()
 { 
     FAST_INP;
     // binary search 
-    int t,n,k;
+    int n,k;
     cin >> n >> k;
     vector<ll> a(n);
-    ll l=0,r=0;
+    ll l=1,r=0;
     for(int i=0;i<n;i++) {
     	cin >> a[i];
     	r=max(r,a[i]);
@@ -27,7 +27,7 @@ int main()
 		for(int i=0;i<n;i++){
 			kk+=(a[i]-1)/m;
 		}
-    	if(res<=k) r=m;
+    	if(kk<=k) r=m;
     	else l=m+1;
 	}
 	cout << l << endl;
