@@ -13,6 +13,7 @@
 - [Educational Codeforces Round 92 (Rated for Div. 2)](https://github.com/wingkwong/codeforces/blob/master/contests/1389)
 - [Codeforces Round #659 (Div. 2)](https://github.com/wingkwong/codeforces/blob/master/contests/1384)
 - [Codeforces Round #658 (Div. 2)](https://github.com/wingkwong/codeforces/blob/master/contests/1382)
+- [Educational Codeforces Round 91 (Rated for Div. 2)](https://github.com/wingkwong/codeforces/blob/master/contests/1380)
 - [Codeforces Round #656 (Div. 3)](https://github.com/wingkwong/codeforces/blob/master/contests/1385)
 - [Codeforces Round #655 (Div. 2)](https://github.com/wingkwong/codeforces/blob/master/contests/1372)
 - [Codeforces Round #653 (Div. 3)](https://github.com/wingkwong/codeforces/blob/master/contests/1374)
