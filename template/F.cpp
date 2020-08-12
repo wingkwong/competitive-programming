@@ -6,6 +6,10 @@ const ll MOD = 1000000007;
 
 int main()  
 { 
+    #ifndef ONLINE_JUDGE
+    freopen("input.txt","r", stdin);
+    freopen("output.txt","w", stdout);
+    #endif
     FAST_INP;
     int t,n;
     cin >> t;
