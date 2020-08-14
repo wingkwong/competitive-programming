@@ -23,6 +23,7 @@ const ll MOD = 1000000007;
 #define VALUE(x) cerr << "The value of " << #x << " is " << x << endl 
 #define OUT(x) cout << x << endl 
 #define debug(...) fprintf(stderr, __VA_ARGS__) 
+#define READ(b) for(auto &(a):b) cin >> a;
 #define FOR(a, b, c) for (int(a)=(b); (a) < (c); ++(a)) 
 #define FORN(a, b, c) for (int(a)=(b); (a) <= (c); ++(a)) 
 #define FORD(a, b, c) for (int(a)=(b); (a) >= (c); --(a)) 
