@@ -2,8 +2,8 @@
 
 - [A. Bad Triangle](https://github.com/wingkwong/codeforces/blob/master/contests/1398/A.cpp)
 - [B. Substring Removal Game](https://github.com/wingkwong/codeforces/blob/master/contests/1398/B.cpp)
-- C. Good Subarrays
-- D. Colored Rectangles
+- [C. Good Subarrays](https://github.com/wingkwong/codeforces/blob/master/contests/1398/C.cpp)
+- [D. Colored Rectangles](https://github.com/wingkwong/codeforces/blob/master/contests/1398/D.cpp)
 - E. Two Types of Spells
 - F. Controversial Rounds
 - G. Running Competition
