@@ -1,3 +1,42 @@
+/*
+Coin Combinations I
+https://cses.fi/problemset/task/1635
+
+Consider a money system consisting of n coins. Each coin has a positive integer value. Your task is to calculate the number of distinct ways you can produce a money sum x using the available coins.
+
+For example, if the coins are {2,3,5} and the desired sum is 9, there are 8 ways:
+2+2+5
+2+5+2
+5+2+2
+3+3+3
+2+2+2+3
+2+2+3+2
+2+3+2+2
+3+2+2+2
+Input
+
+The first input line has two integers n and x: the number of coins and the desired sum of money.
+
+The second line has n distinct integers c1,c2,…,cn: the value of each coin.
+
+Output
+
+Print one integer: the number of ways modulo 109+7.
+
+Constraints
+1≤n≤100
+1≤x≤106
+1≤ci≤106
+Example
+
+Input:
+3 9
+2 3 5
+
+Output:
+8
+*/
+
 #include <bits/stdc++.h>
 using namespace std; 
 
@@ -8,12 +47,13 @@ typedef pair<string, string> pss;
 typedef vector<int> vi; 
 typedef vector<vi> vvi; 
 typedef vector<pii> vii; 
+typedef vector<pll> vll; 
 typedef vector<ll> vl; 
 typedef vector<vl> vvl; 
 
 double EPS=1e-9; 
 int INF=1000000005; 
-long long INFF=1000000000000000005ll; 
+ll INFF=1000000000000000005ll; 
 double PI=acos(-1); 
 int dirx[8]={ -1, 0, 0, 1, -1, -1, 1, 1 }; 
 int diry[8]={ 0, 1, -1, 0, -1, 1, -1, 1 }; 
@@ -52,20 +92,28 @@ const ll MOD = 1000000007;
 #define FAST_INP  ios_base::sync_with_stdio(false);cin.tie(NULL)
 
 
-void solve() {
-
-}
-
 int main()  
 { 
     FAST_INP;
-    #ifndef ONLINE_JUDGE
-    freopen("input.txt","r", stdin);
-    freopen("output.txt","w", stdout);
-    #endif
-    
-    int tc; cin >> tc;
-    TC(tc) solve();
-
+    // #ifndef ONLINE_JUDGE
+    // freopen("input.txt","r", stdin);
+    // freopen("output.txt","w", stdout);
+    // #endif
+    int n, x;
+    cin >> n >> x;
+    vi c(n);
+    READ(c);
+    vi dp(x+1,0);
+    dp[0]=1;
+    // target = x
+    FORN(i,1,x){
+        // number of ways
+        FOR(j,0,n){
+            if(i-c[j]>=0){
+                dp[i]=(dp[i]+dp[i-c[j]])%MOD;
+            }
+        }
+    }
+    OUT(dp[x]);
     return 0; 
 } 

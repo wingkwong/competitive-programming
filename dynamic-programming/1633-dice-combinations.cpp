@@ -1,3 +1,33 @@
+/*
+Dice Combinations
+https://cses.fi/problemset/task/1633
+
+Your task is to count the number of ways to construct sum n by throwing a dice one or more times. Each throw produces an outcome between 1 and 6.
+
+For example, if n=3, there are 4 ways:
+1+1+1
+1+2
+2+1
+3
+Input
+
+The only input line has an integer n.
+
+Output
+
+Print the number of ways modulo 109+7.
+
+Constraints
+1≤n≤106
+Example
+
+Input:
+3
+
+Output
+4
+*/
+
 #include <bits/stdc++.h>
 using namespace std; 
 
@@ -8,12 +38,13 @@ typedef pair<string, string> pss;
 typedef vector<int> vi; 
 typedef vector<vi> vvi; 
 typedef vector<pii> vii; 
+typedef vector<pll> vll; 
 typedef vector<ll> vl; 
 typedef vector<vl> vvl; 
 
 double EPS=1e-9; 
 int INF=1000000005; 
-long long INFF=1000000000000000005ll; 
+ll INFF=1000000000000000005ll; 
 double PI=acos(-1); 
 int dirx[8]={ -1, 0, 0, 1, -1, -1, 1, 1 }; 
 int diry[8]={ 0, 1, -1, 0, -1, 1, -1, 1 }; 
@@ -52,20 +83,25 @@ const ll MOD = 1000000007;
 #define FAST_INP  ios_base::sync_with_stdio(false);cin.tie(NULL)
 
 
-void solve() {
-
-}
-
 int main()  
 { 
     FAST_INP;
-    #ifndef ONLINE_JUDGE
-    freopen("input.txt","r", stdin);
-    freopen("output.txt","w", stdout);
-    #endif
-    
-    int tc; cin >> tc;
-    TC(tc) solve();
-
+    // #ifndef ONLINE_JUDGE
+    // freopen("input.txt","r", stdin);
+    // freopen("output.txt","w", stdout);
+    // #endif
+    int n;
+    cin >> n;
+    int dp[n+1];
+    memset(dp,0,sizeof(dp));
+    dp[0]=1;
+    // target = n
+    FORN(i,1,n){
+        // number of ways = min(i,6)
+        FORN(j,1,min(i,6)){
+            dp[i]=(dp[i]+dp[i-j])%MOD;
+        }
+    }
+    OUT(dp[n]);
     return 0; 
 } 

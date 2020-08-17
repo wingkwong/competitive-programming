@@ -1,3 +1,32 @@
+/*
+Subarray Divisibility
+https://cses.fi/problemset/task/1662
+
+Given an array of n integers, your task is to count the number of subarrays where the sum of values is divisible by n.
+
+Input
+
+The first input line has an integer n: the size of the array.
+
+The next line has n integers a1,a2,…,an: the contents of the array.
+
+Output
+
+Print one integer: the required number of subarrays.
+
+Constraints
+1≤n≤2⋅105
+−109≤ai≤109
+Example
+
+Input:
+5
+3 1 2 7 4
+
+Output:
+1
+*/
+
 #include <bits/stdc++.h>
 using namespace std; 
 
@@ -8,12 +37,13 @@ typedef pair<string, string> pss;
 typedef vector<int> vi; 
 typedef vector<vi> vvi; 
 typedef vector<pii> vii; 
+typedef vector<pll> vll; 
 typedef vector<ll> vl; 
 typedef vector<vl> vvl; 
 
 double EPS=1e-9; 
 int INF=1000000005; 
-long long INFF=1000000000000000005ll; 
+ll INFF=1000000000000000005ll; 
 double PI=acos(-1); 
 int dirx[8]={ -1, 0, 0, 1, -1, -1, 1, 1 }; 
 int diry[8]={ 0, 1, -1, 0, -1, 1, -1, 1 }; 
@@ -52,20 +82,25 @@ const ll MOD = 1000000007;
 #define FAST_INP  ios_base::sync_with_stdio(false);cin.tie(NULL)
 
 
-void solve() {
-
-}
-
 int main()  
 { 
     FAST_INP;
-    #ifndef ONLINE_JUDGE
-    freopen("input.txt","r", stdin);
-    freopen("output.txt","w", stdout);
-    #endif
-    
-    int tc; cin >> tc;
-    TC(tc) solve();
-
+    // #ifndef ONLINE_JUDGE
+    // freopen("input.txt","r", stdin);
+    // freopen("output.txt","w", stdout);
+    // #endif
+    int n;
+    cin >> n;
+    vi a(n);
+    READ(a);
+    map<ll,int> m;
+    m[0]++;
+    ll sum=0,ans=0;
+    REP(i,n){
+        sum=(sum+a[i]%n+n)%n;
+        ans+=m[sum];
+        m[sum]++;
+    }
+    OUT(ans);
     return 0; 
 } 

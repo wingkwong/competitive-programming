@@ -1,3 +1,35 @@
+/*
+Minimizing Coins
+https://cses.fi/problemset/task/1634
+
+Consider a money system consisting of n coins. Each coin has a positive integer value. Your task is to produce a sum of money x using the available coins in such a way that the number of coins is minimal.
+
+For example, if the coins are {1,5,7} and the desired sum is 11, an optimal solution is 5+5+1 which requires 3 coins.
+
+Input
+
+The first input line has two integers n and x: the number of coins and the desired sum of money.
+
+The second line has n distinct integers c1,c2,…,cn: the value of each coin.
+
+Output
+
+Print one integer: the minimum number of coins. If it is not possible to produce the desired sum, print −1.
+
+Constraints
+1≤n≤100
+1≤x≤106
+1≤ci≤106
+Example
+
+Input:
+3 11
+1 5 7
+
+Output:
+3
+*/
+
 #include <bits/stdc++.h>
 using namespace std; 
 
@@ -8,12 +40,13 @@ typedef pair<string, string> pss;
 typedef vector<int> vi; 
 typedef vector<vi> vvi; 
 typedef vector<pii> vii; 
+typedef vector<pll> vll; 
 typedef vector<ll> vl; 
 typedef vector<vl> vvl; 
 
 double EPS=1e-9; 
 int INF=1000000005; 
-long long INFF=1000000000000000005ll; 
+ll INFF=1000000000000000005ll; 
 double PI=acos(-1); 
 int dirx[8]={ -1, 0, 0, 1, -1, -1, 1, 1 }; 
 int diry[8]={ 0, 1, -1, 0, -1, 1, -1, 1 }; 
@@ -52,20 +85,29 @@ const ll MOD = 1000000007;
 #define FAST_INP  ios_base::sync_with_stdio(false);cin.tie(NULL)
 
 
-void solve() {
-
-}
-
 int main()  
 { 
     FAST_INP;
-    #ifndef ONLINE_JUDGE
-    freopen("input.txt","r", stdin);
-    freopen("output.txt","w", stdout);
-    #endif
-    
-    int tc; cin >> tc;
-    TC(tc) solve();
-
+    // #ifndef ONLINE_JUDGE
+    // freopen("input.txt","r", stdin);
+    // freopen("output.txt","w", stdout);
+    // #endif
+    int n, x;
+    // unbounded knapsack problem
+    cin >> n >> x;
+    vi c(n);
+    READ(c);
+    vi dp(x+1,INF);
+    dp[0]=0;
+    // target = x
+    FORN(i,1,x){
+        // number of ways
+        FOR(j,0,n){
+            if(i-c[j]>=0){
+                dp[i]=min(dp[i],dp[i-c[j]]+1);
+            }
+        }
+    }
+    OUT((dp[x]==INF?-1:dp[x]));
     return 0; 
 } 

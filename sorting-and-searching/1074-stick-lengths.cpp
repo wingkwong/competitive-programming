@@ -1,3 +1,28 @@
+/*
+Stick Lengths
+https://cses.fi/problemset/task/1074
+
+There are n sticks with some lengths. Your task is to modify the sticks so that each stick has the same length.
+
+You can either lengthen and shorten each stick. Both operations cost x where x is the difference between the new and original length.
+
+What is the minimum total cost?
+
+Input
+
+The first input line contains an integer n: the number of sticks.
+
+Then there are n integers: p1,p2,…,pn: the lengths of the sticks.
+
+Output
+
+Print one integer: the minimum total cost.
+
+Constraints
+1≤n≤2⋅105
+1≤pi≤109
+*/
+
 #include <bits/stdc++.h>
 using namespace std; 
 
@@ -8,12 +33,13 @@ typedef pair<string, string> pss;
 typedef vector<int> vi; 
 typedef vector<vi> vvi; 
 typedef vector<pii> vii; 
+typedef vector<pll> vll; 
 typedef vector<ll> vl; 
 typedef vector<vl> vvl; 
 
 double EPS=1e-9; 
 int INF=1000000005; 
-long long INFF=1000000000000000005ll; 
+ll INFF=1000000000000000005ll; 
 double PI=acos(-1); 
 int dirx[8]={ -1, 0, 0, 1, -1, -1, 1, 1 }; 
 int diry[8]={ 0, 1, -1, 0, -1, 1, -1, 1 }; 
@@ -52,20 +78,21 @@ const ll MOD = 1000000007;
 #define FAST_INP  ios_base::sync_with_stdio(false);cin.tie(NULL)
 
 
-void solve() {
-
-}
-
 int main()  
 { 
     FAST_INP;
-    #ifndef ONLINE_JUDGE
-    freopen("input.txt","r", stdin);
-    freopen("output.txt","w", stdout);
-    #endif
-    
-    int tc; cin >> tc;
-    TC(tc) solve();
-
+    // #ifndef ONLINE_JUDGE
+    // freopen("input.txt","r", stdin);
+    // freopen("output.txt","w", stdout);
+    // #endif
+    ll n;
+    cin >> n;
+    vi p(n);
+    READ(p);
+    // sort, find the median & calculate the cost
+    SORT(p);
+    ll m=p[n/2], ans=0;
+    EACH(x,p) ans+=abs(x-m);
+    OUT(ans);
     return 0; 
 } 

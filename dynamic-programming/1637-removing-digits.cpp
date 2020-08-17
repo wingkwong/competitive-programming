@@ -1,3 +1,32 @@
+/*
+Removing Digits
+https://cses.fi/problemset/task/1637
+
+You are given an integer n. On each step, you may substract from it any one-digit number that appears in it.
+
+How many steps are required to make the number equal to 0?
+
+Input
+
+The only input line has an integer n.
+
+Output
+
+Print one integer: the minimum number of steps.
+
+Constraints
+1≤n≤106
+Example
+
+Input:
+27
+
+Output:
+5
+
+Explanation: An optimal solution is 27→20→18→10→9→0.
+*/
+
 #include <bits/stdc++.h>
 using namespace std; 
 
@@ -8,12 +37,13 @@ typedef pair<string, string> pss;
 typedef vector<int> vi; 
 typedef vector<vi> vvi; 
 typedef vector<pii> vii; 
+typedef vector<pll> vll; 
 typedef vector<ll> vl; 
 typedef vector<vl> vvl; 
 
 double EPS=1e-9; 
 int INF=1000000005; 
-long long INFF=1000000000000000005ll; 
+ll INFF=1000000000000000005ll; 
 double PI=acos(-1); 
 int dirx[8]={ -1, 0, 0, 1, -1, -1, 1, 1 }; 
 int diry[8]={ 0, 1, -1, 0, -1, 1, -1, 1 }; 
@@ -52,10 +82,6 @@ const ll MOD = 1000000007;
 #define FAST_INP  ios_base::sync_with_stdio(false);cin.tie(NULL)
 
 
-void solve() {
-
-}
-
 int main()  
 { 
     FAST_INP;
@@ -63,9 +89,15 @@ int main()
     freopen("input.txt","r", stdin);
     freopen("output.txt","w", stdout);
     #endif
-    
-    int tc; cin >> tc;
-    TC(tc) solve();
-
+    int n;
+    cin >> n;
+    vi dp(n+1,INF); // min number of operations to go from x to 0
+    dp[0]=0;
+    FORN(i,0,n){
+        EACH(j,to_string(i)){
+            dp[i]=min(dp[i],dp[i-(j-'0')]+1);
+        }
+    }
+    OUT(dp[n]);
     return 0; 
 } 

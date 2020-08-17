@@ -1,3 +1,34 @@
+/*
+Movie Festival
+https://cses.fi/problemset/task/1629
+
+In a movie festival n movies will be shown. You know the starting and ending time of each movie. What is the maximum number of movies you can watch entirely?
+
+Input
+
+The first input line has an integer n: the number of movies.
+
+After this, there are n lines that describe the movies. Each line has two integers a and b: the starting and ending times of a movie.
+
+Output
+
+Print one integer: the maximum number of movies.
+
+Constraints
+1≤n≤2⋅105
+1≤a<b≤109
+Example
+
+Input:
+3
+3 5
+4 9
+5 8
+
+Output:
+2
+*/
+
 #include <bits/stdc++.h>
 using namespace std; 
 
@@ -8,12 +39,13 @@ typedef pair<string, string> pss;
 typedef vector<int> vi; 
 typedef vector<vi> vvi; 
 typedef vector<pii> vii; 
+typedef vector<pll> vll; 
 typedef vector<ll> vl; 
 typedef vector<vl> vvl; 
 
 double EPS=1e-9; 
 int INF=1000000005; 
-long long INFF=1000000000000000005ll; 
+ll INFF=1000000000000000005ll; 
 double PI=acos(-1); 
 int dirx[8]={ -1, 0, 0, 1, -1, -1, 1, 1 }; 
 int diry[8]={ 0, 1, -1, 0, -1, 1, -1, 1 }; 
@@ -23,7 +55,6 @@ const ll MOD = 1000000007;
 #define VALUE(x) cerr << "The value of " << #x << " is " << x << endl 
 #define OUT(x) cout << x << endl 
 #define debug(...) fprintf(stderr, __VA_ARGS__) 
-#define READ(b) for(auto &(a):b) cin >> a;
 #define FOR(a, b, c) for (int(a)=(b); (a) < (c); ++(a)) 
 #define FORN(a, b, c) for (int(a)=(b); (a) <= (c); ++(a)) 
 #define FORD(a, b, c) for (int(a)=(b); (a) >= (c); --(a)) 
@@ -52,20 +83,30 @@ const ll MOD = 1000000007;
 #define FAST_INP  ios_base::sync_with_stdio(false);cin.tie(NULL)
 
 
-void solve() {
-
-}
-
 int main()  
 { 
     FAST_INP;
-    #ifndef ONLINE_JUDGE
-    freopen("input.txt","r", stdin);
-    freopen("output.txt","w", stdout);
-    #endif
-    
-    int tc; cin >> tc;
-    TC(tc) solve();
-
+    // #ifndef ONLINE_JUDGE
+    // freopen("input.txt","r", stdin);
+    // freopen("output.txt","w", stdout);
+    // #endif
+    int n,a,b;
+    cin >> n;
+    vii v;
+    TC(n){
+        cin >> a >> b;
+        // {end time, start time}
+        v.pb({b,a});
+    }
+    SORT(v);
+    int e=0, ans=0;
+    EACH(k,v){
+        // increase ans by 1 if end time >= start time
+        if(k.se>=e){
+            ans++;
+            e=k.fi;
+        } 
+    }
+    OUT(ans);
     return 0; 
 } 

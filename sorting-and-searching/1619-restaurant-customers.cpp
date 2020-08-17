@@ -1,3 +1,38 @@
+/*
+Restaurant Customers
+https://cses.fi/problemset/task/1619
+
+You are given the arrival and leaving times of n customers in a restaurant.
+
+What was the maximum number of customers?
+
+Input
+
+The first input line has an integer n: the number of customers.
+
+After this, there are n lines that describe the customers. Each line has two integers a and b: the arrival and leaving times of a customer.
+
+You may assume that all arrival and leaving times are distinct.
+
+Output
+
+Print one integer: the maximum number of customers.
+
+Constraints
+1≤n≤2⋅105
+1≤a<b≤109
+Example
+
+Input:
+3
+5 8
+2 4
+3 9
+
+Output:
+2
+*/
+
 #include <bits/stdc++.h>
 using namespace std; 
 
@@ -8,12 +43,13 @@ typedef pair<string, string> pss;
 typedef vector<int> vi; 
 typedef vector<vi> vvi; 
 typedef vector<pii> vii; 
+typedef vector<pll> vll; 
 typedef vector<ll> vl; 
 typedef vector<vl> vvl; 
 
 double EPS=1e-9; 
 int INF=1000000005; 
-long long INFF=1000000000000000005ll; 
+ll INFF=1000000000000000005ll; 
 double PI=acos(-1); 
 int dirx[8]={ -1, 0, 0, 1, -1, -1, 1, 1 }; 
 int diry[8]={ 0, 1, -1, 0, -1, 1, -1, 1 }; 
@@ -23,7 +59,6 @@ const ll MOD = 1000000007;
 #define VALUE(x) cerr << "The value of " << #x << " is " << x << endl 
 #define OUT(x) cout << x << endl 
 #define debug(...) fprintf(stderr, __VA_ARGS__) 
-#define READ(b) for(auto &(a):b) cin >> a;
 #define FOR(a, b, c) for (int(a)=(b); (a) < (c); ++(a)) 
 #define FORN(a, b, c) for (int(a)=(b); (a) <= (c); ++(a)) 
 #define FORD(a, b, c) for (int(a)=(b); (a) >= (c); --(a)) 
@@ -52,20 +87,29 @@ const ll MOD = 1000000007;
 #define FAST_INP  ios_base::sync_with_stdio(false);cin.tie(NULL)
 
 
-void solve() {
-
-}
-
 int main()  
 { 
     FAST_INP;
-    #ifndef ONLINE_JUDGE
-    freopen("input.txt","r", stdin);
-    freopen("output.txt","w", stdout);
-    #endif
-    
-    int tc; cin >> tc;
-    TC(tc) solve();
-
+    // #ifndef ONLINE_JUDGE
+    // freopen("input.txt","r", stdin);
+    // freopen("output.txt","w", stdout);
+    // #endif
+    int n,a,b;
+    cin >> n;
+    vii v;
+    TC(n){
+        cin >> a >> b;
+        v.pb({a,1});
+        v.pb({b,0});
+    }
+    SORT(v);
+    int c=0, ans=0;
+    EACH(k,v){
+        // increase/decrease the current count 
+        c+=k.second?1:-1;
+        // compare with the max count
+        ans=max(ans,c);
+    }
+    OUT(ans);
     return 0; 
 } 

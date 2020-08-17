@@ -1,3 +1,36 @@
+/*
+Grid Paths
+https://cses.fi/problemset/task/1638
+
+Consider an n×n grid whose squares may have traps. It is not allowed to move to a square with a trap.
+
+Your task is to calculate the number of paths from the upper-left square to the lower-right square where you only can move right or down.
+
+Input
+
+The first input line has an integer n: the size of the grid.
+
+After this, there are n lines that describe the grid. Each line has n characters: . denotes an empty cell, and * denotes a trap.
+
+Output
+
+Print the number of paths modulo 109+7.
+
+Constraints
+1≤n≤1000
+Example
+
+Input:
+4
+....
+.*..
+...*
+*...
+
+Output:
+3
+*/
+
 #include <bits/stdc++.h>
 using namespace std; 
 
@@ -8,12 +41,13 @@ typedef pair<string, string> pss;
 typedef vector<int> vi; 
 typedef vector<vi> vvi; 
 typedef vector<pii> vii; 
+typedef vector<pll> vll; 
 typedef vector<ll> vl; 
 typedef vector<vl> vvl; 
 
 double EPS=1e-9; 
 int INF=1000000005; 
-long long INFF=1000000000000000005ll; 
+ll INFF=1000000000000000005ll; 
 double PI=acos(-1); 
 int dirx[8]={ -1, 0, 0, 1, -1, -1, 1, 1 }; 
 int diry[8]={ 0, 1, -1, 0, -1, 1, -1, 1 }; 
@@ -52,20 +86,32 @@ const ll MOD = 1000000007;
 #define FAST_INP  ios_base::sync_with_stdio(false);cin.tie(NULL)
 
 
-void solve() {
-
-}
-
 int main()  
 { 
     FAST_INP;
-    #ifndef ONLINE_JUDGE
-    freopen("input.txt","r", stdin);
-    freopen("output.txt","w", stdout);
-    #endif
-    
-    int tc; cin >> tc;
-    TC(tc) solve();
-
+    // #ifndef ONLINE_JUDGE
+    // freopen("input.txt","r", stdin);
+    // freopen("output.txt","w", stdout);
+    // #endif
+    int n;
+    cin >> n;
+    int dp[n][n];
+    memset(dp,0,sizeof(dp));
+    dp[0][0]=1;
+    vector<string> g(n);
+    REP(i,n) {
+        cin >> g[i];
+        REP(j,n){
+            if(g[i][j]=='.'){
+                // get from the left
+                if(i) dp[i][j] = (dp[i][j]+dp[i-1][j])%MOD;
+                // get from the top
+                if(j) dp[i][j] = (dp[i][j]+dp[i][j-1])%MOD;
+            } else {
+                dp[i][j] = 0;
+            }
+        }
+    }
+    OUT(dp[n-1][n-1]);
     return 0; 
 } 
