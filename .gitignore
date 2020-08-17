@@ -31,3 +31,6 @@
 *.exe
 *.out
 *.app
+
+# Test files
+*.txt
