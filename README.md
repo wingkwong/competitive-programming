@@ -8,6 +8,7 @@
 
 <br/>
 
+- [Codeforces Global Round 10](https://github.com/wingkwong/codeforces/blob/master/contests/1392)
 - [Educational Codeforces Round 93 (Rated for Div. 2)](https://github.com/wingkwong/codeforces/blob/master/contests/1398)
 - [Codeforces Round #664 (Div. 2)](https://github.com/wingkwong/codeforces/blob/master/contests/1395)
 - [Codeforces Round #663 (Div. 2)](https://github.com/wingkwong/codeforces/blob/master/contests/1391)
