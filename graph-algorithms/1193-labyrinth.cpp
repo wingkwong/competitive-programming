@@ -58,12 +58,9 @@ const ll MOD = 1000000007;
 #define FAST_INP  ios_base::sync_with_stdio(false);cin.tie(NULL)
 
 struct Point{
-	int x, y;
-	string path;
+	int x, y, dist;
 };
 
-
-// TLE on one test case. Still thinking how to solve it.
 int main()  
 { 
     FAST_INP;
@@ -74,6 +71,8 @@ int main()
     int n, m, sx, sy, dx, dy;
     cin >> n >> m;
     vector<vector<char>> g(n,vector<char>(m));
+	vvi d(n,vi(m,-1));
+	// bfs approach to find the shortest path
     REP(i,n) {
     	REP(j,m) {
     		cin >> g[i][j];
@@ -83,9 +82,8 @@ int main()
 	}
 	g[sx][sy]='#';
 	queue<Point> q;
-	q.push({sx,sy,""});
-	int row[4]={-1,0,0,1};
-	int col[4]={0,-1,1,0};
+	q.push({sx,sy,0});
+	int row[4]={-1,0,0,1}, col[4]={0,-1,1,0};
 	char dir[4]={'U','L','R','D'};
 	function<bool(int,int)> ok = [&](int i, int j){
 	  if(i<0||i>n-1||j<0||j>m-1||g[i][j]=='#') return false;
@@ -94,24 +92,43 @@ int main()
 	while(!q.empty()){
 		Point p = q.front();
 		q.pop();
-		int xx = p.x, yy = p.y;
-		string path = p.path;
+		int xx = p.x, yy = p.y, dist=p.dist;
+		d[xx][yy]=dist;
 		if(xx==dx&&yy==dy){
 			OUT("YES");
-			OUT(path.size());
-			OUT(path);
+			OUT(dist);
+			// backtracking to build the ans 
+			// as copying string in each step is time consuming
+			// and it would cause TLE for 999x999 maze
+			string ans;
+			while(xx!=sx||yy!=sy){
+				if(xx>0&&d[xx-1][yy]==dist-1){
+					ans.pb('D');
+					xx--;
+				} else if(xx<n-1&&d[xx+1][yy]==dist-1){
+					ans.pb('U');
+					xx++;
+				} else if(yy>0&&d[xx][yy-1]==dist-1){
+					ans.pb('R');
+					yy--;
+				} else {
+					ans.pb('L');
+					yy++;
+				}
+				dist--;
+			}
+			REVERSE(ans);
+			OUT(ans);
 			return 0;
 		}
 		REP(i,4){
 			int x=xx+row[i], y=yy+col[i];
 			if(ok(x,y)){
-//				cout << x << " " << y << " : " << path+dir[i] << endl;
 				g[x][y]='#';
-				q.push({x,y,path+dir[i]});
-			}
+				q.push(Point{x,y,dist+1});
+			} 
 		}
 	}
 	OUT("NO");
-	
     return 0; 
 } 
