@@ -62,12 +62,12 @@ void solve() {
     ll r,c;
     cin >> r >> c;
     // check the pattern 
-    if(r>c) {
-        if(r&1) OUT(r*r-c+1);
-        else --r, OUT(r*r+c);
+    if(c>r) {
+        if(c&1) OUT(c*c-r+1);
+        else --c, OUT(c*c+r);
     } else {
-        if((c&1)^1) OUT(c*c-r+1);
-        else OUT(c*c+r);
+        if((r&1)^1) OUT(r*r-c+1);
+        else --r, OUT(r*r+c);
     }
 }
 
