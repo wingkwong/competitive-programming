@@ -31,6 +31,41 @@ You may assume that there are no duplicate edges in the input prerequisites.
 class Solution {
 public:
     vector<int> findOrder(int numCourses, vector<vector<int>>& prerequisites) {
+        vector<vector<int>> g(numCourses);
+        vector<int> indegree(numCourses,0);
+        vector<int> ans;
+        for(auto p:prerequisites){
+            g[p[0]].push_back(p[1]);
+            indegree[p[1]]++;
+        }
+        queue<int> q;
+        for(int i=0;i<numCourses;i++){
+            if(indegree[i]==0){
+                q.push(i);
+            }
+        }
+        while(!q.empty()){
+            int u = q.front();
+            q.pop();
+            ans.push_back(u);
+            for(auto v:g[u]){
+                if(--indegree[v]==0){
+                    q.push(v);
+                }
+            }
+        }
+        if(ans.size()!=numCourses) return {};
+        reverse(ans.begin(),ans.end());
+        return ans;
+    }
+};
+
+class Solution2 {
+public:
+    vector<int> findOrder(int numCourses, vector<vector<int>>& prerequisites) {
+        // this solution can pass Leetcode test cases
+        // however, it may cause TLE if the numbers go larger
+        // use the first solution for larger constraints 
         vector<vector<int>> graph(numCourses);
         vector<int> indegree(numCourses,0);
         vector<int> ans;
