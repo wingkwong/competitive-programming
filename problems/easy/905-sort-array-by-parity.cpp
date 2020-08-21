@@ -32,4 +32,19 @@ public:
     }
 };
 
+class Solution2 {
+public:
+    vector<int> sortArrayByParity(vector<int>& A) {
+        vector<int> odd, even;
+        for(int x:A){
+            if(x&1) odd.push_back(x);
+            else even.push_back(x);
+        }
+        sort(odd.begin(),odd.end());
+        sort(even.begin(),even.end());
+        even.insert(even.end(),odd.begin(),odd.end());
+        return even;
+    }
+};
+
 static const auto io_sync_off = []() {std::ios::sync_with_stdio(false);cin.tie(nullptr);cout.tie(nullptr);return 0;}();
