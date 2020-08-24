@@ -18,6 +18,24 @@ Output: 2
 class Solution {
 public:
     int majorityElement(vector<int>& nums) {
+        // simply solved by Boyer-Moore Voting Algorithm
+        // There can be at most one majority element which is more than ⌊n/2⌋ times.
+        // There can be at most two majority elements which are more than ⌊n/3⌋ times.
+        // There can be at most three majority elements which are more than ⌊n/4⌋ times.
+        int c1, cnt1=0;
+        for(int n:nums){
+            if(cnt1==0) c1=n;
+            if(n==c1) cnt1++;
+            else cnt1--;
+        }
+        return c1;
+    }
+};
+
+
+class Solution2 {
+public:
+    int majorityElement(vector<int>& nums) {
         int n = (int)nums.size();
         int k = n/2;
         unordered_map<int,int> m;
@@ -29,7 +47,7 @@ public:
     }
 };
 
-class Solution2 {
+class Solution3 {
 public:
     int majorityElement(vector<int>& nums) {
         int n = (int)nums.size();
