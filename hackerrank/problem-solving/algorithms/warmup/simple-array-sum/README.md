@@ -13,4 +13,4 @@ Sample Output
 31
 ```
 
-Similar to  [A Very Big Sum](https://github.com/wingkwong/hackerrank/tree/master/warmup/a-very-big-sum), but ``int`` is enough for this question.
+Similar to  [A Very Big Sum](https://github.com/wingkwong/competitive-programming/tree/master/hackerrank/warmup/a-very-big-sum), but ``int`` is enough for this question.

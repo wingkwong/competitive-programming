@@ -8,9 +8,9 @@
 
 <br/>
 
-- [Classical](https://github.com/wingkwong/spoj/tree/master/classical)
+- [Classical](https://github.com/wingkwong/competitive-programming/tree/master/spoj/classical)
 - Challenge
 - Partial
 - Tutorial
 - Riddle
-- Basics
+- [Basics](https://github.com/wingkwong/competitive-programming/tree/master/spoj/basic)
