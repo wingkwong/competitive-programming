@@ -78,7 +78,7 @@ int main()
 	vl a(n);
 	READ(a);
 	unordered_map<ll, pii> m;
-	m.reserve(1<<20);
+	m.reserve(1<<32);
 	REP(i,n-1){
 		FOR(j,i+1,n){
 			if(m.count(x-a[i]-a[j])){
