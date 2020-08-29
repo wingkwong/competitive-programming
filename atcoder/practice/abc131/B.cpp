@@ -1,3 +1,8 @@
+/*
+AtCoder Beginner Contest 131 - Bite Eating
+https://atcoder.jp/contests/abc131/tasks/abc131_b
+*/
+
 #include <bits/stdc++.h>
 using namespace std;
 
