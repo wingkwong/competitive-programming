@@ -1,3 +1,8 @@
+/*
+AtCoder Beginner Contest 131 - Megalomania
+https://atcoder.jp/contests/abc131/tasks/abc131_d
+*/
+
 #include <bits/stdc++.h>
 using namespace std;
 
