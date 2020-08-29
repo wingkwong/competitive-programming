@@ -1,3 +1,8 @@
+/*
+AtCoder Beginner Contest 131 - Anti-Division
+https://atcoder.jp/contests/abc131/tasks/abc131_c
+*/
+
 #include <bits/stdc++.h>
 using namespace std;
 
