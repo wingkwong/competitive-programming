@@ -87,10 +87,10 @@ int main()
 //	cout << roundDown(b,c*d) << " " <<roundUp(a,c*d) << endl;
 //	cout << x1 << " " << x2 << " " << x3 << " " << x4 << endl;
 	ll e = lcm(c,d);
-	ll x1 = b-a+1;
-	ll x2 = b/c-(a-1)/c;
-	ll x3 = b/d-(a-1)/d;
-	ll x4 = b/e-(a-1)/e;
+	ll x1 = b-a+1;        // total range (inclusive)
+	ll x2 = b/c-(a-1)/c;  // disvisble by C, not D
+	ll x3 = b/d-(a-1)/d;  // divisible by D, not C
+	ll x4 = b/e-(a-1)/e;  // disvisble by C & D
 	OUT(x1-x2-x3+x4);
     return 0;
 }
