@@ -1,3 +1,8 @@
+/*
+AtCoder Beginner Contest 131 - Security
+https://atcoder.jp/contests/abc131/tasks/abc131_a
+*/
+
 #include <bits/stdc++.h>
 using namespace std;
 
