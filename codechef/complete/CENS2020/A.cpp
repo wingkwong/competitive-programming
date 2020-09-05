@@ -1,6 +1,6 @@
 /*
-Code Ensemble (Rated for Division 2) - Priya and AND
-https://www.codechef.com/CENS2020/problems/CENS20D
+Code Ensemble (Rated for Division 2) - Cherry and Bits
+https://www.codechef.com/CENS2020/problems/CENS20A
 */
 
 #include <bits/stdc++.h>
