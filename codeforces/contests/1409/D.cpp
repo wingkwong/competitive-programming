@@ -73,7 +73,7 @@ void solve() {
 	// make the digit to zero from right to left
 	while(ds(n)>s){
 		// we need to add k in order to make the last digit become 0
-		ll k=(10-(n%10)); 
+		ll k=(10-(n%10))%10;
 		ans+=p*k;
 		n+=k;
 		p*=10LL;
