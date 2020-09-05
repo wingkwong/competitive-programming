@@ -8,6 +8,7 @@
 
 <br/>
 
+- [Codeforces Round #667 (Div. 3)](https://github.com/wingkwong/competitive-programming/tree/master/codeforces/contests/1409)
 - [Codeforces Round #666 (Div. 2)](https://github.com/wingkwong/competitive-programming/tree/master/codeforces/contests/1397)
 - [Codeforces Round #665 (Div. 2)](https://github.com/wingkwong/competitive-programming/tree/master/codeforces/contests/1401)
 - [Codeforces Global Round 10](https://github.com/wingkwong/competitive-programming/tree/master/codeforces/contests/1392)
