@@ -3,7 +3,7 @@
 - [A. String Similarity](https://github.com/wingkwong/competitive-programming/tree/master/codeforces/contests/1400/A.cpp)
 - B. RPG Protagonist
 - [C. Binary String Reconstruction](https://github.com/wingkwong/competitive-programming/tree/master/codeforces/contests/1400/C.cpp)
-- [D. Zigzags](https://github.com/wingkwong/competitive-programming/tree/master/codeforces/contests/1401/B.cpp)
+- [D. Zigzags](https://github.com/wingkwong/competitive-programming/tree/master/codeforces/contests/1400/D.cpp)
 - E. Clear the Multiset
 - F. x-prime Substrings
 - G. Mercenaries
