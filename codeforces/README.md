@@ -10,6 +10,7 @@
 
 - [Codeforces Round #667 (Div. 3)](https://github.com/wingkwong/competitive-programming/tree/master/codeforces/contests/1409)
 - [Codeforces Round #666 (Div. 2)](https://github.com/wingkwong/competitive-programming/tree/master/codeforces/contests/1397)
+- [Educational Codeforces Round 94 (Rated for Div. 2)](https://github.com/wingkwong/competitive-programming/tree/master/codeforces/contests/1400)
 - [Codeforces Round #665 (Div. 2)](https://github.com/wingkwong/competitive-programming/tree/master/codeforces/contests/1401)
 - [Codeforces Global Round 10](https://github.com/wingkwong/competitive-programming/tree/master/codeforces/contests/1392)
 - [Educational Codeforces Round 93 (Rated for Div. 2)](https://github.com/wingkwong/competitive-programming/tree/master/codeforces/contests/1398)
