@@ -19,6 +19,10 @@ int dirx[8]={ -1, 0, 0, 1, -1, -1, 1, 1 };
 int diry[8]={ 0, 1, -1, 0, -1, 1, -1, 1 };
 const ll MOD = 1000000007;
 
+ll sum() { return 0; }
+template<typename T, typename... Args>
+T sum(T a, Args... args) { return a + sum(args...); }
+
 #define DEBUG fprintf(stderr, "====TESTING====\n")
 #define VALUE(x) cerr << "The value of " << #x << " is " << x << endl
 #define OUT(x) cout << x << endl
@@ -51,10 +55,10 @@ const ll MOD = 1000000007;
 #define PERMUTE next_permutation
 #define TC(t) while (t--)
 #define FAST_INP  ios_base::sync_with_stdio(false);cin.tie(NULL)
-
+#define what_is(x) cerr << #x << " is " << x << endl;
 
 void solve() {
-
+	
 }
 
 int main()
