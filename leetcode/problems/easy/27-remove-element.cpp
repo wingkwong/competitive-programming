@@ -44,6 +44,7 @@ for (int i = 0; i < len; i++) {
 class Solution {
 public:
     int removeElement(vector<int>& nums, int val) {
+        // similar to the solution to Remove Duplicates from Sorted Array.
         int i=0;
         for(int j=0;j<nums.size();j++){
             if(nums[j]!=val){
@@ -51,7 +52,7 @@ public:
                 i++;
             }
         }
-        return i+1;
+        return i;
     }
 };
 
