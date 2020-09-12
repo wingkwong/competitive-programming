@@ -56,11 +56,11 @@ const ll MOD = 1000000007;
 #define TC(t) while (t--)
 #define FAST_INP  ios_base::sync_with_stdio(false);cin.tie(NULL)
 
-class dsu {
+class DSU {
 private:
     vector<ll> d, sz;
 public:
-    dsu(ll n) {
+    DSU(ll n) {
         d=vector<ll>(n);
         sz=vector<ll>(n, 1);
         REP(i,n) d[i]=i;
@@ -89,12 +89,12 @@ public:
     }
 };
 
-// Solution 1: Use DSU template to find out the max tree size
+// Solution 1: Use custom DSU template to find out the max tree size
 // AC - 55 ms
 void solve() {
 	ll n, m, a, b;
 	cin >> n >> m;
-	dsu d=dsu(n);
+	DSU d=DSU(n);
     REP(i,m){
     	cin >> a >> b;
     	--a,--b;
@@ -140,6 +140,25 @@ void solve2(){
     OUT(ans);
 }
 
+// Solution 3: Use ACL - DSU to find out the max tree size
+// Similar to solution 1
+
+#include <atcoder/dsu>
+using namespace atcoder;
+void solve3(){
+	ll n, m, a, b;
+	cin >> n >> m;
+	dsu d=dsu(n);
+    REP(i,m){
+    	cin >> a >> b;
+    	--a,--b;
+		d.merge(a,b);
+	}
+	int ans=-INT_MAX;
+	REP(i,n) MAX(ans,(int)d.size(i));
+	OUT(ans);
+}
+
 int main()
 {
     FAST_INP;
@@ -153,5 +172,6 @@ int main()
 
     // solve1();
     solve2(); 
+//	solve3();
     return 0;
 }
