@@ -57,12 +57,12 @@ private:
 class Solution {
 public:
     int rob(vector<int>& nums) {
-        int sz = (int) nums.size();
-        if(sz==0) return 0;
-        vector<int> memo(sz+1);
+        int n = (int) nums.size();
+        if(n==0) return 0;
+        vector<int> memo(n+1);
         memo[0] = 0;
         memo[1] = nums[0];
-        for(int i=1;i<sz;i++){
+        for(int i=1;i<n;i++){
             memo[i+1] = max(memo[i], memo[i-1]+nums[i]);
         }
         return memo[n];
