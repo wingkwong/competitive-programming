@@ -8,6 +8,8 @@
 
 <br/>
 
+## Contests 
+
 - [Educational Codeforces Round 95 (Rated for Div. 2)](https://github.com/wingkwong/competitive-programming/tree/master/codeforces/contests/1418)
 - [Codeforces Round #670 (Div. 2)](https://github.com/wingkwong/competitive-programming/tree/master/codeforces/contests/1406)
 - [Codeforces Round #668 (Div. 2)](https://github.com/wingkwong/competitive-programming/tree/master/codeforces/contests/1405)
@@ -40,9 +42,16 @@
 - [Codeforces Round #640 (Div. 2)](https://github.com/wingkwong/competitive-programming/tree/master/codeforces/contests/1350)
 - [Codeforces Round #640 (Div. 3)](https://github.com/wingkwong/competitive-programming/tree/master/codeforces/contests/1353)
 - [Codeforces Round #640 (Div. 4)](https://github.com/wingkwong/competitive-programming/tree/master/codeforces/contests/1352)
+
+## Virtual Participation 
+
 - [Educational Codeforces Round 85 (Rated for Div. 2)](https://github.com/wingkwong/competitive-programming/tree/master/codeforces/contests/1334)
 - [Codeforces Round #632 (Div. 2)](https://github.com/wingkwong/competitive-programming/tree/master/codeforces/contests/1333)
 - [Testing Round #16 (Unrated)](https://github.com/wingkwong/competitive-programming/tree/master/codeforces/contests/1351)
 - [Testing Round #15 (Unrated)](https://github.com/wingkwong/competitive-programming/tree/master/codeforces/contests/1177)
 - [Codeforces Beta Round #65 (Div. 2)](https://github.com/wingkwong/competitive-programming/tree/master/codeforces/contests/71)
 - [Codeforces Beta Round #1](https://github.com/wingkwong/competitive-programming/tree/master/codeforces/contests/1)
+
+## Training 
+
+- [Assiut University Training - Newcomers - Sheet #1 (Data type - Conditions)](https://github.com/wingkwong/competitive-programming/tree/master/codeforces/groups/icpc-assiut-community/sheet-1-data-type-conditions)
