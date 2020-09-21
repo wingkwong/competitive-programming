@@ -54,4 +54,5 @@
 
 ## Training 
 
+- [Assiut University Training - Newcomers - Sheet #2 (Loops)](https://github.com/wingkwong/competitive-programming/tree/master/codeforces/groups/icpc-assiut-community/sheet-2-loops)
 - [Assiut University Training - Newcomers - Sheet #1 (Data type - Conditions)](https://github.com/wingkwong/competitive-programming/tree/master/codeforces/groups/icpc-assiut-community/sheet-1-data-type-conditions)
