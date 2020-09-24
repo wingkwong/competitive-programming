@@ -31,4 +31,21 @@ public:
     }
 };
 
+class Solution2 {
+public:
+    char findTheDifference(string s, string t) {
+        unordered_map<char, int> m;
+        char ans;
+        for(int i=0;i<t.size();i++) m[t[i]-'a']++;
+        for(int i=0;i<s.size();i++) m[s[i]-'a']--;
+        for(int i=0;i<26;i++) {
+            if(m[i]==1){
+                ans=i+'a';
+                break;
+            }
+        }
+        return ans;
+    }
+};
+
 static const auto io_sync_off = []() {std::ios::sync_with_stdio(false);cin.tie(nullptr);cout.tie(nullptr);return 0;}();
