@@ -11,6 +11,7 @@
 ## Contests 
 
 - [Codeforces Round #674 (Div. 3)](https://github.com/wingkwong/competitive-programming/tree/master/codeforces/contests/1426)
+- [Codeforces Round #673 (Div. 2)](https://github.com/wingkwong/competitive-programming/tree/master/codeforces/contests/1417)
 - [Codeforces Round #672 (Div. 2)](https://github.com/wingkwong/competitive-programming/tree/master/codeforces/contests/1420)
 - [Codeforces Round #671 (Div. 2)](https://github.com/wingkwong/competitive-programming/tree/master/codeforces/contests/1419)
 - [Educational Codeforces Round 95 (Rated for Div. 2)](https://github.com/wingkwong/competitive-programming/tree/master/codeforces/contests/1418)
