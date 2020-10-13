@@ -10,6 +10,7 @@
 
 ## Contests 
 
+- [Codeforces Global Round 11](https://github.com/wingkwong/competitive-programming/tree/master/codeforces/contests/1427)
 - [Grakn Forces 2020](https://github.com/wingkwong/competitive-programming/tree/master/codeforces/contests/1408)
 - [Codeforces Round #674 (Div. 3)](https://github.com/wingkwong/competitive-programming/tree/master/codeforces/contests/1426)
 - [Codeforces Round #673 (Div. 2)](https://github.com/wingkwong/competitive-programming/tree/master/codeforces/contests/1417)
