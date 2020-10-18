@@ -11,6 +11,7 @@
 ## Contests 
 
 
+- [Codeforces Raif Round 1 (Div. 1 + Div. 2)](https://github.com/wingkwong/competitive-programming/tree/master/codeforces/contests/1428)
 - [Educational Codeforces Round 96 (Rated for Div. 2)](https://github.com/wingkwong/competitive-programming/tree/master/codeforces/contests/1430)
 - [Codeforces Global Round 11](https://github.com/wingkwong/competitive-programming/tree/master/codeforces/contests/1427)
 - [Grakn Forces 2020](https://github.com/wingkwong/competitive-programming/tree/master/codeforces/contests/1408)
