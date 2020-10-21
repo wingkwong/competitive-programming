@@ -85,4 +85,22 @@ public:
     }
 };
 
+// DFS
+class Solution3 {
+public:
+    int ans;
+    int dfs(TreeNode* node) {
+        if(node == NULL) return 0;
+        int l = dfs(node->left);
+        int r = dfs(node->right);
+        ans = max(ans, l+r+1);
+        return max(l,r)+1;
+    }
+    int diameterOfBinaryTree(TreeNode* root) {
+        ans = 1;
+        dfs(root);
+        return ans - 1;
+    }
+};
+
 static const auto io_sync_off = []() {std::ios::sync_with_stdio(false);cin.tie(nullptr);cout.tie(nullptr);return 0;}();
