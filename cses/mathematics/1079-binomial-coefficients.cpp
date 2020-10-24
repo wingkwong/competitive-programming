@@ -70,7 +70,7 @@ ll f1[mxN], f2[mxN], inv[mxN];
 void solve() {
 	int a, b;
 	cin >> a >> b;
-	OUT((f1[a]*f2[b]%MOD*f2[a-b]%MOD));
+	OUT((f1[a] * f2[b] % MOD * f2[a - b] % MOD));
 }
 
 int main()
