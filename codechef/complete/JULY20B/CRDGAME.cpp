@@ -1,6 +1,6 @@
 /*
 Chef and Card Game - Problem Code: CRDGAME
-https://www.codechef.com/viewsolution/34951273
+https://www.codechef.com/JULY20B/problems/CRDGAME/
 */
 
 #include <bits/stdc++.h>
