@@ -50,3 +50,19 @@ public:
         return ans;
     }
 };
+
+class Solution2 {
+public:
+    int maxPower(string s) {
+        int n = (int) s.size(), ans = 1, cnt = 1;
+        for(int i = 0; i + 1 < n; i++) {
+            if(s[i] == s[i + 1]) {
+                cnt++;
+                ans = max(ans, cnt);
+            } else {
+                cnt = 1;
+            }
+        }
+        return ans;
+    }
+};
