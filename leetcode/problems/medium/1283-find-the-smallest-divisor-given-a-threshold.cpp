@@ -34,6 +34,7 @@ class Solution {
 public:
     int helper(vector<int>& nums, int mid, int threshold){
         int sum=0;
+        // for(int n:nums) sum+=(n + mid - 1) / mid;
         for(int n:nums) sum+=(n/mid)+(n%mid?1:0);
         return sum;
     }
