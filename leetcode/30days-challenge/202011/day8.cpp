@@ -1,53 +1,72 @@
 /*
-Find the Smallest Divisor Given a Threshold
+Binary Tree Tilt
+https://leetcode.com/problems/binary-tree-tilt/
 
-Given an array of integers nums and an integer threshold, we will choose a positive integer divisor and divide all the array by it and sum the result of the division. Find the smallest divisor such that the result mentioned above is less than or equal to threshold.
+Given the root of a binary tree, return the sum of every tree node's tilt.
 
-Each result of division is rounded to the nearest integer greater than or equal to that element. (For example: 7/3 = 3 and 10/2 = 5).
+The tilt of a tree node is the absolute difference between the sum of all left subtree node values and all right subtree node values. If a node does not have a left child, then the sum of the left subtree node values is treated as 0. The rule is similar if there the node does not have a right child.
 
-It is guaranteed that there will be an answer.
+ 
 
 Example 1:
 
-Input: nums = [1,2,5,9], threshold = 6
-Output: 5
-Explanation: We can get a sum to 17 (1+2+5+9) if the divisor is 1. 
-If the divisor is 4 we can get a sum to 7 (1+1+2+3) and if the divisor is 5 the sum will be 5 (1+1+1+2). 
+
+Input: root = [1,2,3]
+Output: 1
+Explanation: 
+Tilt of node 2 : |0-0| = 0 (no children)
+Tilt of node 3 : |0-0| = 0 (no children)
+Tile of node 1 : |2-3| = 1 (left subtree is just left child, so sum is 2; right subtree is just right child, so sum is 3)
+Sum of every tilt : 0 + 0 + 1 = 1
 Example 2:
 
-Input: nums = [2,3,5,7,11], threshold = 11
-Output: 3
+
+Input: root = [4,2,9,3,5,null,7]
+Output: 15
+Explanation: 
+Tilt of node 3 : |0-0| = 0 (no children)
+Tilt of node 5 : |0-0| = 0 (no children)
+Tilt of node 7 : |0-0| = 0 (no children)
+Tilt of node 2 : |3-5| = 2 (left subtree is just left child, so sum is 3; right subtree is just right child, so sum is 5)
+Tilt of node 9 : |0-7| = 7 (no left child, so sum is 0; right subtree is just right child, so sum is 7)
+Tilt of node 4 : |(3+5+2)-(9+7)| = |10-16| = 6 (left subtree values are 3, 5, and 2, which sums to 10; right subtree values are 9 and 7, which sums to 16)
+Sum of every tilt : 0 + 0 + 0 + 2 + 7 + 6 = 15
 Example 3:
 
-Input: nums = [19], threshold = 5
-Output: 4
+
+Input: root = [21,7,14,1,1,2,2,3,3]
+Output: 9
  
 
 Constraints:
 
-1 <= nums.length <= 5 * 10^4
-1 <= nums[i] <= 10^6
-nums.length <= threshold <= 10^6
+The number of nodes in the tree is in the range [0, 104].
+-1000 <= Node.val <= 1000
 */
 
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+ * };
+ */
 class Solution {
 public:
-    int helper(vector<int>& nums, int mid, int threshold){
-        int sum=0;
-        // for(int n:nums) sum+=(n + mid - 1) / mid;
-        for(int n:nums) sum+=(n/mid)+(n%mid?1:0);
-        return sum;
+    int ans=0;
+    int findTilt(TreeNode* root) {
+        dfs(root);
+        return ans;
     }
     
-    int smallestDivisor(vector<int>& nums, int threshold) {
-        // binary search approach
-        int l=1,r=1e6;
-        while(l<r){
-            int mid=l+(r-l)/2;
-            int sum = helper(nums,mid,threshold);
-            if(sum>threshold) l=mid+1;
-            else r=mid;
-        }
-        return l;
+    int dfs(TreeNode* n) {
+        if(n == NULL) return 0;
+        int l = dfs(n->left), r = dfs(n->right);
+        ans += abs(l - r);
+        return l + r + n -> val;
     }
 };
