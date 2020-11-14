@@ -10,6 +10,7 @@
 
 ## Contests 
 
+- [Codeforces Round #682 (Div. 2)](https://github.com/wingkwong/competitive-programming/tree/master/codeforces/contests/1438)
 - [Codeforces Round #681 (Div. 2, based on VK Cup 2019-2020 - Final)](https://github.com/wingkwong/competitive-programming/tree/master/codeforces/contests/1443)
 - [Codeforces Round #680 (Div. 2, based on Moscow Team Olympiad)](https://github.com/wingkwong/competitive-programming/tree/master/codeforces/contests/1445)
 - [Educational Codeforces Round 97 (Rated for Div. 2)](https://github.com/wingkwong/competitive-programming/tree/master/codeforces/contests/1437)
