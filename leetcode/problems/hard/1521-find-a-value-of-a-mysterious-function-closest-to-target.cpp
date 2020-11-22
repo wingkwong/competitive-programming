@@ -34,6 +34,22 @@ Constraints:
 
 class Solution {
 public:
+    int closestToTarget(vector<int>& A, int target) {
+        set<int> s;
+        int ans = INT_MAX;
+        for (int n : A) {
+            set<int> next{ n };
+            for (int m : s) next.insert(m & n);
+            for (int val : next) ans = min(ans, abs(val - target));
+            swap(s, next);
+        }
+        return ans;
+    }
+};
+
+// TLE
+class Solution2 {
+public:
     int closestToTarget(vector<int>& arr, int target) {
         int n = arr.size(), ans=INT_MAX;
         for(int i=0;i<n;i++){
