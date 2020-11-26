@@ -64,6 +64,7 @@
 
 ## Virtual Participation 
 
+- [Unofficial Div 4 Round #2 by ssense SlavicG](https://github.com/wingkwong/competitive-programming/tree/master/codeforces/gym/102873)
 - [Educational Codeforces Round 85 (Rated for Div. 2)](https://github.com/wingkwong/competitive-programming/tree/master/codeforces/contests/1334)
 - [Codeforces Round #632 (Div. 2)](https://github.com/wingkwong/competitive-programming/tree/master/codeforces/contests/1333)
 - [Testing Round #16 (Unrated)](https://github.com/wingkwong/competitive-programming/tree/master/codeforces/contests/1351)
