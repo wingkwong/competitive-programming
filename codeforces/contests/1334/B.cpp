@@ -1,6 +1,6 @@
 /*
 Educational Codeforces Round 85 (Rated for Div. 2) - B. Middle Class
-https://codeforces.com/contest/1353/problem/B
+https://codeforces.com/contest/1334/problem/B
 */
 
 #include <bits/stdc++.h>
