@@ -1,65 +1,102 @@
-/*
-B. Same Parity Summands
-time limit per test1 second
-memory limit per test256 megabytes
-inputstandard input
-outputstandard output
-You are given two positive integers 𝑛 (1≤𝑛≤109) and 𝑘 (1≤𝑘≤100). Represent the number 𝑛 as the sum of 𝑘 positive integers of the same parity (have the same remainder when divided by 2).
-
-In other words, find 𝑎1,𝑎2,…,𝑎𝑘 such that all 𝑎𝑖>0, 𝑛=𝑎1+𝑎2+…+𝑎𝑘 and either all 𝑎𝑖 are even or all 𝑎𝑖 are odd at the same time.
-
-If such a representation does not exist, then report it.
-
-Input
-The first line contains an integer 𝑡 (1≤𝑡≤1000) — the number of test cases in the input. Next, 𝑡 test cases are given, one per line.
-
-Each test case is two positive integers 𝑛 (1≤𝑛≤109) and 𝑘 (1≤𝑘≤100).
-
-Output
-For each test case print:
-
-YES and the required values 𝑎𝑖, if the answer exists (if there are several answers, print any of them);
-NO if the answer does not exist.
-The letters in the words YES and NO can be printed in any case.
-*/
-
 #include <bits/stdc++.h>
-using namespace std; 
-#define FAST_INP  ios_base::sync_with_stdio(false);cin.tie(NULL)
+using namespace std;
 
-int main()  
-{ 
-    FAST_INP;
-    int t,n,k;
-    cin >> t;
-    while(t--){
-       cin >> n >> k;
-       // take either k-1 odd numbers or k-1 even numbers plus n-(k-1) or n-2*(k-1)
-       // make sure n-(k-1) or n-2*(k-1) is positive
-        int n1=n-2*(k-1);
-        if(n1%2==0&&n1>0){
-            // even
-            cout << "YES\n";
-            for(int i=0;i<k-1;i++) {
-                cout << "2 ";
-                n-=2;
-            }
-            cout << n << "\n";
-            continue;
-        } 
-        
-        int n2=n-(k-1);
-        if(n2%2==1&&n2>0){
-            // odd
-            cout << "YES\n";
-            for(int i=0;i<k-1;i++) {
-                cout << "1 ";
-                n-=1;
-            }
-            cout << n << "\n";
-            continue;
+typedef long long ll;
+typedef pair<int, int> pii;
+typedef pair<ll, ll> pll;
+typedef pair<string, string> pss;
+typedef vector<int> vi;
+typedef vector<vi> vvi;
+typedef vector<pii> vii;
+typedef vector<ll> vl;
+typedef vector<vl> vvl;
+
+double EPS=1e-9;
+int INF=1000000005;
+long long INFF=1000000000000000005ll;
+double PI=acos(-1);
+int dirx[8]={ -1, 0, 0, 1, -1, -1, 1, 1 };
+int diry[8]={ 0, 1, -1, 0, -1, 1, -1, 1 };
+const ll MOD = 1000000007;
+
+ll sum() { return 0; }
+template<typename T, typename... Args>
+T sum(T a, Args... args) { return a + sum(args...); }
+
+#define DEBUG fprintf(stderr, "====TESTING====\n")
+#define VALUE(x) cerr << "The value of " << #x << " is " << x << endl
+#define OUT(x) cout << x << endl
+#define OUTH(x) cout << x << " "
+#define debug(...) fprintf(stderr, __VA_ARGS__)
+#define READ(x) for(auto &(z):x) cin >> z;
+#define FOR(a, b, c) for (int(a)=(b); (a) < (c); ++(a))
+#define FORN(a, b, c) for (int(a)=(b); (a) <= (c); ++(a))
+#define FORD(a, b, c) for (int(a)=(b); (a) >= (c); --(a))
+#define FORSQ(a, b, c) for (int(a)=(b); (a) * (a) <= (c); ++(a))
+#define FORC(a, b, c) for (char(a)=(b); (a) <= (c); ++(a))
+#define EACH(a, b) for (auto&(a) : (b))
+#define REP(i, n) FOR(i, 0, n)
+#define REPN(i, n) FORN(i, 1, n)
+#define MAX(a, b) a=max(a, b)
+#define MIN(a, b) a=min(a, b)
+#define SQR(x) ((ll)(x) * (x))
+#define RESET(a, b) memset(a, b, sizeof(a))
+#define fi first
+#define se second
+#define mp make_pair
+#define pb push_back
+#define ALL(v) v.begin(), v.end()
+#define ALLA(arr, sz) arr, arr + sz
+#define SIZE(v) (int)v.size()
+#define SORT(v) sort(ALL(v))
+#define REVERSE(v) reverse(ALL(v))
+#define SORTA(arr, sz) sort(ALLA(arr, sz))
+#define REVERSEA(arr, sz) reverse(ALLA(arr, sz))
+#define PERMUTE next_permutation
+#define TC(t) while (t--)
+#define FAST_INP  ios_base::sync_with_stdio(false);cin.tie(NULL)
+#define what_is(x) cerr << #x << " is " << x << endl;
+
+void solve() {
+	int n, k;
+	cin >> n >> k;
+   // take either k-1 odd numbers or k-1 even numbers plus n-(k-1) or n-2*(k-1)
+   // make sure n-(k-1) or n-2*(k-1) is positive
+    int n1 = n - 2 * (k - 1);
+    if(n1 % 2 == 0 && n1 > 0){
+        // even
+        OUT("YES");
+        REP(i, k - 1) {
+        	OUTH(2);
+            n -= 2;
         }
-        cout << "NO\n";
+        OUT(n);
+        return;
     }
+
+    int n2 = n - (k - 1);
+    if(n2 % 2 == 1 && n2 > 0){
+        // odd
+        OUT("YES");
+        REP(i, k - 1) {
+        	OUTH(1);
+        	n -= 1;
+		}
+		OUT(n);
+		return;
+    }
+    OUT("NO");
+}
+
+int main()
+{
+    FAST_INP;
+//    #ifndef ONLINE_JUDGE
+//    freopen("input.txt","r", stdin);
+//    freopen("output.txt","w", stdout);
+//    #endif
+
+    int tc; cin >> tc;
+    TC(tc) solve();
     return 0;
-} 
+}

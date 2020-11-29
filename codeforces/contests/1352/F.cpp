@@ -1,41 +1,87 @@
-/*
-F. Binary String Reconstruction
-time limit per test1 second
-memory limit per test256 megabytes
-inputstandard input
-outputstandard output
-For some binary string 𝑠 (i.e. each character 𝑠𝑖 is either '0' or '1'), all pairs of consecutive (adjacent) characters were written. In other words, all substrings of length 2 were written. For each pair (substring of length 2), the number of '1' (ones) in it was calculated.
-
-You are given three numbers:
-
-𝑛0 — the number of such pairs of consecutive characters (substrings) where the number of ones equals 0;
-𝑛1 — the number of such pairs of consecutive characters (substrings) where the number of ones equals 1;
-𝑛2 — the number of such pairs of consecutive characters (substrings) where the number of ones equals 2.
-For example, for the string 𝑠="1110011110", the following substrings would be written: "11", "11", "10", "00", "01", "11", "11", "11", "10". Thus, 𝑛0=1, 𝑛1=3, 𝑛2=5.
-
-Your task is to restore any suitable binary string 𝑠 from the given values 𝑛0,𝑛1,𝑛2. It is guaranteed that at least one of the numbers 𝑛0,𝑛1,𝑛2 is greater than 0. Also, it is guaranteed that a solution exists.
-
-Input
-The first line contains an integer 𝑡 (1≤𝑡≤1000) — the number of test cases in the input. Then test cases follow.
-
-Each test case consists of one line which contains three integers 𝑛0,𝑛1,𝑛2 (0≤𝑛0,𝑛1,𝑛2≤100; 𝑛0+𝑛1+𝑛2>0). It is guaranteed that the answer for given 𝑛0,𝑛1,𝑛2 exists.
-
-Output
-Print 𝑡 lines. Each of the lines should contain a binary string corresponding to a test case. If there are several possible solutions, print any of them.
-*/
-
 #include <bits/stdc++.h>
-using namespace std; 
-#define FAST_INP  ios_base::sync_with_stdio(false);cin.tie(NULL)
+using namespace std;
 
-int main()  
-{ 
+typedef long long ll;
+typedef pair<int, int> pii;
+typedef pair<ll, ll> pll;
+typedef pair<string, string> pss;
+typedef vector<int> vi;
+typedef vector<vi> vvi;
+typedef vector<pii> vii;
+typedef vector<ll> vl;
+typedef vector<vl> vvl;
+
+double EPS=1e-9;
+int INF=1000000005;
+long long INFF=1000000000000000005ll;
+double PI=acos(-1);
+int dirx[8]={ -1, 0, 0, 1, -1, -1, 1, 1 };
+int diry[8]={ 0, 1, -1, 0, -1, 1, -1, 1 };
+const ll MOD = 1000000007;
+
+ll sum() { return 0; }
+template<typename T, typename... Args>
+T sum(T a, Args... args) { return a + sum(args...); }
+
+#define DEBUG fprintf(stderr, "====TESTING====\n")
+#define VALUE(x) cerr << "The value of " << #x << " is " << x << endl
+#define OUT(x) cout << x << endl
+#define OUTH(x) cout << x << " "
+#define debug(...) fprintf(stderr, __VA_ARGS__)
+#define READ(x) for(auto &(z):x) cin >> z;
+#define FOR(a, b, c) for (int(a)=(b); (a) < (c); ++(a))
+#define FORN(a, b, c) for (int(a)=(b); (a) <= (c); ++(a))
+#define FORD(a, b, c) for (int(a)=(b); (a) >= (c); --(a))
+#define FORSQ(a, b, c) for (int(a)=(b); (a) * (a) <= (c); ++(a))
+#define FORC(a, b, c) for (char(a)=(b); (a) <= (c); ++(a))
+#define EACH(a, b) for (auto&(a) : (b))
+#define REP(i, n) FOR(i, 0, n)
+#define REPN(i, n) FORN(i, 1, n)
+#define MAX(a, b) a=max(a, b)
+#define MIN(a, b) a=min(a, b)
+#define SQR(x) ((ll)(x) * (x))
+#define RESET(a, b) memset(a, b, sizeof(a))
+#define fi first
+#define se second
+#define mp make_pair
+#define pb push_back
+#define ALL(v) v.begin(), v.end()
+#define ALLA(arr, sz) arr, arr + sz
+#define SIZE(v) (int)v.size()
+#define SORT(v) sort(ALL(v))
+#define REVERSE(v) reverse(ALL(v))
+#define SORTA(arr, sz) sort(ALLA(arr, sz))
+#define REVERSEA(arr, sz) reverse(ALLA(arr, sz))
+#define PERMUTE next_permutation
+#define TC(t) while (t--)
+#define FAST_INP  ios_base::sync_with_stdio(false);cin.tie(NULL)
+#define what_is(x) cerr << #x << " is " << x << endl;
+
+void solve() {
+	int n0, n1, n2;
+	cin >> n0 >> n1 >> n2;
+	if(n1 == 0) {
+		if(n0 != 0) OUT(string(n0 + 1, '0'));
+		else OUT(string(n2 + 1, '1'));
+		return;
+	}
+	string ans = string(n0 + 1, '0') + string(n2 + 1, '1');
+	while(n1 > 1) {
+		ans += '0' + '1' - ans.back();
+		n1--;
+	}
+	OUT(ans);
+}
+
+int main()
+{
     FAST_INP;
-    int t,n0,n1,n2;
-    cin >> t;
-    while(t--){
-       cin >> n0 >> n1 >> n2;
-       
-    }
+//    #ifndef ONLINE_JUDGE
+//    freopen("input.txt","r", stdin);
+//    freopen("output.txt","w", stdout);
+//    #endif
+
+    int tc; cin >> tc;
+    TC(tc) solve();
     return 0;
-} 
+}

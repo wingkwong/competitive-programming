@@ -1,53 +1,89 @@
-/*
-A. Sum of Round Numbers
-time limit per test 1 second
-memory limit per test 256 megabytes
-input standard input
-output standard output
-A positive (strictly greater than zero) integer is called round if it is of the form d00...0. 
-In other words, a positive integer is round if all its digits except the leftmost (most significant) are equal to zero. 
-In particular, all numbers from 1 to 9 (inclusive) are round.
-
-For example, the following numbers are round: 4000, 1, 9, 800, 90. The following numbers are not round: 110, 707, 222, 1001.
-
-You are given a positive integer 𝑛 (1≤𝑛≤104). Represent the number 𝑛 as a sum of round numbers using the minimum number of summands (addends). 
-In other words, you need to represent the given number 𝑛 as a sum of the least number of terms, each of which is a round number.
-
-Input
-The first line contains an integer 𝑡 (1≤𝑡≤104) — the number of test cases in the input. Then 𝑡 test cases follow.
-
-Each test case is a line containing an integer 𝑛 (1≤𝑛≤104).
-
-Output
-Print 𝑡 answers to the test cases. Each answer must begin with an integer 𝑘 — the minimum number of summands. Next, 𝑘 terms must follow, 
-each of which is a round number, and their sum is 𝑛. The terms can be printed in any order. If there are several answers, print any of them.
-*/
-
 #include <bits/stdc++.h>
-using namespace std; 
-#define FAST_INP  ios_base::sync_with_stdio(false);cin.tie(NULL)
+using namespace std;
 
-int main()  
-{ 
-    FAST_INP;
-    int n,t;
-    cin >> t;
-    while(t--){
-        cin >> n;
-        vector<int> ans;
-        int p=1;
-        // iterate each digit
-        while(n){
-            // if the digit is not 0, store the digit*power to ans
-            if(n%10) ans.push_back(n%10*p);
-            // multiply the power by 10
-            p*=10;
-            // check the next digit (from right to left)
-            n/=10;
-        }
-        cout << ans.size() << "\n";
-        for(int a:ans) cout << a << " " ;
-        cout << "\n";
+typedef long long ll;
+typedef pair<int, int> pii;
+typedef pair<ll, ll> pll;
+typedef pair<string, string> pss;
+typedef vector<int> vi;
+typedef vector<vi> vvi;
+typedef vector<pii> vii;
+typedef vector<ll> vl;
+typedef vector<vl> vvl;
+
+double EPS=1e-9;
+int INF=1000000005;
+long long INFF=1000000000000000005ll;
+double PI=acos(-1);
+int dirx[8]={ -1, 0, 0, 1, -1, -1, 1, 1 };
+int diry[8]={ 0, 1, -1, 0, -1, 1, -1, 1 };
+const ll MOD = 1000000007;
+
+ll sum() { return 0; }
+template<typename T, typename... Args>
+T sum(T a, Args... args) { return a + sum(args...); }
+
+#define DEBUG fprintf(stderr, "====TESTING====\n")
+#define VALUE(x) cerr << "The value of " << #x << " is " << x << endl
+#define OUT(x) cout << x << endl
+#define OUTH(x) cout << x << " "
+#define debug(...) fprintf(stderr, __VA_ARGS__)
+#define READ(x) for(auto &(z):x) cin >> z;
+#define FOR(a, b, c) for (int(a)=(b); (a) < (c); ++(a))
+#define FORN(a, b, c) for (int(a)=(b); (a) <= (c); ++(a))
+#define FORD(a, b, c) for (int(a)=(b); (a) >= (c); --(a))
+#define FORSQ(a, b, c) for (int(a)=(b); (a) * (a) <= (c); ++(a))
+#define FORC(a, b, c) for (char(a)=(b); (a) <= (c); ++(a))
+#define EACH(a, b) for (auto&(a) : (b))
+#define REP(i, n) FOR(i, 0, n)
+#define REPN(i, n) FORN(i, 1, n)
+#define MAX(a, b) a=max(a, b)
+#define MIN(a, b) a=min(a, b)
+#define SQR(x) ((ll)(x) * (x))
+#define RESET(a, b) memset(a, b, sizeof(a))
+#define fi first
+#define se second
+#define mp make_pair
+#define pb push_back
+#define ALL(v) v.begin(), v.end()
+#define ALLA(arr, sz) arr, arr + sz
+#define SIZE(v) (int)v.size()
+#define SORT(v) sort(ALL(v))
+#define REVERSE(v) reverse(ALL(v))
+#define SORTA(arr, sz) sort(ALLA(arr, sz))
+#define REVERSEA(arr, sz) reverse(ALLA(arr, sz))
+#define PERMUTE next_permutation
+#define TC(t) while (t--)
+#define FAST_INP  ios_base::sync_with_stdio(false);cin.tie(NULL)
+#define what_is(x) cerr << #x << " is " << x << endl;
+
+void solve() {
+	int n; cin >> n;
+	vi ans;
+	int p = 1;
+    // iterate each digit
+    while(n){
+        // if the digit is not 0, store the digit*power to ans
+        if(n % 10) ans.push_back(n % 10 * p);
+        // multiply the power by 10
+        p *= 10;
+        // check the next digit (from right to left)
+        n /= 10;
     }
+    OUT(ans.size());
+    EACH(x, ans) OUTH(x);
+    OUT("");
+}
+
+int main()
+{
+    FAST_INP;
+//    #ifndef ONLINE_JUDGE
+//    freopen("input.txt","r", stdin);
+//    freopen("output.txt","w", stdout);
+//    #endif
+
+    int tc; cin >> tc;
+    TC(tc) solve();
     return 0;
-} 
+}

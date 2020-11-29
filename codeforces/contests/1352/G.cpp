@@ -1,51 +1,89 @@
-/*
-G. Special Permutation
-time limit per test 2 seconds
-memory limit per test 256 megabytes
-inputstandard input
-outputstandard output
-A permutation of length 𝑛 is an array 𝑝=[𝑝1,𝑝2,…,𝑝𝑛], which contains every integer from 1 to 𝑛 (inclusive) and, moreover, each number appears exactly once. For example, 𝑝=[3,1,4,2,5] is a permutation of length 5.
-
-For a given number 𝑛 (𝑛≥2), find a permutation 𝑝 in which absolute difference (that is, the absolute value of difference) of any two neighboring (adjacent) elements is between 2 and 4, inclusive. Formally, find such permutation 𝑝 that 2≤|𝑝𝑖−𝑝𝑖+1|≤4 for each 𝑖 (1≤𝑖<𝑛).
-
-Print any such permutation for the given integer 𝑛 or determine that it does not exist.
-
-Input
-The first line contains an integer 𝑡 (1≤𝑡≤100) — the number of test cases in the input. Then 𝑡 test cases follow.
-
-Each test case is described by a single line containing an integer 𝑛 (2≤𝑛≤1000).
-
-Output
-Print 𝑡 lines. Print a permutation that meets the given requirements. If there are several such permutations, then print any of them. If no such permutation exists, print -1.
-*/
-
 #include <bits/stdc++.h>
-using namespace std; 
-#define FAST_INP  ios_base::sync_with_stdio(false);cin.tie(NULL)
+using namespace std;
 
-int main()  
-{ 
+typedef long long ll;
+typedef pair<int, int> pii;
+typedef pair<ll, ll> pll;
+typedef pair<string, string> pss;
+typedef vector<int> vi;
+typedef vector<vi> vvi;
+typedef vector<pii> vii;
+typedef vector<ll> vl;
+typedef vector<vl> vvl;
+
+double EPS=1e-9;
+int INF=1000000005;
+long long INFF=1000000000000000005ll;
+double PI=acos(-1);
+int dirx[8]={ -1, 0, 0, 1, -1, -1, 1, 1 };
+int diry[8]={ 0, 1, -1, 0, -1, 1, -1, 1 };
+const ll MOD = 1000000007;
+
+ll sum() { return 0; }
+template<typename T, typename... Args>
+T sum(T a, Args... args) { return a + sum(args...); }
+
+#define DEBUG fprintf(stderr, "====TESTING====\n")
+#define VALUE(x) cerr << "The value of " << #x << " is " << x << endl
+#define OUT(x) cout << x << endl
+#define OUTH(x) cout << x << " "
+#define debug(...) fprintf(stderr, __VA_ARGS__)
+#define READ(x) for(auto &(z):x) cin >> z;
+#define FOR(a, b, c) for (int(a)=(b); (a) < (c); ++(a))
+#define FORN(a, b, c) for (int(a)=(b); (a) <= (c); ++(a))
+#define FORD(a, b, c) for (int(a)=(b); (a) >= (c); --(a))
+#define FORSQ(a, b, c) for (int(a)=(b); (a) * (a) <= (c); ++(a))
+#define FORC(a, b, c) for (char(a)=(b); (a) <= (c); ++(a))
+#define EACH(a, b) for (auto&(a) : (b))
+#define REP(i, n) FOR(i, 0, n)
+#define REPN(i, n) FORN(i, 1, n)
+#define MAX(a, b) a=max(a, b)
+#define MIN(a, b) a=min(a, b)
+#define SQR(x) ((ll)(x) * (x))
+#define RESET(a, b) memset(a, b, sizeof(a))
+#define fi first
+#define se second
+#define mp make_pair
+#define pb push_back
+#define ALL(v) v.begin(), v.end()
+#define ALLA(arr, sz) arr, arr + sz
+#define SIZE(v) (int)v.size()
+#define SORT(v) sort(ALL(v))
+#define REVERSE(v) reverse(ALL(v))
+#define SORTA(arr, sz) sort(ALLA(arr, sz))
+#define REVERSEA(arr, sz) reverse(ALLA(arr, sz))
+#define PERMUTE next_permutation
+#define TC(t) while (t--)
+#define FAST_INP  ios_base::sync_with_stdio(false);cin.tie(NULL)
+#define what_is(x) cerr << #x << " is " << x << endl;
+
+void solve() {
+	int n; cin >> n;
+	if(n < 4) {
+		OUT(-1);
+		return;
+	}
+	// print out all odd numbers. the diff for |pi - p(i+1)| is 2.
+	FORD(i, n, 1) if(i & 1) OUTH(i);
+	// the last odd number is 1, put 4 and 2 to link the even numbers
+	OUTH("4 2");
+	// print ut all even numbers. the diff for |pi - p(i+1)| is 2.
+	FORN(i, 6, n) OUTH(i++);
+	OUT("");
+}
+
+int main()
+{
     FAST_INP;
-    int t,n;
-    cin >> t;
-    while(t--){
-       cin >> n;
-       if(n<4) {
-           cout << -1 << "\n";
-           continue;
-       }
-        // print out all odd numbers. the diff for |pi-pi+1| is 2.
-        for(int i=n;i>=1;i--) {
-            if(i%2) cout << i << " ";
-        }
-        // the last odd number is 1, put 4 and 2 to link the even numbers
-        cout << 4 << " " << 2 << " ";
-        // print ut all even numbers. the diff for |pi-pi+1| is 2.
-        for(int i=6;i<=n;i+=2) cout << i << " ";
-        cout << "\n";
-    }
+//    #ifndef ONLINE_JUDGE
+//    freopen("input.txt","r", stdin);
+//    freopen("output.txt","w", stdout);
+//    #endif
+
+    int tc; cin >> tc;
+    TC(tc) solve();
     return 0;
-} 
+}
 
 // 1 2 3 4 5 6 7 8 9 10
 // 9 7 5 3 1 4 2 6 8 10
