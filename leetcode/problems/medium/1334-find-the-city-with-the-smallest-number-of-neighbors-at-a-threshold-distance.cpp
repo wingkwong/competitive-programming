@@ -50,7 +50,7 @@ All pairs (fromi, toi) are distinct.
 class Solution {
 public:
     int findTheCity(int n, vector<vector<int>>& edges, int distanceThreshold) {
-        // floyd Warshall alogrithm
+        // floyd Warshall algorithm
         int ans = 0, mi = n;
         vector<vector<int>> dist(n, vector<int>(n, 10005));
         for(int i = 0; i < n; i++) dist[i][i] = 0;
