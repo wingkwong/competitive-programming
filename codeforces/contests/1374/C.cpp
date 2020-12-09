@@ -19,7 +19,6 @@ int solve(string s){
 				// it means this bracket needs to be moved
 				l=0;
 				ans++;
-			}
 		}
 	}
 	return ans;
