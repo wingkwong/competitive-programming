@@ -33,6 +33,20 @@ Note:
 
 class Solution {
 public:
+    bool validMountainArray(vector<int>& arr) {
+        int n = arr.size();
+        if(n < 3) return false;
+        vector<int> p(n, 0), s(n, 0); // prefix & suffix
+        p[0] = s[n - 1] = 1;
+        for(int i = 1; i < n - 1; i++) p[i] = arr[i] > arr[i - 1] && p[i - 1];
+        for(int i = n - 2; i >= 1; i--) s[i] = arr[i] > arr[i + 1] && s[i + 1];
+        for(int i = 1; i < n - 1; i++) if(p[i] && s[i]) return true;
+        return false;
+    }
+};
+
+class Solution2 {
+public:
     bool validMountainArray(vector<int>& A) {
         int sz=A.size(), i=0,j=sz-1;
         // going up from left to right
