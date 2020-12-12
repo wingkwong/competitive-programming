@@ -10,6 +10,7 @@
 
 ## Contests 
 
+- [Codeforces Round #689 (Div. 2, based on Zed Code Competition)](https://github.com/wingkwong/competitive-programming/tree/master/codeforces/contests/1461)
 - [Codeforces Global Round 12](https://github.com/wingkwong/competitive-programming/tree/master/codeforces/contests/1450)
 - [Codeforces Round #688 (Div. 2)](https://github.com/wingkwong/competitive-programming/tree/master/codeforces/contests/1453)
 - [Codeforces Round #687 (Div. 2)](https://github.com/wingkwong/competitive-programming/tree/master/codeforces/contests/1457)
