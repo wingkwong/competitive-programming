@@ -66,7 +66,7 @@ struct segtree {
 };
 ```
 
-### Usages:
+### Usage:
 
 ```cpp
 segtree st;
@@ -81,4 +81,86 @@ for(int i=0;i<n;i++){
 }
 // get the range sum
 cout << st.sum(l,r) << endl;
+```
+
+
+```cpp
+// segment tree - template starts
+template <typename T = long long>
+struct SegmentTree
+{
+    using F = function<T(T, T)>;
+#define clz(x) __builtin_clz(x)
+
+    SegmentTree(int n, const F f, const T &unit) : f(f), unit(unit), sz(n - 1 ? 1 << (32 - clz(n - 1)) : 1)
+    {
+        seg.assign(2 * sz, unit);
+    }
+
+    SegmentTree(vector<T> &a, const F f, const T &unit) : f(f), sz((int)a.size() > 1 ? 1 << (32 - clz(a.size() - 1)) : 1), unit(unit)
+    {
+        int n0 = a.size();
+        seg.assign(2 * sz, unit);
+        for (int i = 0; i < n0; ++i)
+            seg[i + sz] = a[i];
+        for (int i = sz - 1; i > 0; --i)
+            seg[i] = f(seg[i << 1], seg[(i << 1) | 1]);
+    }
+    const int sz;
+    vector<T> seg;
+    const F f;
+    const T unit;
+
+    void set(int k, T x) { seg[k + sz] = x; }
+
+    void build()
+    {
+        for (int i = sz - 1; i > 0; --i)
+            seg[i] = f(seg[i << 1], seg[(i << 1) | 1]);
+    }
+
+    T query(int l, int r)
+    {
+        T x = unit;
+        for (int d = r - l; d >= 1; d = r - l)
+        {
+            int L = l | ((1U << 31) >> clz(d));
+            int k = __builtin_ctz(L);
+            x = f(x, seg[(sz | l) >> k]);
+            l += L & (-L);
+        }
+        return x;
+    }
+
+    void update(int i, T x)
+    {
+        int k = i + sz;
+        seg[k] = x;
+        for (k = k >> 1; k > 0; k >>= 1)
+        {
+            seg[k] = f(seg[k << 1], seg[(k << 1) | 1]);
+        }
+    }
+
+    void add(int i, T x)
+    {
+        int k = i + sz;
+        seg[k] += x;
+        for (k = k >> 1; k > 0; k >>= 1)
+        {
+            seg[k] = f(seg[k << 1], seg[(k << 1) | 1]);
+        }
+    }
+    SegmentTree() = default;
+    T operator[](int k) const { return seg[sz + k]; }
+};
+// segment tree - templates ends
+```
+
+### Usage:
+```cpp
+// calculate XOR value within given range
+SegmentTree<int> seg(a, [](int x, int y) { return x ^ y; }, 0);
+seg.update(x - 1, seg[x - 1] ^ y)
+OUT(seg.query(x - 1, y));
 ```
