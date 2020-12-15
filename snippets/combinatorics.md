@@ -25,7 +25,6 @@ struct comb{
 
 };
 ```
-
 ### Usage:
 
 ```cpp
@@ -35,4 +34,39 @@ comb c = comb(n);
 FORN(i,1,k){
   OUT((c.ncr(n-k+1,i)*c.ncr(k-1,i-1)%MOD));
 }
+```
+
+```cpp
+template< typename T >
+T binomial(int64_t N, int64_t K) {
+  if(K < 0 || N < K) return 0;
+  T ret = 1;
+  for(T i = 1; i <= K; ++i) {
+    ret *= N--;
+    ret /= i;
+  }
+  return ret;
+}
+```
+
+### Usage:
+
+```cpp
+ll res = binomial<ll>(l - 1, 11)
+```
+
+
+## Python Version
+
+```py
+import math
+ 
+ 
+def c(n, r):
+    return math.factorial(n) // (math.factorial(n - r) * math.factorial(r))
+  
+n = int(input())
+r = int(input())
+ans = c(n, r)
+print(ans)
 ```
