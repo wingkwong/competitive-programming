@@ -65,6 +65,8 @@ T sum(T a, Args... args) { return a + sum(args...); }
 void solve() {
 	int n, m;
 	cin >> n >> m;
+	// odd colums / rows jumps to odd columns / rows
+	// even colums / rows jumps to even columns / rows
 	if(n % 4 == 0 && m % 4 == 0) OUT("Yes");
 	else OUT("No");
 }
