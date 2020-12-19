@@ -47,3 +47,74 @@ for(int i=0;i<n;i++){
     ans.emplace_back(j);
 }
 ```
+
+## Check Bipartition
+
+```cpp
+struct is_bipartite {
+    int V;
+    vector<vector<int>> adj;
+    vector<int> depth;
+    vector<bool> visited;
+
+    is_bipartite(int v = -1) {
+        if (v >= 0) init(v);
+    }
+
+    void init(int v) {
+        V = v;
+        adj.assign(V, {});
+    }
+
+    void add(int a, int b) {
+        adj[a].push_back(b);
+        adj[b].push_back(a);
+    }
+
+    vector<array<vector<int>, 2>> components;
+
+    bool dfs(int node, int parent) {
+        assert(!visited[node]);
+        visited[node] = true;
+        depth[node] = parent < 0 ? 0 : depth[parent] + 1;
+        components.back()[depth[node] % 2].push_back(node);
+        for (int h : adj[node])
+            if (h != parent) {
+                if (!visited[h] && !dfs(h, node)) return false;
+                if (depth[node] % 2 == depth[h] % 2) return false;
+            }
+        return true;
+    }
+    
+    bool solve() {
+        depth.assign(V, -1);
+        visited.assign(V, false);
+        components = {};
+        for (int i = 0; i < V; i++)
+            if (!visited[i]) {
+                components.emplace_back();
+                if (!dfs(i, -1))
+                    return false;
+            }
+        return true;
+    }
+};    
+```
+
+### Usage:
+
+```
+// init 
+is_bipartite c(N);
+
+// add the edge
+for(auto d : dislikes) c.add(--d[0], --d[1]);
+ 
+// check if it is bipartite
+bool b = c.solve();
+
+// print out two parts
+for(auto c : components[0]) {
+    cout << c[0] << " " << c[1] << "\n";
+}
+```
