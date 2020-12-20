@@ -58,7 +58,7 @@ T sum(T a, Args... args) { return a + sum(args...); }
 #define what_is(x) cerr << #x << " is " << x << endl;
 
 void solve() {
-	ll n, m, x, mi = INFF;
+	ll n, m, x, cnt = 0, mi = INFF;
 	cin >> n >> m;
 	REP(i, n) {
 		cin >> x;
