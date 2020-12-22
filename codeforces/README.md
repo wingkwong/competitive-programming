@@ -1,5 +1,5 @@
 <div align="center">
-    <a href="https://codeforces.com/profile/wingkwong/">
+    <a href="https://codeforces.com/">
         <img height=180 src="https://user-images.githubusercontent.com/35857179/81492331-4ca22d00-92c9-11ea-9c58-fb5bb657c00b.png">
     </a>
     <hr>
@@ -10,6 +10,9 @@
 
 ## Contests 
 
+- [Codeforces Round #692 (Div. 2, based on Technocup 2021 Elimination Round 3)](https://github.com/wingkwong/competitive-programming/tree/master/codeforces/contests/1465)
+- [Codeforces Round #691 (Div. 2)](https://github.com/wingkwong/competitive-programming/tree/master/codeforces/contests/1459)
+- [Educational Codeforces Round 100 (Rated for Div. 2)](https://github.com/wingkwong/competitive-programming/tree/master/codeforces/contests/1463)
 - [Codeforces Round #690 (Div. 3)](https://github.com/wingkwong/competitive-programming/tree/master/codeforces/contests/1462)
 - [Codeforces Round #689 (Div. 2, based on Zed Code Competition)](https://github.com/wingkwong/competitive-programming/tree/master/codeforces/contests/1461)
 - [Codeforces Global Round 12](https://github.com/wingkwong/competitive-programming/tree/master/codeforces/contests/1450)
