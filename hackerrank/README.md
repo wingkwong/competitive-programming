@@ -38,6 +38,7 @@
 
 <details>
   <summary>Project Euler</summary>
+  - [#031: Coin sums](https://github.com/wingkwong/competitive-programming/tree/master/hackerrank/contests/euler/031)
   - [#002: Even Fibonacci numbers](https://github.com/wingkwong/competitive-programming/tree/master/hackerrank/contests/euler/002)
   - [#001: Multiples of 3 and 5](https://github.com/wingkwong/competitive-programming/tree/master/hackerrank/contests/euler/001)
 </details>
