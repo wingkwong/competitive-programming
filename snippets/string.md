@@ -25,3 +25,44 @@ vector<int> z_function(const T &s) {
 }
 // Z Function - template ends
 ```
+
+## Booth's Algorithm
+
+```cpp
+int booth_function(string s) {
+  s = s + s;
+  int n = SIZE(s);
+  // failure function
+  vi f(n, -1);
+  // least roation of string found so far
+  int k = 0; 
+  FOR(j, 1, n) {
+    char sj = s[j];
+    int i = f[j - k - 1];
+    while(i != -1 && sj != s[k + i + 1]) {
+      if(sj < s[k + i + 1]) k = j - i - 1;
+      i = f[i];
+    }
+    if(sj != s[k + i + 1]) {
+      // i == -1
+      if(sj < s[k]) k = j;
+      f[j - k] = -1;
+    } else {
+      f[j - k] = i + 1;
+    }
+  }
+  return k;
+}
+```
+
+### Usage: determine the lexicographically minimal rotation of a string
+
+```cpp
+void solve() {
+  string s; cin >> s;
+  int n = SIZE(s);
+  int k = booth_function(s);
+  s = s + s;
+  OUT(s.substr(k, n));
+}
+```
