@@ -10,6 +10,7 @@
 
 ## Contests 
 
+- [Educational Codeforces Round 101](https://github.com/wingkwong/competitive-programming/tree/master/codeforces/contests/1469)
 - [Codeforces Round #692 (Div. 2, based on Technocup 2021 Elimination Round 3)](https://github.com/wingkwong/competitive-programming/tree/master/codeforces/contests/1465)
 - [Codeforces Round #691 (Div. 2)](https://github.com/wingkwong/competitive-programming/tree/master/codeforces/contests/1459)
 - [Educational Codeforces Round 100 (Rated for Div. 2)](https://github.com/wingkwong/competitive-programming/tree/master/codeforces/contests/1463)
