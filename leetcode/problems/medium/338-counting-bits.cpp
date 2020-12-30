@@ -45,3 +45,14 @@ public:
 // 9:   1001 - 2
 // 10:  1010 - 2
     
+class Solution2 {
+public:
+    vector<int> countBits(int num) {
+        vector<int> ans(num + 1, 0);
+        for(int i = 1; i <= num; i++) {
+        	// Brian Kernighan’s Algorithm
+            ans[i] = ans[i & (i - 1)] + 1;
+        }
+        return ans; 
+    }
+};
