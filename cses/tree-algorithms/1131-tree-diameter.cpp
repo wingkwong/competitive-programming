@@ -64,10 +64,10 @@ vi d;
 // instead of double dfs / double bfs..
 void dfs(int u, int p){
     EACH(v, g[u]){
-        if(v^p){
+        if(v ^ p){
             dfs(v,u);
-            MAX(ans,d[u]+d[v]+1);
-            MAX(d[u],d[v]+1);
+            MAX(ans, d[u] + d[v] + 1);
+            MAX(d[u], d[v]+1);
         }
     }
 }
