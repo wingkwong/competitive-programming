@@ -164,3 +164,92 @@ SegmentTree<int> seg(a, [](int x, int y) { return x ^ y; }, 0);
 seg.update(x - 1, seg[x - 1] ^ y)
 OUT(seg.query(x - 1, y));
 ```
+
+
+## Binary Lifting
+
+```cpp
+// --------------------------------
+// binary lifting starts 
+// --------------------------------
+const int mxN = 200005;
+const int mxNode = 19; // log2(mxN) + 2
+vi g[mxN];
+int d[mxN], up[mxN][mxNode];
+
+void dfs(int u, int p) {
+  up[u][0] = p;
+  for(int i = 1; i < mxNode; i++) {
+    up[u][i] = ~up[u][i - 1] ? up[up[u][i - 1]][i - 1] : -1;
+  }
+  for(int v : g[u]){
+      if(v ^ p){
+          d[v] += d[u] + 1;
+          dfs(v, u);
+      }
+  }
+}
+
+int lift(int x, int k) {
+  // find the k-th ancestor of x
+  for(int i = mxNode; ~i; i--) {
+    if((1 << i) & k) {
+      x = up[x][i];    
+    }
+  }
+  return x;
+}
+// --------------------------------
+// binary lifting ends
+// --------------------------------
+
+```
+
+
+## Lower Common Ancestor (LCA)
+
+```cpp
+// --------------------------------
+// LCA starts 
+// --------------------------------
+const int mxN = 200005;
+const int mxNode = 19; // log2(mxN) + 2
+vi g[mxN];
+int d[mxN], up[mxN][mxNode];
+
+void dfs(int u, int p) {
+  up[u][0] = p;
+  for(int i = 1; i < mxNode; i++) {
+    up[u][i] = ~up[u][i - 1] ? up[up[u][i - 1]][i - 1] : -1;
+  }
+  for(int v : g[u]){
+      if(v ^ p){
+          d[v] += d[u] + 1;
+          dfs(v, u);
+      }
+  }
+}
+
+int lca(int u, int v) {
+  // swap u and v if v is farther than root node
+  if(d[u] < d[v]) swap(u, v);
+  // find the ancestor of u which has the same level as v
+  for(int i = mxNode - 1; ~i; i--) {
+    if(d[u] - (1 << i) >= d[v]) {
+        u = up[u][i];
+    }
+  }
+  // if v is the ancestor of u, then v is the LCA of u
+  if(u == v) return u;
+  // find a node which is not a common ancestor of u and v but up[x][0]
+  for(int i = mxNode - 1; ~i; i--) {
+    if(up[u][i] ^ up[v][i]) {
+      u = up[u][i], v = up[v][i];
+    }
+  } 
+  return up[u][0];
+}
+// --------------------------------
+// LCA ends
+// --------------------------------
+```
