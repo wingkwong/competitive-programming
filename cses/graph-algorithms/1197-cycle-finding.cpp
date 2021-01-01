@@ -25,9 +25,9 @@ int dirx[8]={ -1, 0, 0, 1, -1, -1, 1, 1 };
 int diry[8]={ 0, 1, -1, 0, -1, 1, -1, 1 };
 const ll MOD = 1000000007;
 
-ll sum() { return 0; }
-template<typename T, typename... Args>
-T sum(T a, Args... args) { return a + sum(args...); }
+// ll sum() { return 0; }
+// template<typename T, typename... Args>
+// T sum(T a, Args... args) { return a + sum(args...); }
 
 #define DEBUG fprintf(stderr, "====TESTING====\n")
 #define VALUE(x) cerr << "The value of " << #x << " is " << x << endl
@@ -61,51 +61,64 @@ T sum(T a, Args... args) { return a + sum(args...); }
 #define PERMUTE next_permutation
 #define TC(t) while (t--)
 #define FAST_INP  ios_base::sync_with_stdio(false);cin.tie(NULL)
-#define what_is(x) cerr << #x << " is " << x << endl;
+#define what_is(x) cerr << #x << " is " << x << endl
 
-// WA - TODO
-struct Edge {
-    int a, b, cost;
-};
+const int mxN = 3e3;
+vector<pll> g[mxN];
+vl ans;
+ll vis[mxN], par[mxN];
 
-int n, m;
-vector<Edge> edges;
-
-void solve()
-{
-    vector<int> d(n);
-    vector<int> p(n, -1);
-    int x;
-    for (int i = 0; i < n; ++i) {
-        x = -1;
-        for (Edge e : edges) {
-            if (d[e.a] + e.cost < d[e.b]) {
-                d[e.b] = d[e.a] + e.cost;
-                p[e.b] = e.a;
-                x = e.b;
-            }
+void solve() {
+  int n, m;
+  cin >> n >> m;
+  REP(i, m) {
+    int u, v, w;
+    cin >> u >> v >> w;
+    --u, --v;
+    g[u].pb({v, w});
+  }
+  // --------------------------------
+  // bellman-ford 
+  // --------------------------------
+  vector<ll> dist(n + 1, INF);
+  dist[0] = 0;
+  // calculate the shortest paths
+  for (int i = 0; i < n - 1; i++) {
+    for (int u = 0; u < n; u++) {
+      for (auto p : g[u]) {
+        ll v = p.first, w = p.second;
+        if (dist[u] + w < dist[v]) {
+          par[v] = u;
+          dist[v] = dist[u] + w;
         }
+      }
     }
-
-    if (x == -1) {
-        OUT("NO");
-    } else {
-        for (int i = 0; i < n; ++i)
-            x = p[x];
-
-        vector<int> cycle;
-        for (int v = x;; v = p[v]) {
-            cycle.push_back(v);
-            if (v == x && cycle.size() > 1)
-                break;
-        }
-        reverse(cycle.begin(), cycle.end());
-
+  }
+  // detect negative weight cycle
+  for (int u = 0; u < n; u++) {
+    for (auto p : g[u]) {
+      ll v = p.first, w = p.second;
+      if (dist[u] + w < dist[v]) {
+        // negative weight cycle is found
         OUT("YES");
-        for (int v : cycle)
-            cout << v + 1 << ' ';
-        cout << endl;
+        while(!vis[v]) vis[v] = 1, v = par[v];
+        int vv = v;
+        ans.pb(v);
+        u = par[v];
+        while (u ^ vv) {
+          // starting point : v
+          // backtrack each u
+          ans.pb(u);
+          u = par[u];
+        }
+        ans.pb(v);
+        REVERSE(ans);
+        EACH(x, ans) OUTH(x + 1);
+        return;
+      }
     }
+  }
+  OUT("NO");
 }
 
 int main()
@@ -116,16 +129,9 @@ int main()
 //    freopen("output.txt","w", stdout);
 //    #endif
 
-//    int tc; cin >> tc;
-//    TC(tc) solve();
-
-	cin >> n >> m;
-	REP(i, n) {
-		int a, b, c;
-		cin >> a >> b >> c;
-		--a, --b;
-		edges.pb(Edge{a, b, c});
-	}
-	solve();
+    // int tc; cin >> tc;
+    // TC(tc) solve();
+    solve();
     return 0;
 }
+
