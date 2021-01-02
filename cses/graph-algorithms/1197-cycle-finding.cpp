@@ -101,11 +101,13 @@ void solve() {
       if (dist[u] + w < dist[v]) {
         // negative weight cycle is found
         OUT("YES");
-        while(!vis[v]) vis[v] = 1, v = par[v];
-        int vv = v;
+        // find the vertex in the cycle earliest reachable from source
+        for(int i = 0; i < n; i++) v = par[v];
+        // or
+        // while(!vis[v]) vis[v] = 1, v = par[v];
         ans.pb(v);
         u = par[v];
-        while (u ^ vv) {
+        while (u ^ v) {
           // starting point : v
           // backtrack each u
           ans.pb(u);
