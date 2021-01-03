@@ -279,6 +279,13 @@ int kth_ancestor(int u, int k) {
   }
   return u;
 }
+
+int kth_ancestor_ll(int u, ll k) {
+  for(int i = 0; i < mxNode; i++) {
+    if(k & (1LL << i)) u = up[u][i];
+  }
+  return u;
+}
 // --------------------------------
 // binary lifting ends
 // --------------------------------
