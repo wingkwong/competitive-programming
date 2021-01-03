@@ -253,3 +253,33 @@ int lca(int u, int v) {
 // LCA ends
 // --------------------------------
 ```
+
+## Binary Lifting
+
+```cpp
+// --------------------------------
+// binary lifting starts 
+// --------------------------------
+const int mxN = 200005;
+const int mxNode = 30; // ~ log2(k) 
+vi g[mxN];
+int up[mxN][mxNode];
+
+void binary_lifting() {
+  for(int i = 1; i < mxNode; i++) {
+    for(int u = 0; u < mxN; u++) {
+      up[u][i] = up[up[u][i - 1]][i - 1];
+    }
+  }
+}
+
+int kth_ancestor(int u, int k) {
+  for(int i = 0; i < mxNode; i++) {
+    if(k & (1 << i)) u = up[u][i];
+  }
+  return u;
+}
+// --------------------------------
+// binary lifting ends
+// --------------------------------
+```
