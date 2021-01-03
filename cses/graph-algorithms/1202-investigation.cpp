@@ -80,8 +80,8 @@ void dijkstra() {
       if (d > dist[u]) continue;
       for (pll p2 : g[u]) {
           ll v = p2.fi, w = p2.se;
-          if (dist[v] > dist[u] + w) {
-            // reach v in a shorter distance than its current one
+          if (dist[u] + w < dist[v]) {
+            // reach v in a shorter distance than its current min
             dist[v] = dist[u] + w;
             routes[v] = routes[u];
             mn[v] = mn[u] + 1;
