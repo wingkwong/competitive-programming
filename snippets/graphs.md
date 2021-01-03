@@ -118,3 +118,47 @@ for(auto c : components[0]) {
     cout << c[0] << " " << c[1] << "\n";
 }
 ```
+
+## Dijkstra
+
+```cpp
+const int mxN = 1e5;
+vector<pll> g[mxN];
+ll n, m, dist[mxN];
+
+void dijkstra(int u) {
+  priority_queue<pll, vector<pll>, greater<pll>> pq;
+  pq.push({0, u}); 
+  memset(dist, INFF, sizeof(dist));
+  dist[u] = 0;
+  while (!pq.empty()) {
+      pll p = pq.top(); 
+      ll d = p.fi, u = p.se;
+      pq.pop();
+      if (d > dist[u]) continue;
+      for (pll p2 : g[u]) {
+          ll v = p2.fi, w = p2.se;
+          if (dist[u] + w < dist[v]) {
+            dist[v] = dist[u] + w;
+            pq.push({dist[v], v});
+          } 
+      }
+  } 
+}
+```
+
+### Usage: Find the shortest route from u to v
+
+```cpp
+void solve() {
+  cin >> n >> m;
+  REP(i, m) {
+    int u, v, w;
+    cin >> u >> v >> w;
+    --u, --v;
+    g[u].pb({v, w});
+  }
+  dijkstra(0);
+  REP(v, n) OUTH(dist[v]);
+}
+```
