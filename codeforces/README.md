@@ -10,6 +10,7 @@
 
 ## Contests 
 
+- [Codeforces Round #694 (Div. 2)](https://github.com/wingkwong/competitive-programming/tree/master/codeforces/contests/1471)
 - [Codeforces Round #693 (Div. 3)](https://github.com/wingkwong/competitive-programming/tree/master/codeforces/contests/1472)
 - [Good Bye 2020](https://github.com/wingkwong/competitive-programming/tree/master/codeforces/contests/1466)
 - [Educational Codeforces Round 101](https://github.com/wingkwong/competitive-programming/tree/master/codeforces/contests/1469)
