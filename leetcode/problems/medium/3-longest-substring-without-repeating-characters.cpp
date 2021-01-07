@@ -24,6 +24,20 @@ Explanation: The answer is "wke", with the length of 3.
 class Solution {
 public:
     int lengthOfLongestSubstring(string s) {
+        map<char, int> m;
+        int start = -1, maxLen = 0;
+        for (int i = 0; i < s.size(); i++) {
+            if (m.count(s[i])) start = max(start, m[s[i]]);
+            m[s[i]] = i;
+            maxLen = max(maxLen, i - start);
+        }
+        return maxLen;
+    }
+};
+
+class Solution2 {
+public:
+    int lengthOfLongestSubstring(string s) {
         int ans=0;
         vector<char> v;
         for(char c : s){
