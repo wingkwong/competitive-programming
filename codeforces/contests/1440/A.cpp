@@ -62,21 +62,35 @@ T sum(T a, Args... args) { return a + sum(args...); }
 #define FAST_INP  ios_base::sync_with_stdio(false);cin.tie(NULL)
 #define what_is(x) cerr << #x << " is " << x << endl;
 
+// void solve() {
+	// int n, c0, c1, h;
+	// string s;
+	// cin >> n >> c0 >> c1 >> h >> s;
+// 	int cnt0 = 0, cnt1 = 0;
+// 	REP(i, n) {
+// 		cnt0 += s[i] == '0';
+// 		cnt1 += s[i] == '1';
+// 	}
+// 	int ans = INT_MAX;
+// 	if(cnt0 > cnt1) MIN(ans, h * cnt1 + n * c0);
+// 	if(cnt1 > cnt0) MIN(ans, h * cnt0 + n * c1);
+// 	MIN(ans, min(cnt0 * h + n * c1, cnt1 * h + n * c0 ));
+// 	MIN(ans, cnt1 * c1 + cnt0 * c0);
+// 	OUT(ans);
+// }
+
 void solve() {
 	int n, c0, c1, h;
 	string s;
 	cin >> n >> c0 >> c1 >> h >> s;
-	int cnt0 = 0, cnt1 = 0;
-	REP(i, n) {
-		cnt0 += s[i] == '0';
-		cnt1 += s[i] == '1';
+	int n0 = 0, n1 = 0;
+	EACH(c, s) {
+		if(c == '0') n0++;
+		else n1++;
 	}
-	int ans = INT_MAX;
-	if(cnt0 > cnt1) MIN(ans, h * cnt1 + n * c0);
-	if(cnt1 > cnt0) MIN(ans, h * cnt0 + n * c1);
-	MIN(ans, min(cnt0 * h + n * c1, cnt1 * h + n * c0 ));
-	MIN(ans, cnt1 * c1 + cnt0 * c0);
-	OUT(ans);
+	int cost0 = min(c0, c1 + h);
+	int cost1 = min(c1, c0 + h);
+	OUT(cost0 * n0 + cost1 * n1);
 }
 
 int main()
@@ -88,7 +102,7 @@ int main()
 //    #endif
 
     int tc; cin >> tc;
-    TC(tc) solve2();
+    TC(tc) solve();
 
     return 0;
 }
