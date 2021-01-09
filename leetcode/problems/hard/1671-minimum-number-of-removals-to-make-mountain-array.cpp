@@ -37,27 +37,57 @@ Constraints:
 It is guaranteed that you can make a mountain array out of nums.
 */
 
+
 class Solution {
 public:
     int minimumMountainRemovals(vector<int>& nums) {
-        int n = (int) nums.size();
-        vector<int> l(n + 1, 1), r(n + 1, 1);
+        int n = (int) nums.size(), ans = n;
+        vector<int> a(n), b(n), lis;
         for(int i = 0; i < n; i++) {
-            for(int j = i + 1; j < n; j++) {
-                if(nums[i] < nums[j]) {
-                    l[j] = max(l[j], l[i] + 1);
-                }
-            }
+            auto it = lower_bound(lis.begin(), lis.end(), nums[i]);
+            a[i] = it - lis.begin();
+            if(it == lis.end()) lis.push_back(nums[i]);
+            else *it = nums[i];
         }
+        lis.clear();
         for(int i = n - 1; i >= 0; i--) {
-            for(int j = i - 1; j >= 0; j--) {
-                if(nums[i] < nums[j]) {
-                    r[j] = max(r[j], r[i] + 1);
-                }
+            auto it = lower_bound(lis.begin(), lis.end(), nums[i]);
+            b[i] = it - lis.begin();
+            if(it == lis.end()) lis.push_back(nums[i]);
+            else *it = nums[i];
+        }
+        for(int i = 1; i < n; i++) {
+            if(a[i] && b[i]) {
+                ans = min(ans, n - (a[i] + b[i] + 1));
             }
         }
-        int mx = 0;
-        for(int i = 1; i < n; i++) mx = max(mx, l[i] + r[i] - 1);
-        return n - mx;
+        return ans;
     }
 };
+
+
+// WA
+// class Solution {
+// public:
+//     int minimumMountainRemovals(vector<int>& nums) {
+//         int n = (int) nums.size();
+//         vector<int> l(n + 1, 1), r(n + 1, 1);
+//         for(int i = 0; i < n; i++) {
+//             for(int j = i + 1; j < n; j++) {
+//                 if(nums[i] < nums[j]) {
+//                     l[j] = max(l[j], l[i] + 1);
+//                 }
+//             }
+//         }
+//         for(int i = n - 1; i >= 0; i--) {
+//             for(int j = i - 1; j >= 0; j--) {
+//                 if(nums[i] < nums[j]) {
+//                     r[j] = max(r[j], r[i] + 1);
+//                 }
+//             }
+//         }
+//         int mx = 0;
+//         for(int i = 1; i < n; i++) mx = max(mx, l[i] + r[i] - 1);
+//         return n - mx;
+//     }
+// };
