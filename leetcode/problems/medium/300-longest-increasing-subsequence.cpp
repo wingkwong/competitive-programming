@@ -18,13 +18,13 @@ Follow up: Could you improve it to O(n log n) time complexity?
 class Solution {
 public:
     int lengthOfLIS(vector<int>& nums) {
-        vector<int> lcs;
+        vector<int> lis;
         for(int n : nums) {
-            auto it = lower_bound(lcs.begin(), lcs.end(), n);
-            if(it == lcs.end()) lcs.push_back(n);
+            auto it = lower_bound(lis.begin(), lis.end(), n);
+            if(it == lis.end()) lis.push_back(n);
             else *it = n;
         }
-        return (int) lcs.size();
+        return (int) lis.size();
     }
 };
 
