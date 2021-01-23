@@ -2,10 +2,10 @@
 Distinct Values Queries
 https://cses.fi/problemset/task/1734
 */
-
+ 
 #include <bits/stdc++.h>
 using namespace std;
-
+ 
 typedef long long ll;
 typedef pair<int, int> pii;
 typedef pair<ll, ll> pll;
@@ -15,7 +15,7 @@ typedef vector<vi> vvi;
 typedef vector<pii> vii;
 typedef vector<ll> vl;
 typedef vector<vl> vvl;
-
+ 
 double EPS=1e-9;
 int INF=1000000005;
 long long INFF=1000000000000000005ll;
@@ -23,11 +23,11 @@ double PI=acos(-1);
 int dirx[8]={ -1, 0, 0, 1, -1, -1, 1, 1 };
 int diry[8]={ 0, 1, -1, 0, -1, 1, -1, 1 };
 // const ll MOD = 1000000007;
-
+ 
 // ll sum() { return 0; }
 // template<typename T, typename... Args>
 // T sum(T a, Args... args) { return a + sum(args...); }
-
+ 
 #define DEBUG fprintf(stderr, "====TESTING====\n")
 #define VALUE(x) cerr << "The value of " << #x << " is " << x << endl
 #define OUT(x) cout << x << endl
@@ -61,66 +61,67 @@ int diry[8]={ 0, 1, -1, 0, -1, 1, -1, 1 };
 #define TC(t) while (t--)
 #define FAST_INP  ios_base::sync_with_stdio(false);cin.tie(NULL)
 #define what_is(x) cerr << #x << " is " << x << endl;
-
+ 
 // MO'S ALGORITHM 
-const int M = 2e5 + 7;
-int block_size, ans, compressed;
-int freq[M];
-map<int, int> compress;
-
+const int mxN = 2e5 + 5, block_size = 666; // > N / sqrt(N) = sqrt(N)
 struct mo {
 	int idx, left, right;
 	void set(int i, int l, int r) {
 		idx = i, left = l, right = r;
 	}
 	bool operator < (const mo &m) const {
-		int b1 = left / block_size, b2 = m.left / block_size;
-		if(b1 != b2) return b1 < b2;
+		// different block - sort by block
+		if(left / block_size != m.left / block_size) return left / block_size < m.left / block_size;
+		// same block - sort by right value
 		return right < m.right;
 	}
 };
-
+ 
+int ans, compressed;
+vi freq(mxN), res(mxN), x(mxN), compress;
+vector<mo> Q(mxN);
+ 
 void add(int x) {
+	if(!freq[x]) ans++;
 	freq[x]++;
-	if(freq[x] == 1) ans++;
 }
-
+ 
 void remove(int x) {
 	freq[x]--;
-	if(freq[x] == 0) ans--;
+	if(!freq[x]) ans--;
 }
-
-// TLE x 4
+ 
 void solve() {
-	int n, q;
+	int n, q, a, b;
 	cin >> n >> q;
-	vi x(n + 1), res(q);
-	block_size = sqrt(n + 1);
 	ans = 0, compressed = 1;
-	// REPN(i, n) cin >> x[i];
+	map<int, int> compress;
 	REPN(i, n) {
 		cin >> x[i];
+		// coordinate compression
 		if(compress.find(x[i]) != compress.end()) x[i] = compress[x[i]];
 		else compress[x[i]] = compressed, x[i] = compressed++;
+		// compress.pb(x[i]);
 	}
-	vector<mo> Q(q); 
-	REP(i, q) {
-		int a, b;
+	REPN(i, q) {
 		cin >> a >> b;
 		Q[i].set(i, a, b);
 	}
-	SORT(Q);
+	sort(Q.begin() + 1, Q.begin() + q + 1);
+	// sort(compress.begin(), compress.end());
+	// compress.erase(unique(ALL(compress)), compress.end());
+	// REPN(i, n) x[i] = lower_bound(ALL(compress), x[i]) - compress.begin() + 1;
 	int cur_left = 0, cur_right = 0;
-	REP(i, q) {
-		while(cur_right < Q[i].right) add(x[++cur_right]);
-		while(cur_left > Q[i].left) add(x[--cur_left]);
-		while(cur_right > Q[i].right) remove(x[cur_right--]);
+	REPN(i, q) {
 		while(cur_left < Q[i].left) remove(x[cur_left++]);
+		while(cur_left > Q[i].left) add(x[--cur_left]);
+		while(cur_right < Q[i].right) add(x[++cur_right]);
+		while(cur_right > Q[i].right) remove(x[cur_right--]);
 		res[Q[i].idx] = ans;
 	}
-	REP(i, q) OUT(res[i]);
+	REPN(i, q) OUT(res[i]);
 }
-
+ 
 int main()
 {
     FAST_INP;
@@ -128,7 +129,7 @@ int main()
 //    freopen("input.txt","r", stdin);
 //    freopen("output.txt","w", stdout);
 //    #endif
-
+ 
     // int tc; cin >> tc;
     // TC(tc) solve();
     solve();
