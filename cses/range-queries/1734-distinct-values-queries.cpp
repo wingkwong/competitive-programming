@@ -61,22 +61,55 @@ int diry[8]={ 0, 1, -1, 0, -1, 1, -1, 1 };
 #define TC(t) while (t--)
 #define FAST_INP  ios_base::sync_with_stdio(false);cin.tie(NULL)
 #define what_is(x) cerr << #x << " is " << x << endl;
- 
-// MO'S ALGORITHM 
-const int mxN = 2e5 + 5, block_size = 666; // > N / sqrt(N) = sqrt(N)
+
+// ------------------------------------------------------------------------
+// MO'S ALGORITHM (Classic)
+// ------------------------------------------------------------------------
+// const int mxN = 2e5 + 5, block_size = 666; // > N / sqrt(N) = sqrt(N)
+// struct mo {
+// 	int idx, left, right;
+// 	void set(int i, int l, int r) {
+// 		idx = i, left = l, right = r;
+// 	}
+// 	bool operator < (const mo &m) const {
+// 		// different block - sort by block
+// 		if(left / block_size != m.left / block_size) return left / block_size < m.left / block_size;
+// 		// same block - sort by right value
+// 		return right < m.right;
+// 	}
+// };
+
+// ------------------------------------------------------------------------
+// MO'S ALGORITHM with Hilbert Curve
+// ------------------------------------------------------------------------
+const int mxN = 2e5 + 5;
+
+inline int64_t hilbert_order(int x, int y, int pow, int rotate) {
+	if (pow == 0) return 0;
+	int hpow = 1 << (pow - 1);
+	int seg = (x < hpow) ? ( (y < hpow) ? 0 : 3 ) : ( (y < hpow) ? 1 : 2 );
+	seg = (seg + rotate) & 3;
+	const int rotate_delta[4] = {3, 0, 0, 1};
+	int nx = x & (x ^ hpow), ny = y & (y ^ hpow);
+	int nrot = (rotate + rotate_delta[seg]) & 3;
+	int64_t sub_square_size = int64_t(1) << (2 * pow - 2);
+	int64_t ans = seg * sub_square_size, add = hilbert_order(nx, ny, pow - 1, nrot);
+	ans += (seg == 1 || seg == 2) ? add : (sub_square_size - add - 1);
+	return ans;
+}
+
 struct mo {
 	int idx, left, right;
+	int64_t ord;
 	void set(int i, int l, int r) {
-		idx = i, left = l, right = r;
-	}
-	bool operator < (const mo &m) const {
-		// different block - sort by block
-		if(left / block_size != m.left / block_size) return left / block_size < m.left / block_size;
-		// same block - sort by right value
-		return right < m.right;
+		idx = i, left = l, right = r, ord = hilbert_order(l, r, 21, 0);
 	}
 };
- 
+
+inline bool operator<(const mo &a, const mo &b) {
+	return a.ord < b.ord;
+}
+
 int ans, compressed;
 vi freq(mxN), res(mxN), x(mxN), compress;
 vector<mo> Q(mxN);
