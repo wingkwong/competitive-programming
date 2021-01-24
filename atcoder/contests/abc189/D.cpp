@@ -63,6 +63,26 @@ ll MOD = 1000000007;
 #define what_is(x) cerr << #x << " is " << x << endl
 
 void solve() {
+	int n; cin >> n;
+	vector<string> s(n);
+	READ(s);
+	// dp[i][j] : number of sequences {x[0], x[1], ..., x[i]} with value = j
+	vvl dp(n + 1, vl(2, 0));  
+	dp[0][0] = dp[0][1] = 1;
+	REP(i, n) {
+		for(auto cur_j : {0, 1}) {
+			int next_j;
+			for(auto next_x : {0, 1}) {
+				if(s[i] == "AND") next_j = cur_j && next_x;
+				else next_j = cur_j || next_x;
+				dp[i + 1][next_j] += dp[i][cur_j];
+			}
+		}
+	}
+	OUT(dp[n][1]);
+}
+
+void solve2() {
 	// AND  -> f[0 .. N] = f[0 .. N - 1]
 	// OR	-> f[0 .. N] = 2 ^ N + f[0 .. N - 1]
 	int n; cin >> n;
@@ -75,7 +95,7 @@ void solve() {
 	OUT(ans);
 }
 
-void solve2() {
+void solve3() {
 	int n; cin >> n;
 	ll ans = 1, bit = 1;
 	REP(i, n) {
