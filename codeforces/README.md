@@ -80,6 +80,7 @@
 
 ## Virtual Participation 
 
+- [Noobs Round #2 (Div. 4) by Rudro25](https://github.com/wingkwong/competitive-programming/tree/master/codeforces/gym/102942)
 - [Unofficial Div 4 Round #2 by ssense SlavicG](https://github.com/wingkwong/competitive-programming/tree/master/codeforces/gym/102873)
 - [Educational Codeforces Round 85 (Rated for Div. 2)](https://github.com/wingkwong/competitive-programming/tree/master/codeforces/contests/1334)
 - [Codeforces Round #632 (Div. 2)](https://github.com/wingkwong/competitive-programming/tree/master/codeforces/contests/1333)
