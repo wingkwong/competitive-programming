@@ -10,6 +10,7 @@
 
 ## Contests 
 
+- [Educational Codeforces Round 103 (Rated for Div. 2)](https://github.com/wingkwong/competitive-programming/tree/master/codeforces/contests/1476)
 - [Codeforces Round #698 (Div. 2)](https://github.com/wingkwong/competitive-programming/tree/master/codeforces/contests/1478)
 - [Codeforces Round #696 (Div. 2)](https://github.com/wingkwong/competitive-programming/tree/master/codeforces/contests/1474)
 - [Educational Codeforces Round 102](https://github.com/wingkwong/competitive-programming/tree/master/codeforces/contests/1467)
