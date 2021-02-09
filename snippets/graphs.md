@@ -126,21 +126,18 @@ const int mxN = 1e5;
 vector<pll> g[mxN];
 ll n, m, dist[mxN];
 
-void dijkstra(int u) {
+void dijkstra(int start) {
   priority_queue<pll, vector<pll>, greater<pll>> pq;
-  pq.push({0, u}); 
-  memset(dist, INFF, sizeof(dist));
-  dist[u] = 0;
+  pq.push({start, 0}); 
   while (!pq.empty()) {
       pll p = pq.top(); 
-      ll d = p.fi, u = p.se;
+      ll from = p.fi;
       pq.pop();
-      if (d > dist[u]) continue;
-      for (pll p2 : g[u]) {
-          ll v = p2.fi, w = p2.se;
-          if (dist[u] + w < dist[v]) {
-            dist[v] = dist[u] + w;
-            pq.push({dist[v], v});
+      for (pll p2 : g[from]) {
+          ll to = p2.fi, cost = p.se + p2.se;
+          if (dist[to] > cost) {
+            dist[to] = cost;
+            pq.push({to, cost});
           } 
       }
   } 
