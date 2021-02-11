@@ -60,7 +60,7 @@ ll MOD = 1000000007;
 
 void solve() {
 	int n; cin >> n;
-	int x = n / 4 + n % 4 ? 1 : 0;
+	int x = (n / 4) + (n % 4 ? 1 : 0);
 	REP(i, n - x) cout << 9;
 	REP(i, x) cout << 8;
 	cout << endl;
