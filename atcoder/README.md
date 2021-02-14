@@ -8,6 +8,7 @@
 
 <br/>
 
+- [AtCoder Regular Contest 112](https://github.com/wingkwong/competitive-programming/tree/master/atcoder/contests/arc112)
 - [AtCoder Beginner Contest 190](https://github.com/wingkwong/competitive-programming/tree/master/atcoder/contests/190)
 - [AtCoder Beginner Contest 189](https://github.com/wingkwong/competitive-programming/tree/master/atcoder/contests/189)
 - [KEYENCE Programming Contest 2021](https://github.com/wingkwong/competitive-programming/tree/master/atcoder/contests/keyence2021)
