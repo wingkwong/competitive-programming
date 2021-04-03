@@ -1,50 +1,50 @@
 ## find the max probability from start to end
 
 ```cpp
-vector<vector<pair<int,int>>> g(n);
-for(int i=0;i<edges.size();i++){
-    if(succProb[i]!=0){
-        g[edges[i][0]].push_back({edges[i][1],val[i]});
-        g[edges[i][1]].push_back({edges[i][0],val[i]});
-    }
+vector<vector<pair<int, int>>> g(n);
+for (int i = 0; i < edges.size(); i++) {
+  if (succProb[i] != 0) {
+    g[edges[i][0]].push_back({edges[i][1], val[i]});
+    g[edges[i][1]].push_back({edges[i][0], val[i]});
+  }
 }
 
-while(!q.empty()){
-    vector<int> tmp;
-    for(auto from:q){
-        for(auto [to, val]:g[from]){
-            if(p[to]<p[from]*val){
-                p[to]=p[from]*val;
-                tmp.emplace_back(to);
-            }
-        }
+while (!q.empty()) {
+  vector<int> tmp;
+  for (auto from : q) {
+    for (auto[to, val] : g[from]) {
+      if (p[to] < p[from] * val) {
+        p[to] = p[from] * val;
+        tmp.emplace_back(to);
+      }
     }
-    swap(q,tmp);
+  }
+  swap(q, tmp);
 }
 ```
 
 ## Node Indegree
 ```cpp
 vector<vector<int>> graph(n);
-vector<int> indegree(n,0);
+vector<int> indegree(n, 0);
 vector<int> ans;
-for(auto p:prerequisites) {
-    graph[p[1]].push_back(p[0]);
-    indegree[p[0]]++;
+for (auto p : prerequisites) {
+  graph[p[1]].push_back(p[0]);
+  indegree[p[0]]++;
 }
-for(int i=0;i<n;i++){
-    int j=0;
-    for(;j<n;j++){
-        if(indegree[j]==0){
-            break;
-        }
+for (int i = 0; i < n; i++) {
+  int j = 0;
+  for (; j < n; j++) {
+    if (indegree[j] == 0) {
+      break;
     }
-    if(j==n) return {};
-    indegree[j]--;
-    for(auto to:graph[j]) {
-        indegree[to]--;
-    }
-    ans.emplace_back(j);
+  }
+  if (j == n) return {};
+  indegree[j]--;
+  for (auto to : graph[j]) {
+    indegree[to]--;
+  }
+  ans.emplace_back(j);
 }
 ```
 
@@ -52,58 +52,57 @@ for(int i=0;i<n;i++){
 
 ```cpp
 struct is_bipartite {
-    int V;
-    vector<vector<int>> adj;
-    vector<int> depth;
-    vector<bool> visited;
+  int V;
+  vector<vector<int>> adj;
+  vector<int> depth;
+  vector<bool> visited;
 
-    is_bipartite(int v = -1) {
-        if (v >= 0) init(v);
-    }
+  is_bipartite(int v = -1) {
+    if (v >= 0) init(v);
+  }
 
-    void init(int v) {
-        V = v;
-        adj.assign(V, {});
-    }
+  void init(int v) {
+    V = v;
+    adj.assign(V, {});
+  }
 
-    void add(int a, int b) {
-        adj[a].push_back(b);
-        adj[b].push_back(a);
-    }
+  void add(int a, int b) {
+    adj[a].push_back(b);
+    adj[b].push_back(a);
+  }
 
-    vector<array<vector<int>, 2>> components;
+  vector<array<vector<int>, 2>> components;
 
-    bool dfs(int node, int parent) {
-        assert(!visited[node]);
-        visited[node] = true;
-        depth[node] = parent < 0 ? 0 : depth[parent] + 1;
-        components.back()[depth[node] % 2].push_back(node);
-        for (int h : adj[node])
-            if (h != parent) {
-                if (!visited[h] && !dfs(h, node)) return false;
-                if (depth[node] % 2 == depth[h] % 2) return false;
-            }
-        return true;
-    }
-    
-    bool solve() {
-        depth.assign(V, -1);
-        visited.assign(V, false);
-        components = {};
-        for (int i = 0; i < V; i++)
-            if (!visited[i]) {
-                components.emplace_back();
-                if (!dfs(i, -1))
-                    return false;
-            }
-        return true;
-    }
-};    
+  bool dfs(int node, int parent) {
+    assert(!visited[node]);
+    visited[node] = true;
+    depth[node] = parent < 0 ? 0 : depth[parent] + 1;
+    components.back()[depth[node] % 2].push_back(node);
+    for (int h : adj[node])
+      if (h != parent) {
+        if (!visited[h] && !dfs(h, node)) return false;
+        if (depth[node] % 2 == depth[h] % 2) return false;
+      }
+    return true;
+  }
+
+  bool solve() {
+    depth.assign(V, -1);
+    visited.assign(V, false);
+    components = {};
+    for (int i = 0; i < V; i++)
+      if (!visited[i]) {
+        components.emplace_back();
+        if (!dfs(i, -1)) return false;
+      }
+    return true;
+  }
+}; 
 ```
 
 ### Usage:
 
-```
+```cpp
 // init 
 is_bipartite c(N);
 
@@ -123,24 +122,24 @@ for(auto c : components[0]) {
 
 ```cpp
 const int mxN = 1e5;
-vector<pll> g[mxN];
-ll n, m, dist[mxN];
+vector<pair<long, long>> g[mxN];
+long long n, m, dist[mxN];
 
 void dijkstra(int start) {
-  priority_queue<pll, vector<pll>, greater<pll>> pq;
-  pq.push({start, 0}); 
+  priority_queue<pair<long, long>, vector<pair<long, long>>, greater<pair<long, long>>> pq;
+  pq.push({start, 0});
   while (!pq.empty()) {
-      pll p = pq.top(); 
-      ll from = p.fi;
-      pq.pop();
-      for (pll p2 : g[from]) {
-          ll to = p2.fi, cost = p.se + p2.se;
-          if (dist[to] > cost) {
-            dist[to] = cost;
-            pq.push({to, cost});
-          } 
+    pair<long, long> p = pq.top();
+    long long from = p.first;
+    pq.pop();
+    for (pair<long, long> p2 : g[from]) {
+      long long to = p2.first, cost = p.second + p2.second;
+      if (dist[to] > cost) {
+        dist[to] = cost;
+        pq.push({to, cost});
       }
-  } 
+    }
+  }
 }
 ```
 
@@ -149,13 +148,13 @@ void dijkstra(int start) {
 ```cpp
 void solve() {
   cin >> n >> m;
-  REP(i, m) {
+  for(int i = 0; i < m; i++) {
     int u, v, w;
     cin >> u >> v >> w;
     --u, --v;
     g[u].pb({v, w});
   }
   dijkstra(0);
-  REP(v, n) OUTH(dist[v]);
+  for(int v = 0; v < n; v++) cout << dist[v] << endl;
 }
 ```
