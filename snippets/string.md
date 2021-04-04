@@ -145,3 +145,15 @@ int manacher(string s) {
 string s; cin >> s;
 int cnt = manacher(s);
 ```
+
+## Split string to vector
+
+```cpp
+vector<string> split(string str, char delim) {
+    string line;
+    vector<string> res;
+    stringstream ss(str);
+    while(getline(ss, line, delim)) res.push_back(line);
+    return res;
+}
+```
