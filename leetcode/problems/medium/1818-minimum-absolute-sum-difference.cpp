@@ -51,7 +51,8 @@ public:
     int minAbsoluteSumDiff(vector<int>& nums1, vector<int>& nums2) {
 		// original_diff_sum - will accumulate sum of difference without replacement
 		// mx_decrement - will store max decrement possible after replacement at any index of nums1
-		long n = size(nums1), original_diff_sum = 0, mx_decrement = 0, M = 1e9 + 7;
+		int n = (int) nums1.size(), M = 1e9 + 7;
+		long original_diff_sum = 0, mx_decrement = 0;
 		set<int> s(nums1.begin(), nums1.end());   // sorted nums1
 		for(int i = 0; i < n; i++){
 			long cur_diff = abs(nums1[i] - nums2[i]);   // original difference for current index without replacement
