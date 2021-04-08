@@ -152,9 +152,38 @@ void solve() {
     int u, v, w;
     cin >> u >> v >> w;
     --u, --v;
-    g[u].pb({v, w});
+    g[u].push_back({v, w});
   }
   dijkstra(0);
   for(int v = 0; v < n; v++) cout << dist[v] << endl;
 }
+```
+
+## Strongly Connected Components (SCC)
+
+```cpp
+struct SCC : vector<int> {
+  vector<vector<int>> comps;
+  vector<int> S;
+
+  SCC() {}
+  SCC(vector<vector<int>>& G) : vector<int>((int)G.size(), -1), S((int)G.size()) {
+    for(int i = 0; i < (int)G.size(); i++) if(!S[i]) dfs(G, i);
+  }
+
+  int dfs(vector<vector<int>>& G, int v) {
+    int low = S[v] = (int)S.size();
+    S.push_back(v);
+    for(auto e : G[v]) if(at(e) < 0) low = min(low, S[e] ?: dfs(G, e));
+    if(low == S[v]) {
+      comps.push_back({});
+      for(int i = S[v]; i < (int)S.size(); i++) {
+        at(S[i]) = (int)comps.size() - 1;
+        comps.back().push_back(S[i]);
+      }
+      S.resize(S[v]);
+    }
+    return low;
+  }
+};
 ```
