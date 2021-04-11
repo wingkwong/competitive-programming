@@ -63,16 +63,35 @@ const ll MOD = 1000000007;
 #define what_is(x) cerr << #x << " is " << x << endl
 
 // TLE x 6
+// void solve() {
+//     ll n, k; cin >> n >> k;
+//     ++k;
+//     FORN(i, 1, n) {
+//         ll x = k * i;
+//         while(x > n) x = floor(( k * (x - n) - 1)/ (k - 1.0));
+//         OUTH(x);
+//     }
+// }
+
+#include <ext/pb_ds/assoc_container.hpp>
+#include <ext/pb_ds/tree_policy.hpp>
+using namespace __gnu_pbds;
+template<class T> using ordered_set =tree<T, null_type, less<T>, rb_tree_tag,tree_order_statistics_node_update> ;
+
 void solve() {
     ll n, k; cin >> n >> k;
-    ++k;
-    FORN(i, 1, n) {
-        ll x = k * i;
-        while(x > n) x = floor(( k * (x - n) - 1)/ (k - 1.0));
-        OUTH(x);
+    ordered_set<int>a;
+    int p = k % n;
+    for(int i = 1; i <= n; i++) a.insert(i);
+    while(SIZE(a)){
+        int r = *a.find_by_order(p);
+        a.erase(r);
+        if(SIZE(a)){
+             p = (p + k) % SIZE(a);
+        }
+        OUTH(r);
     }
 }
-
 
 int main()
 {
