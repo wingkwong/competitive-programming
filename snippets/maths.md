@@ -5,7 +5,6 @@
 constexpr long long MOD = 998244353;
 template <int mod>
 struct ModInt {
-  using long long = long long;
   static int get_mod() { return mod; }
   static int get_primitive_root() {
     static int primitive_root = 0;
@@ -134,7 +133,7 @@ struct ModInt {
       int j = 0;
       ModInt t = y;
       while (t != 1) j++, t *= t;
-      z = z.power(1long long << (e - j - 1));
+      z = z.power(1LL << (e - j - 1));
       x *= z, z *= z, y *= z;
       e = j;
     }
