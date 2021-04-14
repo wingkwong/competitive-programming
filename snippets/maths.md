@@ -164,18 +164,16 @@ bool isPrime(long long n) {
 }
 ```
 
-check how many prime umbers less than a non-negative number n
+## Sieve of Eratosthenes
 
 ```cpp
-// using Sieve of Eratosthenes
-int cntPrime(int n) {
-  if (n < 2) return 0;
-  bool isPrime[n];
+vector<bool> seiveOfEratosthenes(const int N) {
+  assert(n >= 2 && "N must be greater or equal to 2");
+  vector<bool> isPrime = new vector<bool>(N + 1, true);
   int cnt = 0;
-  for (int i = 2; i < n; i++) isPrime[i] = true;
-  for (int i = 2; i * i < n; i++) {
+  for (int i = 2; i * i <= n; i++) {
     if (isPrime[i]) {
-      for (int j = i * i; j < n; j += i) {
+      for (int j = i * i; j <= n; j += i) {
         isPrime[j] = false;
       }
     }
@@ -185,11 +183,35 @@ int cntPrime(int n) {
 }
 ```
 
+
+## Check how many prime numbers <= N
+
+```cpp
+// using Sieve of Eratosthenes
+int cntPrime(int n) {
+  vector<bool> isPrime = seiveOfEratosthenes(n);
+  for (int i = 2; i <= n; i++) cnt += isPrime[i] == true;
+  return cnt;
+}
+```
+
+## Fast Pow
+
+```cpp
+long long fastpow(long long base, long long exp) {
+  long long res = 1;
+  while (exp > 0) {
+    if (exp & 1) res *= base;
+    base *= base;
+    exp >>= 1;
+  }
+  return res;
+}
+```
+
 ## Pow with mod
 
 ```cpp
-typedef long long long long;
-
 long long modpow(long long base, long long exp, long long mod) {
   base %= mod;
   long long res = 1;
@@ -201,7 +223,6 @@ long long modpow(long long base, long long exp, long long mod) {
   return res;
 }
 ```
-
 
 ## Prime Seive 
 
