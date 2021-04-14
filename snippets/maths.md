@@ -201,7 +201,9 @@ int cntPrime(int n) {
 long long fastpow(long long base, long long exp) {
   long long res = 1;
   while (exp > 0) {
+    // if n is odd, a ^ n can be seen as a ^ (n / 2) * a ^ (n / 2) * a
     if (exp & 1) res *= base;
+    // if n is even, a ^ n can be seen as a ^ (n / 2) * a ^ (n / 2)
     base *= base;
     exp >>= 1;
   }
