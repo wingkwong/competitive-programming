@@ -16,6 +16,13 @@ Follow up: Could you solve it without loops/recursion?
 
 class Solution {
 public:
+    bool isPowerOfFour(int n) {
+        return __builtin_popcount(n) == 1 && __builtin_ctz(n) % 2 == 0;
+    }
+};
+
+class Solution2 {
+public:
     bool isPowerOfFour(int num) {
         // 4: 100
         // 16: 10000

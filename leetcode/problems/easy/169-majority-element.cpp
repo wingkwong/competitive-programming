@@ -18,6 +18,20 @@ Output: 2
 class Solution {
 public:
     int majorityElement(vector<int>& nums) {
+        // Boyer-Moore Voting Algorithm
+        int i = 0, m = 0;
+        for(int x : nums) {
+            if(i == 0) m = x, i = 1;
+            else if(m == x) i++;
+            else i--;
+        }
+        return m;
+    }
+};
+
+class Solution2 {
+public:
+    int majorityElement(vector<int>& nums) {
         // simply solved by Boyer-Moore Voting Algorithm
         // There can be at most one majority element which is more than ⌊n/2⌋ times.
         // There can be at most two majority elements which are more than ⌊n/3⌋ times.
@@ -33,7 +47,7 @@ public:
 };
 
 
-class Solution2 {
+class Solution3 {
 public:
     int majorityElement(vector<int>& nums) {
         int n = (int)nums.size();

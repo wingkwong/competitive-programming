@@ -20,6 +20,25 @@ Output: 99
 class Solution {
 public:
     int singleNumber(vector<int>& nums) {
+        int ans = 0, k = 3;
+        for(int i = 0; i < 32; i++) {
+            int cnt = 0, mask = 1 << i;
+            for(auto x : nums) {
+                if(x & mask) {
+                    cnt++;
+                }
+            }
+            if(cnt % k == 1) {
+                ans |= mask;
+            }
+        }
+        return ans;
+    }
+};
+
+class Solution2 {
+public:
+    int singleNumber(vector<int>& nums) {
         int ones=0,twos=0;
         // like a states of machine (00,01,11)
         // first bit: 0 -> 0 -> 1 -> back to 0
