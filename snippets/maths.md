@@ -167,9 +167,9 @@ bool isPrime(long long n) {
 ## Sieve of Eratosthenes
 
 ```cpp
-vector<bool> seiveOfEratosthenes(const int N) {
+vector<bool> seiveOfEratosthenes(const int n) {
   assert(n >= 2 && "N must be greater or equal to 2");
-  vector<bool> isPrime = new vector<bool>(N + 1, true);
+  vector<bool> isPrime = new vector<bool>(n + 1, true);
   int cnt = 0;
   for (int i = 2; i * i <= n; i++) {
     if (isPrime[i]) {
