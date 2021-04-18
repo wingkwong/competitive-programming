@@ -178,8 +178,7 @@ vector<bool> seiveOfEratosthenes(const int N) {
       }
     }
   }
-  for (int i = 2; i < n; i++) cnt += isPrime[i];
-  return cnt;
+  return isPrime;
 }
 ```
 
