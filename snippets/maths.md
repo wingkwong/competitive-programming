@@ -171,6 +171,7 @@ bool isPrime(long long n) {
 vector<bool> seiveOfEratosthenes(const int n) {
   assert(n >= 2 && "N must be greater or equal to 2");
   vector<bool> isPrime(n + 1, true);
+  isPrime[0] = isPrime[1] = 0;
   for (int i = 2; i * i <= n; i++) {
     if (isPrime[i]) {
       for (int j = i * i; j <= n; j += i) {
