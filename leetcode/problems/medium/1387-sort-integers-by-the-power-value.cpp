@@ -55,6 +55,28 @@ Constraints:
 class Solution {
 public:
     int getKth(int lo, int hi, int k) {
+        auto calc = [&](int x) {
+            int res = 0;
+            while(x != 1) {
+                if(x & 1) x = 3 * x + 1;
+                else x /= 2;
+                res++;
+            }
+            return res;
+        };
+        vector<pair<int, int>> v;
+        for(int i = lo; i <= hi; i++) {
+            int cnt = calc(i);
+            v.push_back({cnt, i});
+        }
+        sort(v.begin(), v.end());
+        return v[--k].second;
+    }
+};
+
+class Solution2 {
+public:
+    int getKth(int lo, int hi, int k) {
         vector<pair<int,int>> ans;
         for(int i=lo;i<=hi;i++) ans.push_back({f(i),i});
         // sort by ascending order
