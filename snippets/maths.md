@@ -157,6 +157,7 @@ check if n is a prime number
 
 ```cpp
 bool isPrime(long long n) {
+  assert(n >= 2 && "N must be greater or equal to 2");
   for (long long i = 2; i * i <= n; i++) {
     if (n % i == 0) return false;
   }
@@ -169,8 +170,7 @@ bool isPrime(long long n) {
 ```cpp
 vector<bool> seiveOfEratosthenes(const int n) {
   assert(n >= 2 && "N must be greater or equal to 2");
-  vector<bool> isPrime = new vector<bool>(n + 1, true);
-  int cnt = 0;
+  vector<bool> isPrime(n + 1, true);
   for (int i = 2; i * i <= n; i++) {
     if (isPrime[i]) {
       for (int j = i * i; j <= n; j += i) {
