@@ -26,14 +26,17 @@ Output: 1
 class Solution {
 public:
     int change(int amount, vector<int>& coins) {
-        // unbounded knapsack 
-        vector<int> dp(amount+1,0);
-        dp[0]=1;
-        for(auto c:coins){
-            for(int j=c;j<=amount;j++){
-                dp[j]+=dp[j-c];
+        vector<uint> dp(amount + 1);
+        dp[0] = 1;
+        // coins first because {2, 2, 1} is same as {1, 2, 2} and {2, 1, 2}
+        // we only take one 
+        // see 377. Combination Sum IV for opposite case
+        for(auto c : coins) { 
+            for(int i = 1; i <= amount; i++) {
+                if(i < c) continue;
+                dp[i] += dp[i - c];
             }
         }
-        return dp[amount];
+        return dp.back();
     }
 };
