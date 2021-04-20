@@ -45,7 +45,29 @@ public:
 };
 */
 
+// iterative solution
 class Solution {
+public:
+    vector<int> preorder(Node* root) {
+        vector<int> ans;
+        if(root == NULL) return ans;
+        stack<Node*> q;
+        q.push(root);
+        while(!q.empty()) {
+            Node* cur = q.top();
+            q.pop();
+            ans.push_back(cur->val);
+            for(int i = cur->children.size() - 1; i >= 0; i--) {
+                if(cur->children[i] != NULL) {
+                    q.push(cur->children[i]);
+                }
+            }
+        }
+        return ans;
+    }
+};
+
+class Solution2 {
 public:
     void solve(Node* root, vector<int>& ans){
         if(!root) return;
