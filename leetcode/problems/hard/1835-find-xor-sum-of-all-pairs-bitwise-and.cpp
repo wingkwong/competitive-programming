@@ -42,3 +42,21 @@ public:
         return xor_1 & xor_2;
     }
 };
+
+class Solution2 {
+public:
+    int getXORSum(vector<int>& arr1, vector<int>& arr2) {
+        vector<long long> cnt1(32, 0), cnt2(32, 0);
+        long long ans = 0;
+        for(int i = 0; i < 32; i++) {
+            for(auto x : arr1) cnt1[i] += x & (1 << i) ? 1 : 0;
+            for(auto x : arr2) cnt2[i] += x & (1 << i) ? 1 : 0;
+        }
+        for(int i = 0; i < 32; i++) {
+            if((cnt1[i] & 1) && (cnt2[i] & 1)) {
+                ans |= 1 << i;
+            }
+        }
+        return ans;
+    }
+};

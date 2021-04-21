@@ -24,6 +24,24 @@ n is a 32-bit signed integer, within the range [−231, 231 − 1]
 
 class Solution {
 public:
+    double myPow(double x, int N) {
+        int64_t n = N;
+        if(n == 0) return 1;
+        if(n < 0) {
+            n = -n, x = 1 / x;
+        }
+        double ans = 1;
+        while(n > 0) {
+            if(n & 1) ans *= x;
+            x *= x;
+            n >>= 1;
+        }
+        return ans;
+    }
+};
+
+class Solution {
+public:
     double myPow(double x, int n) {
         // recusive approach
         double ans=1;
