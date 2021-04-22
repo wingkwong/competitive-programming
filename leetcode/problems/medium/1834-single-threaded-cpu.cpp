@@ -51,24 +51,51 @@ tasks.length == n
 class Solution {
 public:
     vector<int> getOrder(vector<vector<int>>& tasks) {
-    vector<int> res, idx(tasks.size());
-    priority_queue<pair<int, int>> pq;
-    iota(begin(idx), end(idx), 0);
-    sort(begin(idx), end(idx), [&](int i, int j) { 
-        return tasks[i][0] < tasks[j][0];
-    });
-    for (long i = 0, time = 1; i < idx.size() || !pq.empty();) {
-        for (; i < idx.size() && tasks[idx[i]][0] <= time; ++i)
-            pq.push({-tasks[idx[i]][1], -idx[i]});
-        if (!pq.empty()) {
-            auto [process_time, j] = pq.top(); 
-            pq.pop();
-            time -= process_time;
-            res.push_back(-j);
-        } else {
-            time = tasks[idx[i]][0];
+        vector<int> ans;
+        int n = tasks.size();
+        priority_queue<pair<int, int>, vector<pair<int, int>>, greater<>> pq;
+        for(int i = 0; i < n; i++) tasks[i].push_back(i);
+        sort(tasks.begin(), tasks.end());
+        long long cur_time = 0;
+        for(int i = 0; i < n; i++) {
+            // cout << tasks[i][0] << " " << tasks[i][1] << " " << tasks[i][2] << " " << endl;
+            while(cur_time < tasks[i][0] && !pq.empty()) {
+                ans.push_back(pq.top().second);
+                cur_time += pq.top().first;
+                pq.pop();
+            }
+            pq.push({tasks[i][1], tasks[i][2]});
+            cur_time = max(cur_time, (long long)tasks[i][0]);
         }
+        while(!pq.empty()) {
+            ans.push_back(pq.top().second);
+            pq.pop();
+        }
+        return ans;
     }
-    return res;
+};
+
+class Solution2 {
+public:
+    vector<int> getOrder(vector<vector<int>>& tasks) {
+	    vector<int> res, idx(tasks.size());
+	    priority_queue<pair<int, int>> pq;
+	    iota(begin(idx), end(idx), 0);
+	    sort(begin(idx), end(idx), [&](int i, int j) { 
+	        return tasks[i][0] < tasks[j][0];
+	    });
+	    for (long i = 0, time = 1; i < idx.size() || !pq.empty();) {
+	        for (; i < idx.size() && tasks[idx[i]][0] <= time; ++i)
+	            pq.push({-tasks[idx[i]][1], -idx[i]});
+	        if (!pq.empty()) {
+	            auto [process_time, j] = pq.top(); 
+	            pq.pop();
+	            time -= process_time;
+	            res.push_back(-j);
+	        } else {
+	            time = tasks[idx[i]][0];
+	        }
+	    }
+	    return res;
     }
 };
