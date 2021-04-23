@@ -27,6 +27,15 @@ bits[i] is always 0 or 1.
 class Solution {
 public:
     bool isOneBitCharacter(vector<int>& bits) {
+        int n = bits.size(), i = n - 2;
+        while(i >= 0 && bits[i] > 0) i--;
+        return (n - i) % 2 == 0;
+    }
+};
+
+class Solution2 {
+public:
+    bool isOneBitCharacter(vector<int>& bits) {
         int i = 0;
         while(i < (int) bits.size() - 1){
             if(bits[i] == 0) i++;
