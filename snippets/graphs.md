@@ -187,3 +187,63 @@ struct SCC : vector<int> {
   }
 };
 ```
+
+## Find Bridges (Tarjan's Algorithm)
+
+```cpp
+struct TarjanBridge : vector<vector<int>> {
+  vector<int> low;
+  vector<int> parent;
+  vector<int> discovery;
+  vector<vector<int>> bridge;
+
+  // TarjanBridge() {}
+  TarjanBridge(vector<vector<int>>& G) {
+    int n = (int) G.size();
+    low.resize(n, -1);
+    parent.resize(n, -1);
+    discovery.resize(n, -1);
+    for(int i = 0; i < n; i++) {
+      if(discovery[i] == -1) {
+        dfs(i, discovery, low, parent, G, bridge);
+      }
+    }
+  }
+
+  void dfs(int i, vector<int>& discovery, vector<int>& low, vector<int>& parent, vector<vector<int>>& G, vector<vector<int>>&  bridge) {
+    static int time = 0;
+    discovery[i] = time;
+    low[i] = time;
+    time++;
+    for(auto x : G[i]) {
+      if(discovery[x] == -1) {
+        parent[x] = i;
+        dfs(x, discovery, low, parent, G, bridge);
+        low[i] = min(low[i], low[x]);
+        if(low[x] > discovery[i]) {
+          bridge.push_back({i, x});
+        }
+      } else {
+        if(x != parent[i]) {
+          low[i] = min(low[i], discovery[x]);
+        }
+      }
+    }
+  }
+};
+
+```
+
+### Example:
+
+```cpp
+vector<vector<int>> criticalConnections(int n, vector<vector<int>>& connections) {
+    vector<vector<int>> g(n);
+    for(auto c : connections) {
+        g[c[0]].push_back(c[1]);
+        g[c[1]].push_back(c[0]);
+    }
+    TarjanBridge tarjan(g);
+    return tarjan.bridge;
+}
+```
