@@ -31,39 +31,43 @@ class Solution {
 public:
     struct TarjanBridge : vector<vector<int>> {
       vector<int> low;
-      vector<int> parent;
       vector<int> discovery;
       vector<vector<int>> bridge;
+      vector<vector<int>> G;
 
       TarjanBridge() {}
       TarjanBridge(vector<vector<int>>& G) {
+        this->G = G;
         int n = (int) G.size();
         low.resize(n, -1);
-        parent.resize(n, -1);
         discovery.resize(n, -1);
         for(int i = 0; i < n; i++) {
           if(discovery[i] == -1) {
-            dfs(i, discovery, low, parent, G, bridge);
+            dfs(i, i);
           }
         }
       }
 
-      void dfs(int i, vector<int>& discovery, vector<int>& low, vector<int>& parent, vector<vector<int>>& G, vector<vector<int>>&  bridge) {
+      void dfs(int u, int p) {
         static int time = 0;
-        discovery[i] = time;
-        low[i] = time;
+        discovery[u] = time;
+        low[u] = time;
         time++;
-        for(auto x : G[i]) {
-          if(discovery[x] == -1) {
-            parent[x] = i;
-            dfs(x, discovery, low, parent, G, bridge);
-            low[i] = min(low[i], low[x]);
-            if(low[x] > discovery[i]) {
-              bridge.push_back({i, x});
-            }
-          } else {
-            if(x != parent[i]) {
-              low[i] = min(low[i], discovery[x]);
+        for(auto v : G[u]) {
+          if(v ^ p) {
+            if(discovery[v] == -1) {
+              // recursive DFS
+              dfs(v, u);
+              // low[v] might be an ancestor of u
+              low[u] = min(low[u], low[v]);
+              // bridge found
+              if(discovery[u] < low[v]) {
+                bridge.push_back({u, v});
+              }
+            } else {
+              // v was discovered -> found an ancestor
+              // find the ancestor with the least discovery time
+              low[u] = min(low[u], discovery[v]);
             }
           }
         }
