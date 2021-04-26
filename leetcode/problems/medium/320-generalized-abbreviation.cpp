@@ -26,6 +26,35 @@ word consists of only lowercase English letters.
 
 class Solution {
 public:
+    string go(string word, int x) {
+        string res;
+        int consecutive_ones = 0, n = word.size();
+        for(int i = 0; i < n; i++, x >>= 1) {
+            if(x & 1) consecutive_ones++;
+            else {
+                if(consecutive_ones > 0) {
+                    res += to_string(consecutive_ones);
+                    consecutive_ones = 0;
+                }
+                res += word[i];
+            }
+        }
+        if(consecutive_ones > 0) res += to_string(consecutive_ones);
+        return res;
+    }
+    
+    vector<string> generateAbbreviations(string word) {
+        vector<string> ans;
+        int n = word.size();
+        for(int i = 0; i < (1 << n); i++) {
+            ans.push_back(go(word, i));
+        }
+        return ans;
+    }
+};
+
+class Solution2 {
+public:
     vector<string> ans;
     void dfs(string& word, string abbr, int num, int i) {
         if(i == word.size()) {
