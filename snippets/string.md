@@ -157,3 +157,20 @@ vector<string> split(string str, char delim) {
     return res;
 }
 ```
+
+## Prefix Function
+
+```cpp
+vector<int> prefix_function(string s) {
+    int n = (int) s.size();
+    // p[i] : the length of the longest proper prefix of the substring s[0 ... i] which is also a suffix of this substring
+    vector<int> p(n);
+    for (int i = 1; i < n; i++) {
+        int j = p[i - 1];
+        while (j > 0 && s[i] != s[j]) j = p[j - 1];
+        if (s[i] == s[j]) j++;
+        p[i] = j;
+    }
+    return p;
+}
+```
