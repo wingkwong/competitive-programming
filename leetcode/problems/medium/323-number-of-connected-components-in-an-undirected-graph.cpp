@@ -32,6 +32,26 @@ There are no repeated edges.
 
 class Solution {
 public:
+    vector<int> parent;
+    int find(int x) {
+        return x == parent[x] ? x : find(parent[x]);
+    }
+    int countComponents(int n, vector<vector<int>>& edges) {
+        parent.resize(n);
+        iota(parent.begin(), parent.end(), 0);
+        int ans = n;
+        for(auto e : edges) {
+            int x = find(e[0]);
+            int y = find(e[1]);
+            parent[x] = y;
+            ans -= x != y;
+        }
+        return ans;
+    }
+};
+
+class Solution2 {
+public:
     struct SCC : vector<int> {
       vector<vector<int>> comps;
       vector<int> S;
