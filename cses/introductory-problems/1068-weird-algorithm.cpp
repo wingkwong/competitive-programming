@@ -35,13 +35,13 @@ int main()
     FAST_INP;
     long long n;
     cin >> n;
-    printf("%lld ", n);
-    while(n!=1){
+    cout << n;
+    while(n != 1){
         // if n is even, the algorithm divides it by two
-        if(n%2==0) n/=2;
+        if(n % 2 == 0) n /= 2;
         // if n is odd, the algorithm multiplies it by three and adds one
-        else n=n*3+1;
-        printf("%lld ", n);
+        else n = n * 3 + 1;
+        cout << n << " ";
     }
     return 0;
 } 
