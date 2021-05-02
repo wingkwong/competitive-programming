@@ -63,25 +63,30 @@ void solve() {
 	vvi A(N, vi(5));
 	REP(i, N) REP(j, 5) cin >> A[i][j];
 	int l = 0, r = 1000000001;
+	auto check = [&](int x) {
+		set<int> s;
+		EACH(candidates, A) {
+			int bit = 0;
+			EACH(candidate, candidates) {
+				bit <<= 1;
+				bit |= candidate >= x;
+			}
+			s.insert(bit);
+		}
+		EACH(x, s) {
+			EACH(y, s) {
+				EACH(z, s) {
+					if((x | y | z) == 31) {
+						return true;
+					}
+				}
+			}
+		}
+		return false;
+	};
 	while (r - l > 1){
-		int m = (l + r) / 2;
-		vi B(N, 0);
-		REP(i, N) {
-		  REP(j, 5) {
-		    if (A[i][j] >= m){
-		      B[i] += 1 << j;
-		    }
-		  }
-		}
-		vvi dp(N + 1, vi(32, INF));
-		dp[0][0] = 0;
-		REP(i, N) {
-			REP(j, 32) {
-				dp[i + 1][j] = min(dp[i + 1][j], dp[i][j]);
-				dp[i + 1][j | B[i]] = min(dp[i + 1][j | B[i]], dp[i][j] + 1);
-		  	}
-		}
-		if(dp[N][31] <= 3) l = m;
+		int m = l + (r - l) / 2;
+		if(check(m)) l = m;
 		else r = m;
 	}
 	OUT(l);
