@@ -21,7 +21,20 @@ Explanation: You will always arrive at index 3 no matter what. Its maximum
 
 */
 
+
 class Solution {
+public:
+    bool canJump(vector<int>& nums) {
+        int n = nums.size(), pos = n - 1;
+        for(int i = n - 1; ~i ; i--) {
+            if(i + nums[i] >= pos) pos = i;
+        }
+        return pos == 0;
+    }
+};
+
+
+class Solution2 {
 public:
     bool canJump(vector<int>& nums) {
         int sz = nums.size();
