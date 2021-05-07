@@ -14,6 +14,30 @@ Characters in given words can only be lower-case letters.
 
 class Solution {
 public:
+    // LC 1143
+    // https://leetcode.com/problems/longest-common-subsequence/
+    int longestCommonSubsequence(string text1, string text2) {
+        int n = text1.size(), m = text2.size();
+        vector<vector<int>> dp(n + 1, vector<int>(m + 1));
+        for(int i = 1; i <= n; i++) {
+            for(int j = 1; j <= m; j++) {
+                if(text1[i - 1] == text2[j - 1]) {
+                    dp[i][j] = dp[i - 1][j - 1] + 1;
+                } else {
+                    dp[i][j] = max(dp[i - 1][j], dp[i][j - 1]);
+                }
+            }
+        }
+        return dp[n][m];
+    }
+    
+    int minDistance(string word1, string word2) {
+        return word1.size() + word2.size() - 2 * longestCommonSubsequence(word1, word2);
+    }
+};
+
+class Solution2 {
+public:
     int minDistance(string word1, string word2) {
         int m=word1.size(),n=word2.size();
         int dp[m+1][n+1];
