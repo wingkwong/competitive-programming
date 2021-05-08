@@ -31,11 +31,10 @@ left is less than or equal to right.
 
 class Solution {
 public:
-    bool isPalindrome(string s) {
-        string t = s;
-        reverse(t.begin(), t.end());
-        return s == t;
+    bool isPalindrome(const string &s) {
+        return equal(s.begin(), s.begin() + s.size() / 2, s.rbegin());
     }
+    
     int superpalindromesInRange(string left, string right) {
         int ans = 0;
         long l = stol(left), r = stol(right);
