@@ -174,3 +174,43 @@ vector<int> prefix_function(string s) {
     return p;
 }
 ```
+
+## Check Palindrom
+
+### Long + Efficient
+
+```cpp
+bool isPalindrome(const string& s) {
+    for (int i = 0; i < s.size() / 2; i++) {
+        if (s[i] != s[s.size() - i - 1])
+            return false;
+    }
+
+    return true;
+}
+```
+### Shorter, but not efficient
+
+```cpp
+bool isPalindrome(const string& s) {
+    string t = s;
+    reverse(t.begin(), t.end());
+    return s == t;
+}
+```
+
+### Shortest, but not efficient
+
+```cpp
+bool isPalindrome(const string& s) {
+    return s == string(s.rbegin(), s.rend());
+}
+```
+
+### Shortest, but efficient
+
+```cpp
+bool isPalindrome(const string &s) {
+    return equal(s.begin(), s.begin() + s.size() / 2, s.rbegin());
+}
+```
