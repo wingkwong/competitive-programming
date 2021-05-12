@@ -44,6 +44,22 @@ Constraints:
 1 <= k <= cardPoints.length
 */
 
+class Solution {
+public:
+    int maxScore(vector<int>& cardPoints, int k) {
+        int sum = 0, cur = 0, n = cardPoints.size(), x = n - k;
+        for(int x : cardPoints) sum += x;
+        for(int i = 0; i < x; i++) cur += cardPoints[i];
+        int ans = sum - cur;
+        for(int i = x; i < n; i++) {
+            cur -= cardPoints[i - x];
+            cur += cardPoints[i];
+            ans = max(ans, sum - cur);
+        }
+        return ans;
+    }
+};
+
 
 class Solution {
 public:
