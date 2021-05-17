@@ -63,7 +63,24 @@ T sum(T a, Args... args) { return a + sum(args...); }
 #define what_is(x) cerr << #x << " is " << x << endl;
 
 void solve() {
-
+	int k; cin >> k;
+	string s; cin >> s;
+	int cnt[26] = {0};
+	set<char> st;
+	EACH(c, s) {
+		cnt[c - 'a']++;
+		st.insert(c);
+	}
+	string tmp;
+	EACH(c, st) {
+		if(cnt[c - 'a'] % k) {
+			OUT(-1);
+			return;
+		}
+		REP(i, cnt[c - 'a'] / k) tmp += c;
+	}
+	REP(i, k) cout << tmp;
+	OUT("");
 }
 
 int main()
@@ -76,23 +93,6 @@ int main()
 
 //    int tc; cin >> tc;
 //    TC(tc) solve();
-	int k; cin >> k;
-	string s; cin >> s;
-	int cnt[26] = {0};
-	set<char> st;
-	for(char c : s) {
-		cnt[c - 'a']++;
-		st.insert(c);
-	}
-	string tmp;
-	EACH(c, st) {
-		if(cnt[c - 'a'] % k) {
-			OUT(-1);
-			return 0;
-		}
-		REP(i, cnt[c - 'a'] / k) tmp += c;
-	}
-	REP(i, k) cout << tmp;
-	OUT("");
+    solve();
     return 0;
 }
