@@ -73,7 +73,7 @@ int go(int r) {
     ll res = 0, p = 0, n = (int) log10(r) + 1;
     REP(i, n) {
         p = p * 10 + 1;
-        REPN(j, 9) res += ((1 <= (p * j)) && ((p * j) <= r));
+        REPN(j, 9) res += (p * j) <= r;
     }
     return res;
 }
