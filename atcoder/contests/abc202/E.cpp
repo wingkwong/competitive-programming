@@ -24,7 +24,7 @@ ll MOD = 1000000007;
 
 #define DEBUG fprintf(stderr, "====TESTING====\n")
 #define VALUE(x) cerr << "The value of " << #x << " is " << x << endl
-#define OUT(x) cout << x << endl
+#define OUT(x) cout << x << '\n'
 #define OUTH(x) cout << x << " "
 #define debug(...) fprintf(stderr, __VA_ARGS__)
 #define READ(x) for(auto &(z):x) cin >> z;
