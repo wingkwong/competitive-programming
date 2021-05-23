@@ -1,6 +1,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+#pragma GCC optimize("Ofast")
+#pragma GCC target("avx,avx2,fma")
+
 typedef long long ll;
 typedef pair<int, int> pii;
 typedef pair<ll, ll> pll;
@@ -17,15 +20,11 @@ long long INFF=1000000000000000005ll;
 double PI=acos(-1);
 int dirx[8]={ -1, 0, 0, 1, -1, -1, 1, 1 };
 int diry[8]={ 0, 1, -1, 0, -1, 1, -1, 1 };
-const ll MOD = 1000000007;
-
-ll sum() { return 0; }
-template<typename T, typename... Args>
-T sum(T a, Args... args) { return a + sum(args...); }
+ll MOD = 1000000007;
 
 #define DEBUG fprintf(stderr, "====TESTING====\n")
-#define VALUE(x) cerr << "The value of " << #x << " is " << x << endl
-#define OUT(x) cout << x << endl
+#define VALUE(x) cerr << "The value of " << #x << " is " << x << '\n'
+#define OUT(x) cout << x << '\n'
 #define OUTH(x) cout << x << " "
 #define debug(...) fprintf(stderr, __VA_ARGS__)
 #define READ(x) for(auto &(z):x) cin >> z;
@@ -55,22 +54,31 @@ T sum(T a, Args... args) { return a + sum(args...); }
 #define PERMUTE next_permutation
 #define TC(t) while (t--)
 #define FAST_INP  ios_base::sync_with_stdio(false);cin.tie(NULL)
-#define what_is(x) cerr << #x << " is " << x << endl;
+#define what_is(x) cerr << #x << " is " << x << '\n'
+
+template<typename T_vector>
+void output_vector(const T_vector &v, bool line_break = false, bool add_one = false, int start = -1, int end = -1) {
+    if (start < 0) start = 0;
+    if (end < 0) end = int(v.size());
+    for (int i = start; i < end; i++) {
+      cout << v[i] + (add_one ? 1 : 0) << (line_break ? '\n' : i < end - 1 ? ' ' : '\n');
+    }
+}
 
 void solve() {
 
 }
-
-int main()
-{
+ 
+int main() {
     FAST_INP;
+
 //    #ifndef ONLINE_JUDGE
 //    freopen("input.txt","r", stdin);
 //    freopen("output.txt","w", stdout);
 //    #endif
-
-    int tc; cin >> tc;
-    TC(tc) solve();
-
+ 
+    // int tc; cin >> tc;
+    // TC(tc) solve();
+    solve();
     return 0;
 }
