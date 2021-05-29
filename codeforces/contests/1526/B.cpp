@@ -122,7 +122,7 @@ void solve() {
     // by Chicken McNugget Theorem, (m - 1) * n - m
     // ref: https://artofproblemsolving.com/wiki/index.php/Chicken_McNugget_Theorem
     int mi = (m - 1) * n - m;
-    if(x >= mi) {
+    if(x > mi) {
         OUT("YES");
         return;
     }
