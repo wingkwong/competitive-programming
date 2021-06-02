@@ -98,38 +98,49 @@ void solve() {
     int n, m, p; cin >> n >> m >> p;
     vector<string> s(n);
     REP(i, n) cin >> s[i];
-    ll ans = 0;
-    REP(it, 40) {
+    ll best = 0;
+    // fail with probability 1 : 2 ^ (min(20, SIZE(s)))
+    REP(it, min(20, SIZE(s))) {
         // randomly pick a friend
-        int idx = int(rng() % n);
+        // int idx = int(rng() % n);
+        // or we can shuffle the s[]
+        // i.e. 
+        shuffle(ALL(s), rng);
         vi bits;
         // "compress" each mask for each friend to a size no larger than p
         // by only keeping those true bits which are also true in mask
-        REP(b, m) if(s[idx][b] == '1') bits.pb(b);
+        // REP(b, m) if(s[idx][b] == '1') bits.pb(b);
+        // if u use shuffle, then uncomment below line
+        REP(b, m) if(s[it][b] == '1') bits.pb(b);
         int B = SIZE(bits);
-        vi cnt(1 << B, 0);
+        // exact_cnt[mask] : the number of friends who like exactly the currency mask
+        vi exact_cnt(1 << B, 0);
         EACH(x, s) {
             int mask = 0;
             REP(i, B) mask |= (x[bits[i]] - '0') << i;
-            cnt[mask]++;
+            exact_cnt[mask]++;
         }
-        // dbg(cnt);
-        cnt = supermask_sums<int>(B, cnt);
-        // dbg(cnt);
+        // dbg(exact_cnt)
+        // at_least_cnt[mask] : the number of friends who like at least the currency mask
+        vi at_least_cnt = supermask_sums<int>(B, exact_cnt);
+        // dbg(at_least_cnt);
         REP(mask, 1 << B) {
             if(
-                2 * cnt[mask] >= n && // at least ⌈n / 2⌉ friends (rounded up) who like each currency in this subset
-                __builtin_popcount(mask) > __builtin_popcountll(ans) // the largest by cardinality (possibly empty) subset of currencies
+                2 * at_least_cnt[mask] >= n && // at least ⌈n / 2⌉ friends (rounded up) who like each currency in this subset
+                __builtin_popcount(mask) > __builtin_popcountll(best) // the largest by cardinality (possibly empty) subset of currencies
             ) {
+                // decompress to the possible best ans
                 ll full_mask = 0;
                 REP(i, B) full_mask |= ll(mask >> i & 1) << bits[i];
-                ans = full_mask;
+                best = full_mask;
             }
         }
 
     }
-    // output 
-    REP(i, m) cout << (ans >> i & 1);
+    // output in binary format
+    REP(i, m) cout << (best >> i & 1);
+    // or
+    // REP(i, m) cout << ((best & (1LL << i)) ? '1' : '0');
     cout << '\n';
 }
  
