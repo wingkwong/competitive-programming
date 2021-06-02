@@ -57,3 +57,9 @@ long long binpow(long long x, long long y) {
 
 long long divide(int x, int y) { return mul(x, binpow(y, MOD - 2)); }
 ```
+
+## Random number generator
+
+```
+mt19937 rng((unsigned int) chrono::steady_clock::now().time_since_epoch().count());
+```
