@@ -159,6 +159,51 @@ void solve() {
 }
 ```
 
+## Dijkstra with Path 
+
+```cpp
+// --------------------------- Dijkstra with Path --------------------------- //
+const int N = 1e5 + 5;
+long long n, m;
+long long arrival[N], departure[N], vis[N], parent[N];
+vector<pair<long long, long long> > g[N];
+
+void dijkstra_with_path(long long source, long long destination) {
+  for (long long i = 1; i <= n; i++) arrival[i] = 1e18, departure[i] = 1e18, vis[i] = 0;
+  arrival[source] = 0;
+  set<pair<long long, long long> > s;
+  s.insert({0, source});
+  while (!s.empty()) {
+    auto x = *(s.begin());
+    s.erase(x);
+    vis[x.second] = 1;
+    departure[x.second] = arrival[x.second];
+    for (auto it : g[x.second]) {
+      if (arrival[it.first] > departure[x.second] + it.second) {
+        s.erase({arrival[it.first], it.first});
+        arrival[it.first] = departure[x.second] + it.second;
+        s.insert({arrival[it.first], it.first});
+        parent[it.first] = x.second;
+      }
+    }
+  }
+  if (!vis[destination]) {
+    cout << "-1";
+    return;
+  }
+  long long v = destination;
+  vector<long long> ans;
+  while (parent[v]) {
+    ans.push_back(v);
+    v = parent[v];
+  }
+  ans.push_back(source);
+  reverse(ans.begin(), ans.end());
+  for (auto it : ans) cout << it << " ";
+}
+// --------------------------- Dijkstra with Path --------------------------- //
+```
+
 ## Strongly Connected Components (SCC)
 
 ```cpp
