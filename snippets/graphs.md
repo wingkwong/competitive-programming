@@ -296,3 +296,69 @@ vector<vector<int>> criticalConnections(int n, vector<vector<int>>& connections)
     return tarjan.bridge;
 }
 ```
+
+## Topological Sort
+
+```cpp
+// --------------------------- Topological Sort  --------------------------- //
+const int N = 500 + 5;
+long long n, m;
+long long indegree[N], indegree2[N];
+vector<long long> g[N];
+ 
+bool topological_sort() {
+	long long res = 0;
+	queue<long long> q;
+	vector<long long> orders;
+	for(int i = 1; i <= n; i++) {
+		if(indegree[i] == 0) {
+			q.push(i);
+			orders.push_back(i);
+		}
+	}
+	while(!q.empty()) {
+		auto u = q.front(); q.pop();
+		for(auto v : g[u]) {
+			if(--indegree[v] == 0) {
+				q.push(v);
+				orders.push_back(v);
+			}
+		}
+		res++;
+	}
+	// output_vector(orders);
+	return res == n;
+}
+// --------------------------- Topological Sort  --------------------------- //
+```
+
+### Example:
+
+```cpp
+void solve() {
+    cin >> n >> m;
+    REPN(i, m) {
+        ll a, b; cin >> a >> b;
+        g[a].pb(b);
+		    indegree[b]++;
+    }
+	// indegree2 <-- indegree
+	memcpy(indegree2, indegree, sizeof(indegree));
+	if(topological_sort()) {
+		OUT("YES");
+		return;
+	}
+	REPN(i, n) {
+		// indegree <-- indegree2
+		memcpy(indegree, indegree2, sizeof(indegree2));
+		if(indegree[i] > 0) {
+			--indegree[i];
+			if(topological_sort()) {
+				OUT("YES");
+				return;
+			}
+		}
+	}
+	OUT("NO");
+}
+```
