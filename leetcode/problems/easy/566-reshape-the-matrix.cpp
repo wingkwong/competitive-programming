@@ -38,6 +38,17 @@ The given r and c are all positive.
 
 class Solution {
 public:
+    vector<vector<int>> matrixReshape(vector<vector<int>>& mat, int r, int c) {
+        int m = size(mat), n = size(mat[0]), k = m * n;
+        if(r * c != k) return mat;
+        vector<vector<int>> ans(r, vector<int>(c));
+        for(int i = 0; i < k; i++) ans[i / c][i % c] = mat[i / n][i % n];
+        return ans;
+    }
+};
+
+class Solution2 {
+public:
     vector<vector<int>> matrixReshape(vector<vector<int>>& nums, int r, int c) {
         vector<vector<int>> ans(r, vector<int>(c));
         int m = nums.size();
