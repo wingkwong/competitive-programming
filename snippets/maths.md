@@ -378,6 +378,21 @@ bool isPrime(long long n) {
 }
 ```
 
+find all prime numbers before N
+```cpp
+vector<int> generate_primes(int n) {
+  vector<int> primes;
+  for(int p = 2; p * p <= n; p++) {
+    if(n % p == 0) primes.push_back(p);
+    do {
+      n /= p;
+    } while(n % p == 0);
+  }
+  if(n > 1) primes.push_back(n);
+  return primes;
+}
+```
+
 ## Sieve of Eratosthenes
 
 ```cpp
